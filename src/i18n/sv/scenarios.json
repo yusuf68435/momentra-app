@@ -1,0 +1,29 @@
+{
+  "featured": "Utvalda scenarion",
+  "all_scenarios": "Alla scenarion",
+  "difficulty": "Svårighetsgrad",
+  "prep_time": "Förberedelsetid",
+  "budget_range": "Budgetintervall",
+  "people_count": "Antal personer",
+  "indoor": "Inomhus",
+  "outdoor": "Utomhus",
+  "both": "Båda",
+  "steps": "Steg",
+  "step": "Steg",
+  "plan_this": "Planera detta!",
+  "reviews": "Recensioner",
+  "no_reviews": "Inga recensioner ännu",
+  "estimated_budget": "Uppskattad budget",
+  "days_prep": "{{count}} dagars förberedelse",
+  "people_range": "{{min}}-{{max}} personer",
+  "filters": {
+    "category": "Kategori",
+    "budget_min": "Minsta budget",
+    "budget_max": "Högsta budget",
+    "people": "Antal personer",
+    "location_type": "Platstyp",
+    "difficulty": "Svårighetsnivå",
+    "clear_all": "Rensa alla",
+    "apply": "Tillämpa"
+  }
+}

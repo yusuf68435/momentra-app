@@ -1,0 +1,63 @@
+appId: com.momentra.app
+---
+# Flow: Open Community tab, browse stories, switch filter tabs
+- launchApp
+
+# Login
+- runFlow: auth_login.yaml
+
+# Tap Community tab
+- tapOn:
+    text: "Topluluk"
+  optional: true
+- tapOn:
+    text: "Community"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Header should be visible
+- assertVisible:
+    text: "Topluluk"
+  optional: true
+- assertVisible:
+    text: "Community"
+  optional: true
+
+# Switch to Trending tab
+- tapOn:
+    text: "Trend"
+  optional: true
+- tapOn:
+    text: "Trending"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Switch to My Stories tab
+- tapOn:
+    text: "Hikayelerim"
+  optional: true
+- tapOn:
+    text: "My Stories"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Switch back to All
+- tapOn:
+    text: "Hepsi"
+  optional: true
+- tapOn:
+    text: "All"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Search icon tap
+- tapOn:
+    id: "search-icon"
+  optional: true
+
+# Verify search input appears or community is still showing
+- waitForAnimationToEnd

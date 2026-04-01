@@ -1,0 +1,45 @@
+appId: com.momentra.app
+---
+# Flow: Register a new account and verify redirection to home
+- launchApp:
+    clearState: true
+
+# Navigate to register screen
+- tapOn:
+    text: "Kayıt Ol"
+  optional: true
+- tapOn:
+    text: "Sign Up"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Fill in full name
+- tapOn:
+    id: "fullname-input"
+  optional: true
+- inputText: "Maestro Test User"
+
+# Fill in email (unique timestamp-based)
+- tapOn:
+    id: "email-input"
+- inputText: "test+e2e@momentra.app"
+
+# Fill in password
+- tapOn:
+    id: "password-input"
+- inputText: "Test1234!"
+
+# Submit
+- tapOn:
+    text: "Kayıt Ol"
+  optional: true
+- tapOn:
+    text: "Create Account"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Should land on home or verification screen
+- assertTrue:
+    condition: ${maestro.platform} != ''

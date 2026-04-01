@@ -1,0 +1,66 @@
+appId: com.momentra.app
+---
+# Flow: Create a new plan end-to-end
+- launchApp
+
+# Login
+- runFlow: auth_login.yaml
+
+# Go to Plans tab
+- tapOn:
+    text: "Planlarım"
+  optional: true
+- tapOn:
+    text: "My Plans"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Tap create plan button
+- tapOn:
+    text: "Yeni plan oluştur"
+  optional: true
+- tapOn:
+    text: "Create Plan"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Fill in plan title
+- tapOn:
+    id: "plan-title-input"
+  optional: true
+- tapOn:
+    text: "Sürpriz başlığı"
+  optional: true
+- tapOn:
+    text: "Surprise title"
+  optional: true
+- inputText: "E2E Test Sürprizi"
+
+# Fill in recipient name
+- tapOn:
+    id: "recipient-name-input"
+  optional: true
+- tapOn:
+    text: "Kime sürpriz yapıyorsun?"
+  optional: true
+- inputText: "Test Kişisi"
+
+# Scroll down and submit
+- scrollDown
+
+- tapOn:
+    text: "Planı Oluştur"
+  optional: true
+- tapOn:
+    text: "Create Plan"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Plan detail screen should open
+- assertVisible:
+    text: "E2E Test Sürprizi"
+  timeout: 10000
+  optional: true

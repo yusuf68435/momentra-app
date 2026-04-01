@@ -1,0 +1,64 @@
+appId: com.momentra.app
+---
+# Flow: Open an existing plan and navigate through its sub-screens
+- launchApp
+
+- runFlow: auth_login.yaml
+
+# Go to Plans tab
+- tapOn:
+    text: "Planlarım"
+  optional: true
+- tapOn:
+    text: "My Plans"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Tap first plan if any exists
+- tapOn:
+    index: 0
+    text: "Sürpriz"
+  optional: true
+- tapOn:
+    index: 0
+    text: "Surprise"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Try navigating to Checklist
+- tapOn:
+    text: "Yapılacaklar"
+  optional: true
+- tapOn:
+    text: "Checklist"
+  optional: true
+
+- waitForAnimationToEnd
+- back
+  optional: true
+
+# Try navigating to Budget
+- tapOn:
+    text: "Bütçe"
+  optional: true
+- tapOn:
+    text: "Budget"
+  optional: true
+
+- waitForAnimationToEnd
+- back
+  optional: true
+
+# Try navigating to Guests
+- tapOn:
+    text: "Misafirler"
+  optional: true
+- tapOn:
+    text: "Guests"
+  optional: true
+
+- waitForAnimationToEnd
+- back
+  optional: true

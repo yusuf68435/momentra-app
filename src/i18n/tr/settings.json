@@ -1,0 +1,139 @@
+{
+  "title": "Ayarlar",
+  "profile": "Profil",
+  "language": "Dil",
+  "language_tr": "Türkçe",
+  "language_en": "English",
+  "notifications": "Bildirimler",
+  "notifications_desc": "Hatırlatma ve geri sayım bildirimleri",
+  "subscription": "Abonelik",
+  "current_plan": "Mevcut Plan",
+  "free_plan": "Ücretsiz",
+  "premium_plan": "Premium",
+  "upgrade": "Premium'a Geç",
+  "dark_mode": "Karanlık Mod",
+  "about": "Hakkında",
+  "privacy_policy": "Gizlilik Politikası",
+  "terms": "Kullanım Şartları",
+  "version": "Sürüm",
+  "rate_app": "Uygulamayı Değerlendir",
+  "contact_us": "Bize Ulaşın",
+  "subscription_screen": {
+    "title": "Abonelik",
+    "subtitle": "Planınızı seçin",
+    "first_surprise_title": "İlk sürpriziniz bizden!",
+    "first_surprise_desc": "Tüm özellikler ilk sürprizinizde ücretsiz.",
+    "current_plan_label": "Mevcut Plan: ",
+    "plan_free": "Ücretsiz",
+    "billing_monthly": "Aylık",
+    "billing_yearly": "Yıllık",
+    "most_popular": "En Popüler",
+    "per_month": "/ay",
+    "per_year": "/yıl",
+    "active_badge": "Aktif",
+    "selected": "Seçili",
+    "select": "Seç",
+    "comparison_title": "Özellik Karşılaştırması",
+    "comparison_col_feature": "Özellik",
+    "comparison_col_free": "Ücretsiz",
+    "cta_current": "Mevcut Planınız",
+    "cta_switch_free": "Ücretsiz Plana Geç",
+    "cta_upgrade_plus": "Plus'a Yüksel",
+    "cta_upgrade_pro": "Pro'ya Yüksel",
+    "restore_purchases": "Satın Almaları Geri Yükle",
+    "terms_privacy": "Kullanım Koşulları ve Gizlilik Politikası",
+    "disclaimer": "İstediğiniz zaman iptal edebilirsiniz. Ödeme App Store / Google Play üzerinden yapılır. Abonelik otomatik olarak yenilenir.",
+    "alert_plan_changed_title": "Plan Değiştirildi",
+    "alert_plan_changed_msg": "Ücretsiz plana geçildi.",
+    "alert_package_not_found_title": "Paket Bulunamadı",
+    "alert_package_not_found_msg": "Bu plan için uygun paket bulunamadı. Lütfen daha sonra tekrar deneyin.",
+    "alert_success_title": "Başarılı!",
+    "alert_subscribed_plus": "Plus planına başarıyla abone oldunuz.",
+    "alert_subscribed_pro": "Pro planına başarıyla abone oldunuz.",
+    "alert_error_title": "Hata",
+    "alert_purchase_error_msg": "Satın alma sırasında bir hata oluştu. Lütfen tekrar deneyin.",
+    "alert_coming_soon_title": "Yakın Zamanda",
+    "alert_coming_soon_msg": "Ödeme sistemi yakın zamanda aktif olacaktır. Şimdilik demo olarak plan değiştirildi.",
+    "alert_ok": "Tamam",
+    "alert_restored_title": "Satın Almalar Geri Yüklendi",
+    "alert_restored_plus": "Plus aboneliğiniz geri yüklendi.",
+    "alert_restored_pro": "Pro aboneliğiniz geri yüklendi.",
+    "alert_no_purchases_title": "Satın Alma Bulunamadı",
+    "alert_no_purchases_msg": "Geri yüklenecek aktif abonelik bulunamadı.",
+    "alert_restore_error_msg": "Geri yükleme sırasında bir hata oluştu.",
+    "alert_restored_fallback_msg": "Önceki satın almalarınız kontrol edildi.",
+    "plan_free_features": [
+      "3 plan / ay",
+      "5 AI sorgu / ay",
+      "Temel şablonlar",
+      "Topluluk senaryoları",
+      "10 MB fotoğraf deposu"
+    ],
+    "plan_plus_features": [
+      "20 plan / ay",
+      "50 AI sorgu / ay",
+      "Premium şablonlar ve senaryolar",
+      "5 ortak organizatör",
+      "500 MB fotoğraf deposu",
+      "PDF dışa aktarma",
+      "Özel temalar",
+      "Reklamsız deneyim"
+    ],
+    "plan_pro_features": [
+      "Sınırsız plan ve AI sorgu",
+      "Sınırsız ortak organizatör",
+      "5 GB fotoğraf deposu",
+      "PDF dışa aktarma",
+      "Özel temalar",
+      "Öncelikli destek",
+      "Erken erişim özellikleri",
+      "Özel sürpriz danışmanlığı"
+    ],
+    "comparison_monthly_plans": "Aylık Plan",
+    "comparison_ai_queries": "AI Sorgu",
+    "comparison_premium_scenarios": "Premium Senaryolar",
+    "comparison_co_organizers": "Ortak Organizatör",
+    "comparison_photo_storage": "Fotoğraf Deposu",
+    "comparison_pdf_export": "PDF Aktarma",
+    "comparison_priority_support": "Öncelikli Destek",
+    "comparison_custom_themes": "Özel Temalar"
+  },
+  "notifications_screen": {
+    "title": "Bildirimler",
+    "subtitle": "Bildirim tercihlerinizi yönetin",
+    "permission_denied_title": "Bildirim İzni Gerekli",
+    "permission_denied_message": "Bildirimleri etkinleştirmek için lütfen ayarlardan bildirim iznini verin.",
+    "permission_denied_button": "Tamam",
+    "all_notifications": "Tüm Bildirimler",
+    "all_on": "Tüm bildirimler açık",
+    "all_off": "Tüm bildirimler kapalı",
+    "section_title": "Bildirim Türleri",
+    "footer": "Bildirim ayarlarınızı istediğiniz zaman değiştirebilirsiniz. Kişisel verileriniz korunmaktadır.",
+    "options": {
+      "planReminders": {
+        "title": "Plan hatırlatmaları",
+        "desc": "Yaklaşan sürpriz planları için bildirim alın"
+      },
+      "countdownAlerts": {
+        "title": "Geri sayım bildirimleri",
+        "desc": "Özel günlere geri sayım hatırlatmaları"
+      },
+      "aiSuggestions": {
+        "title": "AI önerileri",
+        "desc": "Yapay zeka destekli sürpriz önerileri"
+      },
+      "newScenarios": {
+        "title": "Yeni senaryolar",
+        "desc": "Yeni eklenen sürpriz senaryoları hakkında bilgi alın"
+      },
+      "proactiveSuggestions": {
+        "title": "Proaktif öneriler",
+        "desc": "Yaklaşan özel günler için sürpriz planlama hatırlatmaları"
+      },
+      "promotions": {
+        "title": "Promosyonlar",
+        "desc": "Özel fırsatlar ve indirimlerden haberdar olun"
+      }
+    }
+  }
+}

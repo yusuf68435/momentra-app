@@ -1,0 +1,31 @@
+appId: com.momentra.app
+---
+# Flow: Open Profile tab, verify gamification and settings links
+- launchApp
+
+# Login
+- runFlow: auth_login.yaml
+
+# Tap Profile tab
+- tapOn:
+    text: "Profil"
+  optional: true
+- tapOn:
+    text: "Profile"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Profile screen items
+- assertVisible:
+    text: "Profil"
+  timeout: 10000
+  optional: true
+
+# Scroll down to see settings
+- scrollDown
+
+- waitForAnimationToEnd
+
+# Scroll back up
+- scrollUp

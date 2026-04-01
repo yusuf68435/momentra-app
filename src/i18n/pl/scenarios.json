@@ -1,0 +1,29 @@
+{
+  "featured": "Polecane scenariusze",
+  "all_scenarios": "Wszystkie scenariusze",
+  "difficulty": "Trudność",
+  "prep_time": "Czas przygotowania",
+  "budget_range": "Przedział budżetowy",
+  "people_count": "Liczba osób",
+  "indoor": "W pomieszczeniu",
+  "outdoor": "Na zewnątrz",
+  "both": "Oboje",
+  "steps": "Kroki",
+  "step": "Krok",
+  "plan_this": "Zaplanuj to!",
+  "reviews": "Opinie",
+  "no_reviews": "Brak opinii",
+  "estimated_budget": "Szacowany budżet",
+  "days_prep": "{{count}} dni przygotowań",
+  "people_range": "{{min}}-{{max}} osób",
+  "filters": {
+    "category": "Kategoria",
+    "budget_min": "Minimalny budżet",
+    "budget_max": "Maksymalny budżet",
+    "people": "Liczba osób",
+    "location_type": "Typ lokalizacji",
+    "difficulty": "Poziom trudności",
+    "clear_all": "Wyczyść wszystkie",
+    "apply": "Zastosuj"
+  }
+}

@@ -1,0 +1,103 @@
+{"cat_slug":"friendship","id":"581e36e5-0eaa-4d75-b987-a1fe13a114c4","slug":"friendship-geocaching","title_en":"Friendship Geocaching Adventure","title_tr":"Arkadaşlık Geocaching Macerası"}
+{"cat_slug":"friendship","id":"2e0ab177-65fd-4e7d-afbe-3a2cf0f0f083","slug":"friendship-jar-messages","title_en":"Friendship Jar Messages","title_tr":"Arkadaşlık Kavanozu Mesajları"}
+{"cat_slug":"friendship","id":"deb57693-c1a9-4da6-8021-d6b17848f4ce","slug":"friendship-letter-box","title_en":"Friendship Letter Box","title_tr":"Arkadaşlık Mektup Kutusu"}
+{"cat_slug":"friendship","id":"26eefee2-fcc2-439b-846c-574d3a29545e","slug":"friendship-mural-painting","title_en":"Friendship Mural Painting","title_tr":"Arkadaşlık Duvar Resmi Boyama"}
+{"cat_slug":"friendship","id":"3d60c931-e253-4844-bab3-095367e816df","slug":"friendship-photo-book","title_en":"Professional Friendship Photo Book","title_tr":"Profesyonel Arkadaşlık Fotoğraf Kitabı"}
+{"cat_slug":"friendship","id":"f160d5be-e1be-4431-a547-19f263cd2c2f","slug":"friendship-pinata-party","title_en":"Friendship Piñata Party","title_tr":"Arkadaşlık Pinyata Partisi"}
+{"cat_slug":"friendship","id":"96e90f93-fc5c-4b48-8a4f-d22bf2aa97e9","slug":"friendship-potluck-dinner","title_en":"Friendship Potluck Dinner","title_tr":"Arkadaşlık Potluck Akşam Yemeği"}
+{"cat_slug":"friendship","id":"264c5e8e-f87d-4ed4-8988-2f3c2c10bd86","slug":"friendship-quiz-night","title_en":"Friendship Quiz Night","title_tr":"Arkadaşlık Bilgi Yarışması Gecesi"}
+{"cat_slug":"friendship","id":"25515c33-5b9b-43bc-b03f-ec9b1cf557ce","slug":"friendship-tattoo-day","title_en":"Friendship Tattoo Day","title_tr":"Arkadaşlık Dövme Günü"}
+{"cat_slug":"friendship","id":"bc09ae77-9c0e-4ad2-9b7d-570762b8c364","slug":"friendship-time-capsule","title_en":"Friendship Time Capsule","title_tr":"Arkadaşlık Zaman Kapsülü"}
+{"cat_slug":"friendship","id":"81a59db3-1430-424e-a4e5-7149a7c42b70","slug":"japanese-izakaya-night","title_en":"Japanese Izakaya Night","title_tr":"Japon İzakaya Gecesi"}
+{"cat_slug":"friendship","id":"a330d491-e7ce-4f41-aa3a-ce07a89db692","slug":"karaoke-night-friends","title_en":"Karaoke Night with Friends","title_tr":"Arkadaşlarla Karaoke Gecesi"}
+{"cat_slug":"friendship","id":"e236255a-1a8d-4126-8f0d-a9ba09792c24","slug":"memory-road-trip","title_en":"Memory Lane Road Trip","title_tr":"Anı Rotası Yol Gezisi"}
+{"cat_slug":"friendship","id":"4709190f-ec89-4330-8e79-bf3c0105674e","slug":"murder-mystery-dinner","title_en":"Murder Mystery Dinner Party","title_tr":"Cinayet Gizemi Akşam Yemeği"}
+{"cat_slug":"friendship","id":"5b2760d5-c5bf-4c9e-81f5-a0e8cacf0a86","slug":"nostalgia-picnic","title_en":"Nostalgia Friendship Picnic","title_tr":"Nostalji Pikniği"}
+{"cat_slug":"friendship","id":"1d0ad5fb-58c5-4992-b64c-885e9f16fce4","slug":"paint-and-sip-night","title_en":"Paint and Sip Night","title_tr":"Boya ve İç Gecesi"}
+{"cat_slug":"friendship","id":"c9824b91-e7f7-4bc5-967c-5d141018f347","slug":"photo-album-gift-surprise","title_en":"Surprise Photo Album Gift","title_tr":"Sürpriz Fotoğraf Albümü Hediyesi"}
+{"cat_slug":"friendship","id":"c5b60650-76c9-40d0-ba93-166c98ec7ca0","slug":"playlist-exchange-surprise","title_en":"Surprise Playlist Exchange","title_tr":"Sürpriz Playlist Değişimi"}
+{"cat_slug":"friendship","id":"16f30dcc-fe4b-4c06-a012-67e353c34cb9","slug":"rooftop-friendsgiving","title_en":"Rooftop Friendsgiving","title_tr":"Çatı Katında Arkadaşlık Şükran Yemeği"}
+{"cat_slug":"friendship","id":"9cfd75b7-46db-41d6-8ad0-d250dadf877f","slug":"secret-buddy-weekend","title_en":"Secret Buddy Weekend","title_tr":"Gizli Arkadaş Hafta Sonu"}
+{"cat_slug":"friendship","id":"3de427cb-c3c5-4177-820f-484450d6263a","slug":"spa-day-friends","title_en":"Spa Day with Friends","title_tr":"Arkadaşlarla Spa Günü"}
+{"cat_slug":"friendship","id":"3adb227a-4339-4bd3-b5f0-636666c64177","slug":"surprise-birthday-bash","title_en":"Surprise Birthday Bash","title_tr":"Sürpriz Doğum Günü Kutlaması"}
+{"cat_slug":"friendship","id":"4ea6c3ce-9683-4f5e-8413-890bc93530c4","slug":"surprise-camping-getaway","title_en":"Surprise Camping Trip","title_tr":"Sürpriz Kamp Gezisi"}
+{"cat_slug":"friendship","id":"b64e86a0-37f3-491c-84de-456c43f186c3","slug":"surprise-concert-trip","title_en":"Surprise Concert Trip","title_tr":"Sürpriz Konser Gezisi"}
+{"cat_slug":"friendship","id":"4e63bd9e-06f9-4205-9db1-acc37dfb029e","slug":"surprise-reunion-party","title_en":"Surprise Friend Reunion Party","title_tr":"Sürpriz Arkadaş Buluşması Partisi"}
+{"cat_slug":"friendship","id":"a0000008-0001-0001-0001-000000000002","slug":"surprise-road-trip","title_en":"Surprise Road Trip","title_tr":"Sürpriz Yol Gezisi"}
+{"cat_slug":"friendship","id":"59337618-2046-44fa-9838-4bdff1dcd36b","slug":"thai-street-food-night","title_en":"Thai Street Food Night at Home","title_tr":"Tayland Sokak Lezzetleri Gecesi"}
+{"cat_slug":"graduation","id":"bfc70faf-8d75-4b72-a365-17f66faf122b","slug":"achievement-wall-surprise","title_en":"Achievement Wall Surprise Graduation","title_tr":"Başarı Duvarı Sürprizi"}
+{"cat_slug":"graduation","id":"c3e4001d-9bdd-47a2-85ef-f0082a3f6623","slug":"awards-ceremony-surprise","title_en":"Surprise Awards Ceremony Graduation","title_tr":"Sürpriz Ödül Töreni"}
+{"cat_slug":"graduation","id":"93a052fc-a5ef-4e23-9091-b268f45c5c14","slug":"campus-nostalgia-tour","title_en":"Campus Nostalgia Tour Graduation","title_tr":"Kampüs Nostalji Turu"}
+{"cat_slug":"graduation","id":"43d05861-ce36-4268-abbb-3124996aac33","slug":"cap-decoration-party","title_en":"Cap Decoration Party Graduation","title_tr":"Kep Süsleme Partisi"}
+{"cat_slug":"graduation","id":"86f3bacc-ac14-4352-b6b6-1fa5de4550f4","slug":"career-starter-kit-deluxe","title_en":"Career Starter Kit Graduation Gift","title_tr":"Kariyer Başlangıç Kiti"}
+{"cat_slug":"graduation","id":"b208ddfe-0efa-404c-864b-383b72728488","slug":"chalk-mural-celebration","title_en":"Chalk Mural Graduation Celebration","title_tr":"Kaldırım Tebeşiri Duvar Resmi"}
+{"cat_slug":"graduation","id":"448b665d-168c-4bbb-b78b-553ea8390386","slug":"custom-jersey-graduation","title_en":"Custom Jersey Graduation Gift","title_tr":"Özel Tasarım Forma Hediyesi"}
+{"cat_slug":"graduation","id":"b12e7704-31f3-4295-9e61-47472acad5d7","slug":"diploma-frame-surprise","title_en":"Diploma Frame Surprise Graduation","title_tr":"Diploma Çerçevesi Sürprizi"}
+{"cat_slug":"graduation","id":"57d41ca0-a547-48cb-851e-fd7bed868aae","slug":"dream-job-vision-board","title_en":"Dream Job Vision Board Graduation","title_tr":"Hayalindeki İş Vizyon Panosu"}
+{"cat_slug":"graduation","id":"ae29a40c-5534-4277-a2a4-246c9e308959","slug":"friendship-awards-graduation","title_en":"Graduation Friendship Awards Night","title_tr":"Mezuniyet Dostluk Ödül Gecesi"}
+{"cat_slug":"graduation","id":"c79a4ac5-4f8b-4b29-84fe-0a75c6052016","slug":"future-letter-box","title_en":"Future Letter Box Graduation","title_tr":"Geleceğe Mektup Kutusu"}
+{"cat_slug":"graduation","id":"7e342680-f1d0-4226-bbf9-01ab4e0d994e","slug":"graduation-balloon-release","title_en":"Graduation Wish Balloon Release Ceremony","title_tr":"Dilek Balonu Uçurma Töreni"}
+{"cat_slug":"graduation","id":"3061c918-f6c4-410f-829b-fad33a2a13dc","slug":"graduation-boat-party","title_en":"Graduation Boat Party Celebration","title_tr":"Mezuniyet Tekne Partisi"}
+{"cat_slug":"graduation","id":"9e0fb2ad-edb1-4ed0-b90b-326042dfd847","slug":"graduation-brunch-surprise","title_en":"Graduation Brunch Surprise Celebration","title_tr":"Sürpriz Mezuniyet Brunch'ı"}
+{"cat_slug":"graduation","id":"e7ac06c5-e2a7-4202-a3f3-f01c12b26d82","slug":"graduation-concert-night","title_en":"Graduation Concert Night Celebration","title_tr":"Mezuniyet Konser Gecesi"}
+{"cat_slug":"graduation","id":"593640e8-9203-40c5-98a7-f44d46ed3f7f","slug":"graduation-flash-mob","title_en":"Graduation Flash Mob Surprise","title_tr":"Mezuniyet Flash Mob Sürprizi"}
+{"cat_slug":"graduation","id":"acede2ce-16e6-4604-b310-808a59781c70","slug":"graduation-garden-celebration","title_en":"Graduation Garden Party Celebration","title_tr":"Bahçe Partisi Mezuniyet Kutlaması"}
+{"cat_slug":"graduation","id":"fb387916-1c7a-4dea-9fb5-5c505ffb0860","slug":"graduation-karaoke-night","title_en":"Graduation Karaoke Night Celebration","title_tr":"Mezuniyet Karaoke Gecesi"}
+{"cat_slug":"graduation","id":"5ba61e90-0476-4003-bf89-04733d17fecf","slug":"graduation-photo-mosaic","title_en":"Graduation Photo Mosaic Portrait","title_tr":"Fotoğraf Mozaik Portresi"}
+{"cat_slug":"graduation","id":"b68536e9-2deb-40b6-873c-8c7e36450421","slug":"graduation-picnic-celebration","title_en":"Graduation Picnic Celebration","title_tr":"Mezuniyet Pikniği Kutlaması"}
+{"cat_slug":"graduation","id":"2062b3d7-0da6-41aa-a456-c79f9994df77","slug":"graduation-rooftop-party","title_en":"Graduation Rooftop Party Celebration","title_tr":"Çatı Katı Mezuniyet Partisi"}
+{"cat_slug":"graduation","id":"0638644e-92cc-4f19-9574-1d9dcacbf2f9","slug":"graduation-scavenger-hunt","title_en":"Graduation Scavenger Hunt","title_tr":"Mezuniyet Hazine Avı"}
+{"cat_slug":"graduation","id":"8145df38-29e8-40d4-a8d3-a26f7b0b14b2","slug":"graduation-scrapbook","title_en":"Graduation Scrapbook Surprise","title_tr":"Mezuniyet Anı Albümü"}
+{"cat_slug":"graduation","id":"a0000005-0001-0001-0001-000000000001","slug":"graduation-surprise-party","title_en":"Graduation Surprise Party","title_tr":"Mezuniyet Sürpriz Kutlaması"}
+{"cat_slug":"graduation","id":"b39dbd7f-a272-454d-8dc5-e406d9a66d0b","slug":"graduation-time-capsule","title_en":"Graduation Time Capsule Ceremony","title_tr":"Mezuniyet Zaman Kapsülü"}
+{"cat_slug":"graduation","id":"214ab099-92ba-4d06-b7e1-91928012b711","slug":"mentor-message-book","title_en":"Mentor Message Book Graduation","title_tr":"Mentor Mesaj Kitabı"}
+{"cat_slug":"graduation","id":"f7fb4908-b7ca-4dd1-939a-4c2ee5add9da","slug":"photo-timeline-walk","title_en":"Photo Timeline Walk Graduation","title_tr":"Fotoğraf Zaman Çizelgesi Yürüyüşü"}
+{"cat_slug":"graduation","id":"a85bb0d8-4118-4f92-96bf-e5ee4b5e283f","slug":"senbazuru-wish-cranes","title_en":"Senbazuru Wish Paper Cranes","title_tr":"Senbazuru Dilek Turnaları"}
+{"cat_slug":"graduation","id":"086f963a-5f9e-4f25-a785-c2b4a5aa615e","slug":"senior-year-documentary","title_en":"Senior Year Documentary Graduation","title_tr":"Son Sınıf Belgeseli"}
+{"cat_slug":"graduation","id":"aa3dbd95-9052-4567-b9a5-5d3869ab9951","slug":"surprise-family-visit-grad","title_en":"Surprise Family Visit Graduation","title_tr":"Sürpriz Aile Ziyareti"}
+{"cat_slug":"graduation","id":"ea25a58d-a3ea-4630-8972-9c65a05eb294","slug":"this-is-your-life-podcast","title_en":"This Is Your Life Podcast Graduation","title_tr":"Bu Senin Hayatın Podcast'i"}
+{"cat_slug":"graduation","id":"9d77ceba-561d-4c88-89c1-600b98a32aa4","slug":"trip-reveal-graduation","title_en":"Graduation Trip Reveal Surprise","title_tr":"Mezuniyet Seyahati Açıklaması"}
+{"cat_slug":"graduation","id":"7944f738-26c9-40aa-b860-bd7528262e24","slug":"video-compilation-graduation","title_en":"Graduation Video Compilation Surprise","title_tr":"Mezuniyet Video Derlemesi"}
+{"cat_slug":"graduation","id":"78313ea8-5aaf-496d-bdb5-97f6211d3d21","slug":"vision-board-ceremony","title_en":"Vision Board Ceremony","title_tr":"Vizyon Panosu Töreni"}
+{"cat_slug":"graduation","id":"50dac417-fdf9-43f9-b9fc-0b68db09a59d","slug":"yearbook-signing-surprise","title_en":"Yearbook Signing Surprise Graduation","title_tr":"Yıllık İmzalama Sürprizi"}
+{"cat_slug":"holiday","id":"bcb90c3d-3bdc-45f2-bb6a-560a8909da1c","slug":"afternoon-tea-party","title_en":"Victorian Afternoon Tea Party","title_tr":"İngiliz Usulü Çay Partisi"}
+{"cat_slug":"holiday","id":"d385ae31-546a-4f6c-aebc-96f39a02bdae","slug":"autumn-harvest-festival","title_en":"Autumn Harvest Festival","title_tr":"Sonbahar Hasat Festivali"}
+{"cat_slug":"holiday","id":"48afceb7-ffee-4eca-8e1e-6c0749e07327","slug":"bayram-family-reunion","title_en":"Holiday Family Reunion","title_tr":"Bayram Aile Buluşması"}
+{"cat_slug":"holiday","id":"f1cbac22-02f8-4cc4-a336-4f339dffe3c5","slug":"bridal-bath-hamam","title_en":"Bridal Bath Hamam Surprise","title_tr":"Gelin Hamamı Sürprizi"}
+{"cat_slug":"holiday","id":"b36f4af9-f138-4678-b2d6-c40e01d6de5f","slug":"childrens-day-party","title_en":"Children's Day Party","title_tr":"23 Nisan Çocuk Bayramı Partisi"}
+{"cat_slug":"holiday","id":"2449f65b-3139-4d1f-892c-ff1d9bad0824","slug":"chinese-new-year-party","title_en":"Chinese New Year Party","title_tr":"Çin Yeni Yılı Partisi"}
+{"cat_slug":"holiday","id":"1aa71851-1fe7-4e9a-9377-4a91fdcc84fd","slug":"christmas-advent-calendar","title_en":"Christmas Advent Calendar Surprise","title_tr":"Noel Advent Takvimi Sürprizi"}
+{"cat_slug":"holiday","id":"3aaeb2cd-04cf-4211-ad19-5cd46ac5ec01","slug":"christmas-morning-brunch","title_en":"Christmas Morning Surprise Brunch","title_tr":"Noel Sabahı Sürpriz Brunch"}
+{"cat_slug":"holiday","id":"54fab030-ceba-47a7-a429-9fc51a603219","slug":"custom-word-search-card","title_en":"Custom Word Search Card","title_tr":"Özel Kelime Bulmaca Kartı"}
+{"cat_slug":"holiday","id":"9f0c95b6-6b92-4fcc-a867-62648ac30ef8","slug":"diwali-light-celebration","title_en":"Diwali Light Festival Celebration","title_tr":"Diwali Işık Festivali Kutlaması"}
+{"cat_slug":"holiday","id":"33d2711b-60e9-42fb-b0ba-0f7fe854edbb","slug":"easter-egg-hunt-party","title_en":"Easter Egg Hunt Party","title_tr":"Paskalya Yumurtası Avı Partisi"}
+{"cat_slug":"holiday","id":"ea12fe37-c910-4555-a719-d7fd238fce47","slug":"engagement-party-surprise","title_en":"Engagement Party Surprise","title_tr":"Nişan Sürpriz Partisi"}
+{"cat_slug":"holiday","id":"ea950c2e-1b89-48bb-97c0-10e092a16ca1","slug":"family-heritage-dinner","title_en":"Family Heritage Dinner Night","title_tr":"Aile Kökeni Yemek Gecesi"}
+{"cat_slug":"holiday","id":"3d92fe1e-e3cb-416a-a1fa-7072b2e91518","slug":"fathers-day-adventure","title_en":"Father's Day Adventure Surprise","title_tr":"Babalar Günü Macera Sürprizi"}
+{"cat_slug":"holiday","id":"3c6cca92-0997-4b24-8115-5c9183e28707","slug":"fondue-cozy-night","title_en":"Cozy Fondue Night","title_tr":"Fondue Keyif Gecesi"}
+{"cat_slug":"holiday","id":"d0f6429d-d90e-4851-8c2f-6172bbd49bdc","slug":"friendship-day-celebration","title_en":"Friendship Day Celebration","title_tr":"Arkadaşlık Günü Kutlaması"}
+{"cat_slug":"holiday","id":"b802e081-a598-4b71-8108-b8172b166ef5","slug":"grandparents-day-surprise","title_en":"Grandparents' Day Surprise","title_tr":"Büyükanne Büyükbaba Günü Sürprizi"}
+{"cat_slug":"holiday","id":"a202e911-35ea-42f2-adc2-8a83e4181ff3","slug":"halloween-costume-party","title_en":"Halloween Costume Party","title_tr":"Cadılar Bayramı Kostüm Partisi"}
+{"cat_slug":"holiday","id":"b6629768-7ea1-449e-bc66-e61df2f42d64","slug":"hanukkah-candle-ceremony","title_en":"Hanukkah Candle Ceremony","title_tr":"Hanuka Mum Yakma Töreni"}
+{"cat_slug":"holiday","id":"47e36257-49e1-4c0e-940d-cb24110cff1c","slug":"housewarming-surprise","title_en":"Housewarming Surprise","title_tr":"Ev Isınma Sürprizi"}
+{"cat_slug":"holiday","id":"d8145a55-6fb7-4504-ac8d-535ed405108f","slug":"kina-night-surprise","title_en":"Henna Night Surprise","title_tr":"Kına Gecesi Sürprizi"}
+{"cat_slug":"holiday","id":"134914f1-8d9a-43be-90bb-39185c707845","slug":"labor-day-appreciation","title_en":"Labor Day Appreciation Surprise","title_tr":"İşçi Bayramı Takdir Sürprizi"}
+{"cat_slug":"holiday","id":"9cbe9fc0-088e-4afd-8cd7-16240451efd4","slug":"moroccan-riad-dinner","title_en":"Moroccan Riad Dinner Night","title_tr":"Fas Riad Yemek Gecesi"}
+{"cat_slug":"holiday","id":"fbe2b7c5-2f74-4e9c-bd87-a34aeec3f907","slug":"mothers-day-breakfast","title_en":"Mother's Day Breakfast Surprise","title_tr":"Anneler Günü Kahvaltı Sürprizi"}
+{"cat_slug":"holiday","id":"9d0bb600-992c-46a8-87db-1258a4332b1f","slug":"name-day-celebration","title_en":"Name Day Celebration","title_tr":"İsim Günü Kutlaması"}
+{"cat_slug":"holiday","id":"ff7c28be-1fba-4fa8-b19a-81cced1b4816","slug":"nevruz-spring-festival","title_en":"Nevruz Spring Festival","title_tr":"Nevruz Bahar Festivali"}
+{"cat_slug":"holiday","id":"ee70eb8b-a73d-4e36-b04c-a82c5a0dfe88","slug":"new-year-countdown-feast","title_en":"New Years Eve Countdown Feast","title_tr":"Yılbaşı Geri Sayım Ziyafeti"}
+{"cat_slug":"holiday","id":"f46c9757-c940-4ddc-aff9-bbad336be8ee","slug":"new-year-resolution-party","title_en":"New Year Resolution Party","title_tr":"Yeni Yıl Karar Partisi"}
+{"cat_slug":"holiday","id":"a0000011-0001-0001-0001-000000000001","slug":"new-year-surprise","title_en":"New Years Eve Surprise","title_tr":"Yılbaşı Sürprizi"}
+{"cat_slug":"holiday","id":"346d5689-9cf7-446a-9054-5088e2cd8a6a","slug":"ornament-time-capsule","title_en":"Ornament Time Capsule","title_tr":"Süs Zaman Kapsülü"}
+{"cat_slug":"holiday","id":"53f3f3f8-16b7-4e65-8742-e01c6c2e149d","slug":"pet-birthday-party","title_en":"Pet Birthday Party","title_tr":"Evcil Hayvan Doğum Günü Partisi"}
+{"cat_slug":"holiday","id":"245bfd6f-28ad-47a2-9bd1-f586bff03ff7","slug":"ramadan-iftar-surprise","title_en":"Ramadan Iftar Surprise","title_tr":"Ramazan İftar Sürprizi"}
+{"cat_slug":"holiday","id":"07df7080-4637-4fa1-beca-7740856a7296","slug":"republic-day-celebration","title_en":"Republic Day Celebration","title_tr":"Cumhuriyet Bayramı Kutlaması"}
+{"cat_slug":"holiday","id":"ffa070d6-8919-478d-a907-cdc0eb7b8dd8","slug":"retirement-farewell-party","title_en":"Retirement Farewell Party","title_tr":"Emeklilik Veda Partisi"}
+{"cat_slug":"holiday","id":"9f76b83b-6ae1-4a38-8901-6a95dd76219d","slug":"songkran-water-festival","title_en":"Thai Songkran Water Festival","title_tr":"Songkran Su Festivali"}
+{"cat_slug":"holiday","id":"36a1b5ba-96c4-417a-a519-426d798637d8","slug":"summer-solstice-party","title_en":"Summer Solstice Party","title_tr":"Yaz Gündönümü Partisi"}
+{"cat_slug":"holiday","id":"edbe683d-d91d-4ed9-901a-52dace577643","slug":"teachers-day-surprise","title_en":"Teachers' Day Surprise","title_tr":"Öğretmenler Günü Sürprizi"}
+{"cat_slug":"holiday","id":"795b8023-441f-4b10-85c9-692098239dd4","slug":"thanksgiving-potluck-feast","title_en":"Thanksgiving Potluck Feast","title_tr":"Şükran Günü Potluck Ziyafeti"}
+{"cat_slug":"holiday","id":"da94b63f-fb76-4415-8722-6b0bca527c39","slug":"valentines-dessert-bar","title_en":"Valentines Day Dessert Bar","title_tr":"Sevgililer Günü Tatlı Barı"}
+{"cat_slug":"holiday","id":"05685439-2b68-4d6f-ab1f-a2fa626c6f03","slug":"valentines-home-dinner","title_en":"Valentine's Day Home Dinner","title_tr":"Sevgililer Günü Ev Yemeği"}
+{"cat_slug":"holiday","id":"17476b9a-cf15-4784-81a8-96d4cbfc6d00","slug":"winter-solstice-gathering","title_en":"Winter Solstice Gathering","title_tr":"Kış Gündönümü Buluşması"}

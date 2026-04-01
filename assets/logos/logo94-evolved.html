@@ -1,0 +1,2515 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Momentra — Logo #94 Evolved</title>
+    <style>
+      :root {
+        --bg: #f0ece4;
+        --surf: #faf8f4;
+        --surf2: #ffffff;
+        --text: #1a1408;
+        --sub: #7a6a50;
+        --border: #ddd5c2;
+        --accent: #9a7420;
+      }
+      body.dark {
+        --bg: #07070f;
+        --surf: #10101c;
+        --surf2: #17172a;
+        --text: #f0eede;
+        --sub: #8888aa;
+        --border: #1e1e32;
+        --accent: #d4af60;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        transition:
+          background 0.25s,
+          color 0.25s;
+        min-height: 100vh;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 48px 18px;
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--bg);
+        backdrop-filter: blur(12px);
+      }
+      .header-left h1 {
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+      .header-left p {
+        font-size: 13px;
+        color: var(--sub);
+        margin-top: 2px;
+      }
+      .header-right {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      button {
+        background: var(--surf2);
+        color: var(--text);
+        border: 1px solid var(--border);
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      button:hover {
+        opacity: 0.8;
+      }
+      button.active {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .filter-bar {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        padding: 16px 48px;
+        border-bottom: 1px solid var(--border);
+        flex-wrap: wrap;
+      }
+      .filter-bar span {
+        font-size: 12px;
+        color: var(--sub);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-right: 4px;
+      }
+
+      main {
+        padding: 40px 48px 80px;
+        max-width: 1400px;
+      }
+
+      .section {
+        margin-bottom: 64px;
+      }
+      .section-header {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border);
+      }
+      .section-header h2 {
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .section-header p {
+        font-size: 13px;
+        color: var(--sub);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px;
+      }
+      .grid.wide {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      }
+      .grid.tight {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+      }
+
+      .card {
+        background: var(--surf);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 20px 16px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        transition: all 0.2s;
+        position: relative;
+        overflow: hidden;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+      }
+      .card.selected {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+      }
+      .card-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        padding: 2px 7px;
+        border-radius: 8px;
+        text-transform: uppercase;
+      }
+
+      .logo-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 180px;
+        border-radius: 12px;
+        padding: 16px;
+      }
+      .bg-black {
+        background: #000;
+      }
+      .bg-white {
+        background: #fff;
+      }
+      .bg-ivory {
+        background: #f9f6f0;
+      }
+      .bg-navy {
+        background: #0d0d1a;
+      }
+      .bg-checker {
+        background: repeating-conic-gradient(#ddd 0% 25%, #fff 0% 50%) 0 0 /
+          20px 20px;
+      }
+      .bg-dark-surf {
+        background: #10101c;
+      }
+
+      .card-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text);
+        text-align: center;
+      }
+      .card-sub {
+        font-size: 11px;
+        color: var(--sub);
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      /* Size strip */
+      .size-strip {
+        background: var(--surf);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px 32px;
+        display: flex;
+        align-items: flex-end;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+      .size-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      .size-item span {
+        font-size: 11px;
+        color: var(--sub);
+        font-weight: 500;
+      }
+
+      /* Comparison row */
+      .compare-row {
+        display: flex;
+        gap: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        margin-bottom: 16px;
+      }
+      .compare-cell {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 28px 16px;
+      }
+      .compare-cell span {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--sub);
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+      }
+      .compare-cell + .compare-cell {
+        border-left: 1px solid var(--border);
+      }
+
+      /* Platform mockup */
+      .platform-row {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        align-items: flex-end;
+      }
+      .platform-card {
+        background: var(--surf);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 20px 24px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .platform-card .plabel {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .platform-card .psize {
+        font-size: 10px;
+        color: var(--sub);
+      }
+
+      .selected-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        background: color-mix(in srgb, var(--accent) 12%, transparent);
+        color: var(--accent);
+        border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 3px 10px;
+        border-radius: 20px;
+        margin-left: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <h1>Logo #94 — Evolved</h1>
+        <p>App Icon Gradient · Gelişmiş Versiyonlar</p>
+      </div>
+      <div class="header-right">
+        <button id="dtoggle" onclick="toggleDark()">🌙 Dark</button>
+      </div>
+    </header>
+
+    <div class="filter-bar">
+      <span>Filtre:</span>
+      <button class="active" onclick="filterSection('all', this)">Tümü</button>
+      <button onclick="filterSection('gradients', this)">Gradientler</button>
+      <button onclick="filterSection('m-styles', this)">M Stili</button>
+      <button onclick="filterSection('decorative', this)">Dekoratif</button>
+      <button onclick="filterSection('shape', this)">Şekil</button>
+      <button onclick="filterSection('wordmark', this)">Wordmark</button>
+      <button onclick="filterSection('platform', this)">Platform</button>
+    </div>
+
+    <main id="main">
+      <!-- ═══════════════════════════════════════════════════════════════
+           A. GRADIENT GELİŞTİRMELER
+      ════════════════════════════════════════════════════════════════ -->
+      <div class="section" data-section="gradients">
+        <div class="section-header">
+          <h2>A — Gradient Keşfi</h2>
+          <p>Aynı M harfi, 12 farklı gradient yaklaşımı</p>
+        </div>
+        <div class="grid" id="grid-gradients"></div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════
+           B. M HARFİ STİLLERİ
+      ════════════════════════════════════════════════════════════════ -->
+      <div class="section" data-section="m-styles">
+        <div class="section-header">
+          <h2>B — M Harfi İşlemeleri</h2>
+          <p>Stroke kalınlığı, dolgu, çift katman, glow efektleri</p>
+        </div>
+        <div class="grid" id="grid-mstyles"></div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════
+           C. DEKORATİF ELEMENTLER
+      ════════════════════════════════════════════════════════════════ -->
+      <div class="section" data-section="decorative">
+        <div class="section-header">
+          <h2>C — Dekoratif Elementler</h2>
+          <p>Yıldız, sparkle, nokta, halka ve diğer aksan detayları</p>
+        </div>
+        <div class="grid" id="grid-decorative"></div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════
+           D. ŞEKİL / KÖŞE RADYUSU
+      ════════════════════════════════════════════════════════════════ -->
+      <div class="section" data-section="shape">
+        <div class="section-header">
+          <h2>D — Şekil Varyasyonları</h2>
+          <p>Köşe radyusu ve form denemeleri</p>
+        </div>
+        <div class="compare-row" id="compare-shapes"></div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════
+           E. WORDMARK KOMBİNASYONLARI
+      ════════════════════════════════════════════════════════════════ -->
+      <div class="section" data-section="wordmark">
+        <div class="section-header">
+          <h2>E — Wordmark Kombinasyonları</h2>
+          <p>İkon + metin kombinasyonları</p>
+        </div>
+        <div class="grid wide" id="grid-wordmark"></div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════
+           F. BOYUT SHOWCASE
+      ════════════════════════════════════════════════════════════════ -->
+      <div class="section" data-section="platform">
+        <div class="section-header">
+          <h2>F — Boyut & Platform Showcase</h2>
+          <p>En beğenilen varyant, tüm platformlar için</p>
+        </div>
+        <div class="size-strip" id="size-strip"></div>
+        <div class="platform-row" id="platform-row"></div>
+      </div>
+    </main>
+
+    <script>
+      const NS = "http://www.w3.org/2000/svg";
+      const D = () => document.body.classList.contains("dark");
+
+      function toggleDark() {
+        document.body.classList.toggle("dark");
+        document.getElementById("dtoggle").textContent = D()
+          ? "☀️ Light"
+          : "🌙 Dark";
+        renderAll();
+      }
+
+      function filterSection(name, btn) {
+        document
+          .querySelectorAll(".filter-bar button")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.querySelectorAll(".section").forEach((s) => {
+          if (name === "all" || s.dataset.section === name) {
+            s.style.display = "";
+          } else {
+            s.style.display = "none";
+          }
+        });
+      }
+
+      // ─── SVG helpers ────────────────────────────────────────────────
+      const mk = (t, a = {}) => {
+        const e = document.createElementNS(NS, t);
+        for (const [k, v] of Object.entries(a)) e.setAttribute(k, String(v));
+        return e;
+      };
+      const ap = (p, ...ch) => {
+        ch.forEach((c) => c && p.appendChild(c));
+        return p;
+      };
+      const svg = (w, h, vb) =>
+        mk("svg", {
+          width: w,
+          height: h,
+          viewBox: vb || "0 0 512 512",
+          xmlns: NS,
+        });
+      const rc = (a) => mk("rect", a);
+      const ci = (a) => mk("circle", a);
+      const li = (a) => mk("line", a);
+      const pa = (a) => mk("path", a);
+      const tx = (a) => mk("text", a);
+      const gp = (a, ...ch) => ap(mk("g", a), ...ch);
+      const df = (...ch) => ap(mk("defs", {}), ...ch);
+
+      const lg = (id, x1, y1, x2, y2, ...stops) => {
+        const g = mk("linearGradient", { id, x1, y1, x2, y2 });
+        stops.forEach(([o, c, op = 1]) => {
+          const s = mk("stop");
+          s.setAttribute("offset", o);
+          s.setAttribute("stop-color", c);
+          s.setAttribute("stop-opacity", op);
+          g.appendChild(s);
+        });
+        return g;
+      };
+      const rg = (id, cx = "50%", cy = "50%", r = "50%", ...stops) => {
+        const g = mk("radialGradient", { id, cx, cy, r });
+        stops.forEach(([o, c, op = 1]) => {
+          const s = mk("stop");
+          s.setAttribute("offset", o);
+          s.setAttribute("stop-color", c);
+          s.setAttribute("stop-opacity", op);
+          g.appendChild(s);
+        });
+        return g;
+      };
+
+      // ─── Design tokens ───────────────────────────────────────────────
+      const T = () => ({
+        gold1: D() ? "#f0d080" : "#9A7420",
+        gold2: D() ? "#d4af60" : "#7A5C11",
+        gold3: D() ? "#b8942e" : "#c49a28",
+        goldMid: D() ? "#c8a040" : "#8a6618",
+        bg: D() ? "#0d0d1a" : "#F9F6F0",
+        navy: "#0d0d1a",
+        navyMid: "#17172a",
+        ivory: "#F9F6F0",
+        white: "#ffffff",
+      });
+
+      // Sparkle paths
+      const STAR4 =
+        "M0,-24 L4,-7 L20,-10 L8,2 L14,18 L0,10 L-14,18 L-8,2 L-20,-10 L-4,-7 Z";
+      const STAR4S =
+        "M0,-15 L2.5,-4.5 L13,-6.5 L5,1.5 L8.5,11.5 L0,6.5 L-8.5,11.5 L-5,1.5 L-13,-6.5 L-2.5,-4.5 Z";
+      const DIAMOND = "M0,-20 L8,0 L0,20 L-8,0 Z";
+
+      // ─── M letter builder ───────────────────────────────────────────
+      // sw = stroke-width, col = color, op = opacity
+      // shift: vertical center shift (positive = down)
+      // scale: 0..1
+      function makeM(sw, col, op = 1, shift = 0, scale = 1) {
+        const cx = 256,
+          cy = 265 + shift;
+        const h = 80 * scale,
+          w = 108 * scale;
+        return gp(
+          {
+            fill: "none",
+            stroke: col,
+            "stroke-width": sw,
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            opacity: op,
+          },
+          li({ x1: cx - w, y1: cy + h, x2: cx - w, y2: cy - h }),
+          li({ x1: cx - w, y1: cy - h, x2: cx, y2: cy + 13 * scale }),
+          li({ x1: cx, y1: cy + 13 * scale, x2: cx + w, y2: cy - h }),
+          li({ x1: cx + w, y1: cy - h, x2: cx + w, y2: cy + h }),
+        );
+      }
+
+      // Filled M (solid shape)
+      function makeMFilled(col, op = 1) {
+        // polygon-like filled M using path
+        return pa({
+          d: "M 148 345 L 148 185 L 256 298 L 364 185 L 364 345 L 340 345 L 340 230 L 256 325 L 172 230 L 172 345 Z",
+          fill: col,
+          opacity: op,
+          "stroke-linejoin": "round",
+        });
+      }
+
+      // ═══════════════════════════════════════════════════════════════
+      // GRADIENT VARIANTS (Section A)
+      // ═══════════════════════════════════════════════════════════════
+
+      const GRADIENTS = [
+        {
+          id: "classic",
+          name: "Classic Diagonal",
+          sub: "Sol üst → sağ alt",
+          badge: "OG",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ga_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#c8a040" : "#b07820"],
+                  ["45%", D() ? "#d4af60" : "#9A7420"],
+                  ["100%", D() ? "#8a5e18" : "#6a4c0e"],
+                ),
+                rg(
+                  id + "_hl",
+                  "36%",
+                  "24%",
+                  "50%",
+                  ["0%", "#fffce0", D() ? 0.26 : 0.4],
+                  ["100%", "#e8b830", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({ cx: 195, cy: 165, r: 215, fill: `url(#${id}_hl)` }),
+              makeM(32, D() ? "#060608" : "#fff", 0.95),
+            );
+            return s;
+          },
+        },
+        {
+          id: "sunrise",
+          name: "Sunrise Gold",
+          sub: "Üstten alta, ışık yukarıda",
+          build(size) {
+            const s = svg(size, size);
+            const id = `gb_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "0%",
+                  "100%",
+                  ["0%", D() ? "#e8c050" : "#c49030"],
+                  ["55%", D() ? "#c08828" : "#9A7420"],
+                  ["100%", D() ? "#7a5010" : "#5c3a08"],
+                ),
+                rg(
+                  id + "_hl",
+                  "50%",
+                  "18%",
+                  "48%",
+                  ["0%", "#fff8d0", D() ? 0.3 : 0.5],
+                  ["100%", "#f0c820", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({ cx: 256, cy: 130, r: 200, fill: `url(#${id}_hl)` }),
+              makeM(32, D() ? "#050507" : "#fff", 0.95),
+            );
+            return s;
+          },
+        },
+        {
+          id: "ember",
+          name: "Amber Ember",
+          sub: "Koyu turuncu-amber geçiş",
+          build(size) {
+            const s = svg(size, size);
+            const id = `gc_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "100%",
+                  "100%",
+                  "0%",
+                  ["0%", "#4a2800"],
+                  ["40%", "#9a5a10"],
+                  ["80%", "#d48020"],
+                  ["100%", "#f0b040"],
+                ),
+                rg(
+                  id + "_hl",
+                  "65%",
+                  "28%",
+                  "50%",
+                  ["0%", "#fff4c0", 0.35],
+                  ["100%", "#f0a020", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({ cx: 330, cy: 175, r: 195, fill: `url(#${id}_hl)` }),
+              makeM(32, "#fff", 0.95),
+            );
+            return s;
+          },
+        },
+        {
+          id: "navy-gold",
+          name: "Navy → Gold",
+          sub: "Koyu lacivertten altına geçiş",
+          badge: "HOT",
+          build(size) {
+            const s = svg(size, size);
+            const id = `gd_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", "#060914"],
+                  ["50%", "#1a2040"],
+                  ["75%", "#6a4c10"],
+                  ["100%", "#c49030"],
+                ),
+                rg(
+                  id + "_hl",
+                  "70%",
+                  "72%",
+                  "45%",
+                  ["0%", "#ffd86080", 0.5],
+                  ["100%", "#c8900000", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({ cx: 350, cy: 360, r: 180, fill: `url(#${id}_hl)` }),
+              makeM(32, D() ? "#f0d080" : "#e8c060", 0.95),
+            );
+            return s;
+          },
+        },
+        {
+          id: "champagne",
+          name: "Champagne",
+          sub: "Zarif açık gold, neredeyse krem",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ge_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#2a2010" : "#f0e8d0"],
+                  ["50%", D() ? "#4a3818" : "#e4d4a8"],
+                  ["100%", D() ? "#6a5228" : "#c8b080"],
+                ),
+                rg(
+                  id + "_hl",
+                  "38%",
+                  "28%",
+                  "45%",
+                  ["0%", "#fffef8", D() ? 0.25 : 0.5],
+                  ["100%", "#f8e870", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({ cx: 210, cy: 180, r: 190, fill: `url(#${id}_hl)` }),
+              makeM(32, D() ? "#f0d060" : "#6a4c10", 0.95),
+            );
+            return s;
+          },
+        },
+        {
+          id: "rose-gold",
+          name: "Rose Gold",
+          sub: "Pembe-gold füzyon",
+          build(size) {
+            const s = svg(size, size);
+            const id = `gf_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#8a3050" : "#d4609a"],
+                  ["40%", D() ? "#b06820" : "#c8802a"],
+                  ["100%", D() ? "#9a5010" : "#9a6010"],
+                ),
+                rg(
+                  id + "_hl",
+                  "35%",
+                  "22%",
+                  "48%",
+                  ["0%", "#ffe8f0", D() ? 0.28 : 0.42],
+                  ["100%", "#f0b040", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({ cx: 195, cy: 160, r: 205, fill: `url(#${id}_hl)` }),
+              makeM(32, "#fff", 0.95),
+            );
+            return s;
+          },
+        },
+        {
+          id: "cosmos",
+          name: "Deep Cosmos",
+          sub: "Siyahdan elektrik altına",
+          badge: "DARK",
+          build(size) {
+            const s = svg(size, size);
+            const id = `gg_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", "#020204"],
+                  ["55%", "#0d0d1a"],
+                  ["80%", "#2a1e08"],
+                  ["100%", "#c89020"],
+                ),
+                rg(
+                  id + "_hl",
+                  "72%",
+                  "68%",
+                  "40%",
+                  ["0%", "#f0d06080", 0.6],
+                  ["100%", "#c8800000", 0],
+                ),
+                rg(
+                  id + "_star",
+                  "30%",
+                  "22%",
+                  "25%",
+                  ["0%", "#fff8e880", 0.35],
+                  ["100%", "#d4b04000", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({ cx: 365, cy: 345, r: 155, fill: `url(#${id}_hl)` }),
+              ci({ cx: 175, cy: 135, r: 110, fill: `url(#${id}_star)` }),
+              makeM(32, "#f0d060", 0.96),
+            );
+            return s;
+          },
+        },
+        {
+          id: "verdant",
+          name: "Forest Gold",
+          sub: "Zümrüt yeşil zeminde altın",
+          build(size) {
+            const s = svg(size, size);
+            const id = `gh_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#061208" : "#124a1a"],
+                  ["50%", D() ? "#1a3020" : "#1e6228"],
+                  ["100%", D() ? "#2a5018" : "#388030"],
+                ),
+                rg(
+                  id + "_hl",
+                  "38%",
+                  "25%",
+                  "50%",
+                  ["0%", "#e0ffe0", D() ? 0.18 : 0.3],
+                  ["100%", "#60c040", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({ cx: 205, cy: 165, r: 205, fill: `url(#${id}_hl)` }),
+              makeM(32, D() ? "#f0d060" : "#f0e060", 0.95),
+            );
+            return s;
+          },
+        },
+        {
+          id: "platinum",
+          name: "Platinum",
+          sub: "Soğuk gümüş-platin",
+          build(size) {
+            const s = svg(size, size);
+            const id = `gi_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#181820" : "#d0d0d8"],
+                  ["45%", D() ? "#282838" : "#a8a8b8"],
+                  ["100%", D() ? "#404060" : "#888898"],
+                ),
+                rg(
+                  id + "_hl",
+                  "36%",
+                  "24%",
+                  "48%",
+                  ["0%", "#ffffff", D() ? 0.3 : 0.5],
+                  ["100%", "#c0c8e0", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({ cx: 198, cy: 165, r: 200, fill: `url(#${id}_hl)` }),
+              makeM(32, D() ? "#e0e8ff" : "#f8f8ff", 0.95),
+            );
+            return s;
+          },
+        },
+        {
+          id: "deep-red",
+          name: "Crimson Gold",
+          sub: "Koyu bordo & altın",
+          build(size) {
+            const s = svg(size, size);
+            const id = `gj_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#200a08" : "#6a1010"],
+                  ["50%", D() ? "#4a1010" : "#9a2020"],
+                  ["100%", D() ? "#8a3010" : "#c85020"],
+                ),
+                rg(
+                  id + "_hl",
+                  "36%",
+                  "24%",
+                  "50%",
+                  ["0%", "#fff0e0", D() ? 0.22 : 0.35],
+                  ["100%", "#f08020", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({ cx: 200, cy: 165, r: 205, fill: `url(#${id}_hl)` }),
+              makeM(32, D() ? "#f0c060" : "#f0e0a0", 0.95),
+            );
+            return s;
+          },
+        },
+        {
+          id: "midnight",
+          name: "Midnight Premium",
+          sub: "Mat siyah + ince gold kenar",
+          badge: "NEW",
+          build(size) {
+            const s = svg(size, size);
+            const id = `gk_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", "#060608"],
+                  ["100%", "#111118"],
+                ),
+                rg(
+                  id + "_rim",
+                  "50%",
+                  "50%",
+                  "72%",
+                  ["0%", "#c8903000", 0],
+                  ["85%", "#c8903000", 0],
+                  ["100%", "#c8904040", 0.22],
+                ),
+                rg(
+                  id + "_hl",
+                  "36%",
+                  "24%",
+                  "42%",
+                  ["0%", "#ffffff", 0.08],
+                  ["100%", "#c89030", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_rim)`,
+              }),
+              ci({ cx: 200, cy: 165, r: 190, fill: `url(#${id}_hl)` }),
+              rc({
+                x: 2,
+                y: 2,
+                width: 508,
+                height: 508,
+                rx: 113,
+                fill: "none",
+                stroke: "#c8903050",
+                "stroke-width": "1.5",
+              }),
+              makeM(30, "#c8a040", 0.96),
+            );
+            return s;
+          },
+        },
+        {
+          id: "holographic",
+          name: "Holographic",
+          sub: "Çok renkli holografik efekt",
+          build(size) {
+            const s = svg(size, size);
+            const id = `gl_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", "#1a0830"],
+                  ["25%", "#102060"],
+                  ["50%", "#081a40"],
+                  ["75%", "#182840"],
+                  ["100%", "#301028"],
+                ),
+                lg(
+                  id + "_shimmer",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", "#f0c06080", 0],
+                  ["30%", "#80c0ff40", 0.5],
+                  ["60%", "#f0d08040", 0.4],
+                  ["100%", "#ff90b040", 0.3],
+                ),
+                rg(
+                  id + "_hl",
+                  "38%",
+                  "24%",
+                  "48%",
+                  ["0%", "#e8f0ff", D() ? 0.3 : 0.2],
+                  ["100%", "#8090d0", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_shimmer)`,
+              }),
+              ci({ cx: 200, cy: 165, r: 200, fill: `url(#${id}_hl)` }),
+              makeM(32, "#e8e0ff", 0.95),
+            );
+            return s;
+          },
+        },
+      ];
+
+      // ═══════════════════════════════════════════════════════════════
+      // M STYLE VARIANTS (Section B)
+      // ═══════════════════════════════════════════════════════════════
+
+      // Base icon background (classic diagonal gold)
+      function baseBg(s, idp) {
+        ap(
+          s,
+          df(
+            lg(
+              idp + "_bg",
+              "0%",
+              "0%",
+              "100%",
+              "100%",
+              ["0%", D() ? "#c8a040" : "#b07820"],
+              ["50%", D() ? "#d4af60" : "#9A7420"],
+              ["100%", D() ? "#8a5e18" : "#6a4c0e"],
+            ),
+            rg(
+              idp + "_hl",
+              "36%",
+              "24%",
+              "50%",
+              ["0%", "#fffce0", D() ? 0.24 : 0.38],
+              ["100%", "#e8b830", 0],
+            ),
+          ),
+          rc({
+            x: 0,
+            y: 0,
+            width: 512,
+            height: 512,
+            rx: 115,
+            fill: `url(#${idp}_bg)`,
+          }),
+          ci({ cx: 195, cy: 165, r: 215, fill: `url(#${idp}_hl)` }),
+        );
+      }
+
+      const MSTYLES = [
+        {
+          name: "Ultra İnce",
+          sub: "stroke-width: 16",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ms_a_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeM(16, "#fff", 0.96));
+            return s;
+          },
+        },
+        {
+          name: "İnce Zarif",
+          sub: "stroke-width: 22",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ms_b_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeM(22, "#fff", 0.96));
+            return s;
+          },
+        },
+        {
+          name: "Standart",
+          sub: "stroke-width: 30",
+          badge: "BASE",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ms_c_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeM(30, "#fff", 0.95));
+            return s;
+          },
+        },
+        {
+          name: "Güçlü",
+          sub: "stroke-width: 40",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ms_d_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeM(40, "#fff", 0.95));
+            return s;
+          },
+        },
+        {
+          name: "Ultra Kalın",
+          sub: "stroke-width: 54",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ms_e_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeM(54, "#fff", 0.92));
+            return s;
+          },
+        },
+        {
+          name: "Çift Katman Glow",
+          sub: "Glow + crisp üst katman",
+          badge: "✨",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ms_f_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            // glow layer
+            ap(s, makeM(58, "#fff", 0.18));
+            ap(s, makeM(28, "#fff", 0.97));
+            return s;
+          },
+        },
+        {
+          name: "Üçlü Katman",
+          sub: "Geniş glow + orta + ince",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ms_g_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeM(72, "#fff", 0.1));
+            ap(s, makeM(44, "#fff", 0.18));
+            ap(s, makeM(24, "#fff", 0.97));
+            return s;
+          },
+        },
+        {
+          name: "Altın M",
+          sub: "M harfi altın renk (beyaz değil)",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ms_h_${D() ? "d" : "l"}`;
+            // Dark background for contrast
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", "#060608"],
+                  ["100%", "#111118"],
+                ),
+                rg(
+                  id + "_hl",
+                  "36%",
+                  "24%",
+                  "42%",
+                  ["0%", "#ffffff", 0.08],
+                  ["100%", "#c89030", 0],
+                ),
+                lg(
+                  id + "_gold",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#f0d080" : "#e8b840"],
+                  ["100%", D() ? "#b8902e" : "#9a7420"],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({ cx: 200, cy: 165, r: 190, fill: `url(#${id}_hl)` }),
+            );
+            ap(s, makeM(52, "#000", 0.2));
+            ap(s, makeM(30, `url(#${id}_gold)`, 0.97));
+            return s;
+          },
+        },
+        {
+          name: "Dolu M (Filled)",
+          sub: "Stroke yerine dolgulu M şekli",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ms_i_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeMFilled("rgba(255,255,255,0.92)"));
+            return s;
+          },
+        },
+        {
+          name: "İnce + Küçük",
+          sub: "Merkezlenmiş küçük M",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ms_j_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeM(24, "#fff", 0.96, 0, 0.8));
+            return s;
+          },
+        },
+        {
+          name: "Alt Shifted",
+          sub: "M hafifçe aşağıda konumlu",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ms_k_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeM(30, "#fff", 0.96, 20));
+            return s;
+          },
+        },
+        {
+          name: "Outline + Fill",
+          sub: "İçi geçirgen, dış çizgi",
+          build(size) {
+            const s = svg(size, size);
+            const id = `ms_l_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeMFilled("rgba(255,255,255,0.18)"));
+            ap(s, makeM(22, "#fff", 0.97));
+            return s;
+          },
+        },
+      ];
+
+      // ═══════════════════════════════════════════════════════════════
+      // DECORATIVE VARIANTS (Section C)
+      // ═══════════════════════════════════════════════════════════════
+
+      const DECORATIVE = [
+        {
+          name: "Sparkle Üst",
+          sub: "M + tepe yıldızı",
+          build(size) {
+            const s = svg(size, size);
+            const id = `dc_a_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeM(30, "#fff", 0.95));
+            ap(
+              s,
+              gp(
+                {
+                  fill: "rgba(255,248,220,.90)",
+                  transform: "translate(256,112) scale(0.90)",
+                },
+                pa({ d: STAR4 }),
+              ),
+            );
+            return s;
+          },
+        },
+        {
+          name: "3 Nokta Yıldız",
+          sub: "Üst, üst-sağ, üst-sol sparkle",
+          build(size) {
+            const s = svg(size, size);
+            const id = `dc_b_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeM(30, "#fff", 0.95));
+            ap(
+              s,
+              gp(
+                {
+                  fill: "rgba(255,248,220,.92)",
+                  transform: "translate(256,106) scale(0.90)",
+                },
+                pa({ d: STAR4 }),
+              ),
+            );
+            ap(
+              s,
+              gp(
+                {
+                  fill: "rgba(255,248,220,.75)",
+                  transform: "translate(372,120) scale(0.55)",
+                },
+                pa({ d: STAR4 }),
+              ),
+            );
+            ap(
+              s,
+              gp(
+                {
+                  fill: "rgba(255,248,220,.65)",
+                  transform: "translate(152,138) scale(0.42)",
+                },
+                pa({ d: STAR4 }),
+              ),
+            );
+            return s;
+          },
+        },
+        {
+          name: "Halka + M",
+          sub: "Zarif daire çerçeve",
+          build(size) {
+            const s = svg(size, size);
+            const id = `dc_c_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(
+              s,
+              ci({
+                cx: 256,
+                cy: 256,
+                r: 196,
+                fill: "none",
+                stroke: "rgba(255,255,255,0.16)",
+                "stroke-width": "1.5",
+              }),
+            );
+            ap(
+              s,
+              ci({
+                cx: 256,
+                cy: 256,
+                r: 218,
+                fill: "none",
+                stroke: "rgba(255,255,255,0.08)",
+                "stroke-width": "1",
+              }),
+            );
+            ap(s, makeM(30, "#fff", 0.96));
+            return s;
+          },
+        },
+        {
+          name: "Köşe Aksan Noktaları",
+          sub: "4 köşede küçük dekor",
+          build(size) {
+            const s = svg(size, size);
+            const id = `dc_d_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(
+              s,
+              ci({ cx: 108, cy: 110, r: 5, fill: "rgba(255,255,255,.30)" }),
+            );
+            ap(
+              s,
+              ci({ cx: 404, cy: 110, r: 5, fill: "rgba(255,255,255,.30)" }),
+            );
+            ap(
+              s,
+              ci({ cx: 108, cy: 402, r: 5, fill: "rgba(255,255,255,.20)" }),
+            );
+            ap(
+              s,
+              ci({ cx: 404, cy: 402, r: 5, fill: "rgba(255,255,255,.20)" }),
+            );
+            ap(s, makeM(30, "#fff", 0.96));
+            return s;
+          },
+        },
+        {
+          name: "Diamond Aksan",
+          sub: "Küçük diamond üstte",
+          build(size) {
+            const s = svg(size, size);
+            const id = `dc_e_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(s, makeM(30, "#fff", 0.96));
+            ap(
+              s,
+              gp(
+                {
+                  fill: "rgba(255,250,220,.85)",
+                  transform: "translate(256,114) scale(0.7)",
+                },
+                pa({ d: DIAMOND }),
+              ),
+            );
+            return s;
+          },
+        },
+        {
+          name: "Şimşek Çizgisi",
+          sub: "Hafif çapraz ışık çizgisi",
+          build(size) {
+            const s = svg(size, size);
+            const id = `dc_f_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#c8a040" : "#b07820"],
+                  ["50%", D() ? "#d4af60" : "#9A7420"],
+                  ["100%", D() ? "#8a5e18" : "#6a4c0e"],
+                ),
+                lg(
+                  id + "_ray",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", "rgba(255,255,255,0)"],
+                  ["38%", "rgba(255,255,255,.22)"],
+                  ["42%", "rgba(255,255,255,.30)"],
+                  ["46%", "rgba(255,255,255,.18)"],
+                  ["100%", "rgba(255,255,255,0)"],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_ray)`,
+              }),
+            );
+            ap(s, makeM(30, "#fff", 0.96));
+            return s;
+          },
+        },
+        {
+          name: "İç Çerçeve",
+          sub: "Altın ince iç kenar",
+          build(size) {
+            const s = svg(size, size);
+            const id = `dc_g_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            rc({
+              x: 12,
+              y: 12,
+              width: 488,
+              height: 488,
+              rx: 105,
+              fill: "none",
+              stroke: "rgba(255,255,255,0.18)",
+              "stroke-width": "1.5",
+            });
+            ap(
+              s,
+              rc({
+                x: 12,
+                y: 12,
+                width: 488,
+                height: 488,
+                rx: 105,
+                fill: "none",
+                stroke: "rgba(255,255,255,0.18)",
+                "stroke-width": "1.5",
+              }),
+            );
+            ap(s, makeM(30, "#fff", 0.96));
+            return s;
+          },
+        },
+        {
+          name: "Nokta Konstelasyon",
+          sub: "Küçük yıldız noktaları",
+          build(size) {
+            const s = svg(size, size);
+            const id = `dc_h_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            [
+              [116, 145, 4, 0.4],
+              [418, 130, 3, 0.3],
+              [140, 388, 3, 0.2],
+              [400, 400, 3, 0.18],
+              [380, 165, 2.5, 0.22],
+              [135, 165, 2.5, 0.18],
+              [278, 118, 2, 0.28],
+            ].forEach(([cx, cy, r, op]) =>
+              ap(s, ci({ cx, cy, r, fill: `rgba(255,255,255,${op})` })),
+            );
+            ap(s, makeM(30, "#fff", 0.96));
+            return s;
+          },
+        },
+        {
+          name: "Sparkle + Halka",
+          sub: "Yıldız + ince daire kombinasyonu",
+          build(size) {
+            const s = svg(size, size);
+            const id = `dc_i_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(
+              s,
+              ci({
+                cx: 256,
+                cy: 256,
+                r: 200,
+                fill: "none",
+                stroke: "rgba(255,255,255,0.14)",
+                "stroke-width": "1",
+              }),
+            );
+            ap(s, makeM(30, "#fff", 0.95));
+            ap(
+              s,
+              gp(
+                {
+                  fill: "rgba(255,250,220,.88)",
+                  transform: "translate(256,108) scale(0.85)",
+                },
+                pa({ d: STAR4 }),
+              ),
+            );
+            ap(
+              s,
+              gp(
+                {
+                  fill: "rgba(255,250,220,.62)",
+                  transform: "translate(374,122) scale(0.52)",
+                },
+                pa({ d: STAR4 }),
+              ),
+            );
+            ap(
+              s,
+              gp(
+                {
+                  fill: "rgba(255,250,220,.52)",
+                  transform: "translate(148,136) scale(0.38)",
+                },
+                pa({ d: STAR4 }),
+              ),
+            );
+            return s;
+          },
+        },
+        {
+          name: "M + Monogram Çerçeve",
+          sub: "Kare iç çerçeve + köşe detay",
+          build(size) {
+            const s = svg(size, size);
+            const id = `dc_j_${D() ? "d" : "l"}`;
+            baseBg(s, id);
+            ap(
+              s,
+              rc({
+                x: 60,
+                y: 60,
+                width: 392,
+                height: 392,
+                rx: 22,
+                fill: "none",
+                stroke: "rgba(255,255,255,0.14)",
+                "stroke-width": "1.2",
+              }),
+            );
+            ap(
+              s,
+              rc({
+                x: 68,
+                y: 68,
+                width: 376,
+                height: 376,
+                rx: 18,
+                fill: "none",
+                stroke: "rgba(255,255,255,0.08)",
+                "stroke-width": "1",
+              }),
+            );
+            ap(s, makeM(29, "#fff", 0.97));
+            return s;
+          },
+        },
+        {
+          name: "Işık Saçılması",
+          sub: "Sol üst güçlü ışık kaynağı",
+          build(size) {
+            const s = svg(size, size);
+            const id = `dc_k_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#c8a040" : "#b07820"],
+                  ["50%", D() ? "#d4af60" : "#9A7420"],
+                  ["100%", D() ? "#8a5e18" : "#6a4c0e"],
+                ),
+                rg(
+                  id + "_spot",
+                  "18%",
+                  "16%",
+                  "60%",
+                  ["0%", "rgba(255,252,230,.55)", 0.55],
+                  ["50%", "rgba(255,230,100,.12)", 0.12],
+                  ["100%", "rgba(255,200,50,0)", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_spot)`,
+              }),
+            );
+            ap(s, makeM(30, "#fff", 0.96));
+            return s;
+          },
+        },
+        {
+          name: "Arka Glow Katmanı",
+          sub: "M arkasında hale efekti",
+          build(size) {
+            const s = svg(size, size);
+            const id = `dc_l_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#c8a040" : "#b07820"],
+                  ["50%", D() ? "#d4af60" : "#9A7420"],
+                  ["100%", D() ? "#8a5e18" : "#6a4c0e"],
+                ),
+                rg(
+                  id + "_halo",
+                  "50%",
+                  "55%",
+                  "40%",
+                  ["0%", "rgba(255,255,220,.30)", 0.3],
+                  ["60%", "rgba(255,240,160,.12)", 0.12],
+                  ["100%", "rgba(255,220,80,0)", 0],
+                ),
+              ),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_bg)`,
+              }),
+              rc({
+                x: 0,
+                y: 0,
+                width: 512,
+                height: 512,
+                rx: 115,
+                fill: `url(#${id}_halo)`,
+              }),
+            );
+            ap(s, makeM(52, "rgba(255,255,255,.14)"));
+            ap(s, makeM(30, "#fff", 0.97));
+            return s;
+          },
+        },
+      ];
+
+      // ═══════════════════════════════════════════════════════════════
+      // SHAPE VARIANTS (Section D - Compare Row)
+      // ═══════════════════════════════════════════════════════════════
+
+      const SHAPES = [
+        { name: "Kare", sub: "rx: 0", rx: 0 },
+        { name: "Keskin Premium", sub: "rx: 48", rx: 48 },
+        { name: "iOS Standard", sub: "rx: 115", rx: 115, badge: "iOS" },
+        { name: "Yuvarlak", sub: "rx: 160", rx: 160 },
+        { name: "Ultra Round", sub: "rx: 220", rx: 220 },
+        { name: "Daire", sub: "rx: 256", rx: 256 },
+      ];
+
+      function buildShape(rx, size = 130) {
+        const s = svg(size, size);
+        const id = `sh_${rx}_${D() ? "d" : "l"}`;
+        ap(
+          s,
+          df(
+            lg(
+              id + "_bg",
+              "0%",
+              "0%",
+              "100%",
+              "100%",
+              ["0%", D() ? "#c8a040" : "#b07820"],
+              ["50%", D() ? "#d4af60" : "#9A7420"],
+              ["100%", D() ? "#8a5e18" : "#6a4c0e"],
+            ),
+            rg(
+              id + "_hl",
+              "36%",
+              "24%",
+              "50%",
+              ["0%", "#fffce0", D() ? 0.24 : 0.38],
+              ["100%", "#e8b830", 0],
+            ),
+          ),
+          rc({
+            x: 0,
+            y: 0,
+            width: 512,
+            height: 512,
+            rx,
+            fill: `url(#${id}_bg)`,
+          }),
+          ci({ cx: 195, cy: 165, r: 215, fill: `url(#${id}_hl)` }),
+        );
+        ap(s, makeM(30, "#fff", 0.95));
+        return s;
+      }
+
+      // ═══════════════════════════════════════════════════════════════
+      // WORDMARK VARIANTS (Section E)
+      // ═══════════════════════════════════════════════════════════════
+
+      const WORDMARKS = [
+        {
+          name: "İkon Üst + Metin Alt",
+          sub: "Standart dikey yerleşim",
+          build(w, h) {
+            const s = svg(w, h, `0 0 ${w} ${h}`);
+            const iconSz = 120;
+            const id = `wm_a_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#c8a040" : "#b07820"],
+                  ["50%", D() ? "#d4af60" : "#9A7420"],
+                  ["100%", D() ? "#8a5e18" : "#6a4c0e"],
+                ),
+                rg(
+                  id + "_hl",
+                  "36%",
+                  "24%",
+                  "50%",
+                  ["0%", "#fffce0", D() ? 0.24 : 0.38],
+                  ["100%", "#e8b830", 0],
+                ),
+              ),
+            );
+            // icon
+            const iOff = (w - iconSz) / 2;
+            ap(
+              s,
+              rc({
+                x: iOff,
+                y: 20,
+                width: iconSz,
+                height: iconSz,
+                rx: iconSz * 0.225,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({
+                cx: iOff + iconSz * 0.38,
+                cy: 20 + iconSz * 0.32,
+                r: iconSz * 0.42,
+                fill: `url(#${id}_hl)`,
+              }),
+            );
+            // M scaled & positioned
+            const sc = iconSz / 512;
+            ap(
+              s,
+              gp(
+                {
+                  transform: `translate(${iOff},20) scale(${sc})`,
+                  fill: "none",
+                  stroke: "#fff",
+                  "stroke-width": 30,
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round",
+                  opacity: 0.95,
+                },
+                li({ x1: 148, y1: 345, x2: 148, y2: 185 }),
+                li({ x1: 148, y1: 185, x2: 256, y2: 298 }),
+                li({ x1: 256, y1: 298, x2: 364, y2: 185 }),
+                li({ x1: 364, y1: 185, x2: 364, y2: 345 }),
+              ),
+            );
+            // text
+            const textY = 20 + iconSz + 22;
+            const textCol = D() ? "#f0d060" : "#7a5c11";
+            const subCol = D() ? "#8888aa" : "#9a8060";
+            const tName = tx({
+              x: w / 2,
+              "text-anchor": "middle",
+              y: textY,
+              "font-family":
+                "-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif",
+              "font-size": "26",
+              "font-weight": "700",
+              "letter-spacing": "-0.8",
+              fill: textCol,
+            });
+            tName.textContent = "Momentra";
+            const tSub = tx({
+              x: w / 2,
+              "text-anchor": "middle",
+              y: textY + 20,
+              "font-family":
+                "-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif",
+              "font-size": "9.5",
+              "font-weight": "400",
+              "letter-spacing": "4.5",
+              fill: subCol,
+            });
+            tSub.textContent = "EVERY MOMENT, EXTRA";
+            ap(s, tName, tSub);
+            return s;
+          },
+          w: 220,
+          h: 210,
+        },
+        {
+          name: "İkon Sol + Metin Sağ",
+          sub: "Yatay yerleşim (header için ideal)",
+          build(w, h) {
+            const s = svg(w, h, `0 0 ${w} ${h}`);
+            const iconSz = 72;
+            const id = `wm_b_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#c8a040" : "#b07820"],
+                  ["50%", D() ? "#d4af60" : "#9A7420"],
+                  ["100%", D() ? "#8a5e18" : "#6a4c0e"],
+                ),
+                rg(
+                  id + "_hl",
+                  "36%",
+                  "24%",
+                  "50%",
+                  ["0%", "#fffce0", D() ? 0.24 : 0.38],
+                  ["100%", "#e8b830", 0],
+                ),
+              ),
+            );
+            const top = (h - iconSz) / 2;
+            ap(
+              s,
+              rc({
+                x: 0,
+                y: top,
+                width: iconSz,
+                height: iconSz,
+                rx: iconSz * 0.225,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({
+                cx: iconSz * 0.38,
+                cy: top + iconSz * 0.32,
+                r: iconSz * 0.42,
+                fill: `url(#${id}_hl)`,
+              }),
+            );
+            const sc = iconSz / 512;
+            ap(
+              s,
+              gp(
+                {
+                  transform: `translate(0,${top}) scale(${sc})`,
+                  fill: "none",
+                  stroke: "#fff",
+                  "stroke-width": 30,
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round",
+                  opacity: 0.95,
+                },
+                li({ x1: 148, y1: 345, x2: 148, y2: 185 }),
+                li({ x1: 148, y1: 185, x2: 256, y2: 298 }),
+                li({ x1: 256, y1: 298, x2: 364, y2: 185 }),
+                li({ x1: 364, y1: 185, x2: 364, y2: 345 }),
+              ),
+            );
+            const textCol = D() ? "#f0d060" : "#7a5c11";
+            const tName = tx({
+              x: iconSz + 16,
+              y: h / 2 + 2,
+              "font-family":
+                "-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif",
+              "font-size": "28",
+              "font-weight": "700",
+              "letter-spacing": "-0.7",
+              fill: textCol,
+            });
+            tName.textContent = "Momentra";
+            ap(s, tName);
+            return s;
+          },
+          w: 280,
+          h: 80,
+        },
+        {
+          name: "Büyük İkon Üst",
+          sub: "Splash / onboarding ekranı için",
+          build(w, h) {
+            const s = svg(w, h, `0 0 ${w} ${h}`);
+            const iconSz = 160;
+            const id = `wm_c_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#c8a040" : "#b07820"],
+                  ["50%", D() ? "#d4af60" : "#9A7420"],
+                  ["100%", D() ? "#8a5e18" : "#6a4c0e"],
+                ),
+                rg(
+                  id + "_hl",
+                  "36%",
+                  "24%",
+                  "50%",
+                  ["0%", "#fffce0", D() ? 0.24 : 0.38],
+                  ["100%", "#e8b830", 0],
+                ),
+              ),
+            );
+            const iOff = (w - iconSz) / 2;
+            ap(
+              s,
+              rc({
+                x: iOff,
+                y: 16,
+                width: iconSz,
+                height: iconSz,
+                rx: iconSz * 0.225,
+                fill: `url(#${id}_bg)`,
+              }),
+              ci({
+                cx: iOff + iconSz * 0.38,
+                cy: 16 + iconSz * 0.32,
+                r: iconSz * 0.42,
+                fill: `url(#${id}_hl)`,
+              }),
+            );
+            const sc = iconSz / 512;
+            ap(
+              s,
+              gp(
+                {
+                  transform: `translate(${iOff},16) scale(${sc})`,
+                  fill: "none",
+                  stroke: "#fff",
+                  "stroke-width": 30,
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round",
+                  opacity: 0.95,
+                },
+                li({ x1: 148, y1: 345, x2: 148, y2: 185 }),
+                li({ x1: 148, y1: 185, x2: 256, y2: 298 }),
+                li({ x1: 256, y1: 298, x2: 364, y2: 185 }),
+                li({ x1: 364, y1: 185, x2: 364, y2: 345 }),
+              ),
+            );
+            const textY = 16 + iconSz + 26;
+            const textCol = D() ? "#f0d060" : "#7a5c11";
+            const subCol = D() ? "#8888aa" : "#9a8060";
+            const tName = tx({
+              x: w / 2,
+              "text-anchor": "middle",
+              y: textY,
+              "font-family":
+                "-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif",
+              "font-size": "34",
+              "font-weight": "700",
+              "letter-spacing": "-1",
+              fill: textCol,
+            });
+            tName.textContent = "Momentra";
+            const tSub = tx({
+              x: w / 2,
+              "text-anchor": "middle",
+              y: textY + 22,
+              "font-family":
+                "-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif",
+              "font-size": "10",
+              "font-weight": "400",
+              "letter-spacing": "5",
+              fill: subCol,
+            });
+            tSub.textContent = "EVERY MOMENT, EXTRA";
+            ap(s, tName, tSub);
+            return s;
+          },
+          w: 260,
+          h: 250,
+        },
+        {
+          name: "Kompakt Yatay",
+          sub: "Tab bar / navigation için",
+          build(w, h) {
+            const s = svg(w, h, `0 0 ${w} ${h}`);
+            const iconSz = 52;
+            const id = `wm_d_${D() ? "d" : "l"}`;
+            ap(
+              s,
+              df(
+                lg(
+                  id + "_bg",
+                  "0%",
+                  "0%",
+                  "100%",
+                  "100%",
+                  ["0%", D() ? "#c8a040" : "#b07820"],
+                  ["50%", D() ? "#d4af60" : "#9A7420"],
+                  ["100%", D() ? "#8a5e18" : "#6a4c0e"],
+                ),
+              ),
+            );
+            const top = (h - iconSz) / 2;
+            ap(
+              s,
+              rc({
+                x: 0,
+                y: top,
+                width: iconSz,
+                height: iconSz,
+                rx: iconSz * 0.225,
+                fill: `url(#${id}_bg)`,
+              }),
+            );
+            const sc = iconSz / 512;
+            ap(
+              s,
+              gp(
+                {
+                  transform: `translate(0,${top}) scale(${sc})`,
+                  fill: "none",
+                  stroke: "#fff",
+                  "stroke-width": 32,
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round",
+                  opacity: 0.95,
+                },
+                li({ x1: 148, y1: 345, x2: 148, y2: 185 }),
+                li({ x1: 148, y1: 185, x2: 256, y2: 298 }),
+                li({ x1: 256, y1: 298, x2: 364, y2: 185 }),
+                li({ x1: 364, y1: 185, x2: 364, y2: 345 }),
+              ),
+            );
+            const textCol = D() ? "#f0d060" : "#7a5c11";
+            const tName = tx({
+              x: iconSz + 12,
+              y: h / 2 + 5.5,
+              "font-family":
+                "-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif",
+              "font-size": "20",
+              "font-weight": "700",
+              "letter-spacing": "-0.5",
+              fill: textCol,
+            });
+            tName.textContent = "Momentra";
+            ap(s, tName);
+            return s;
+          },
+          w: 210,
+          h: 60,
+        },
+      ];
+
+      // ═══════════════════════════════════════════════════════════════
+      // PLATFORM / SIZE SHOWCASE (Section F)
+      // ═══════════════════════════════════════════════════════════════
+
+      function buildFinalIcon(size) {
+        // Best variant: Classic Diagonal + double glow + 3 sparkles
+        const s = svg(size, size);
+        const id = `fin_${size}_${D() ? "d" : "l"}`;
+        ap(
+          s,
+          df(
+            lg(
+              id + "_bg",
+              "0%",
+              "0%",
+              "100%",
+              "100%",
+              ["0%", D() ? "#c8a040" : "#b07820"],
+              ["45%", D() ? "#d4af60" : "#9A7420"],
+              ["100%", D() ? "#8a5e18" : "#6a4c0e"],
+            ),
+            rg(
+              id + "_hl",
+              "36%",
+              "24%",
+              "52%",
+              ["0%", "#fffce0", D() ? 0.26 : 0.4],
+              ["100%", "#e8b830", 0],
+            ),
+          ),
+          rc({
+            x: 0,
+            y: 0,
+            width: 512,
+            height: 512,
+            rx: 115,
+            fill: `url(#${id}_bg)`,
+          }),
+          ci({ cx: 195, cy: 165, r: 215, fill: `url(#${id}_hl)` }),
+        );
+        // glow + crisp M
+        ap(s, makeM(62, "rgba(255,255,255,.14)"));
+        ap(s, makeM(30, "#fff", 0.97));
+        // sparkles
+        ap(
+          s,
+          gp(
+            {
+              fill: "rgba(255,250,220,.88)",
+              transform: "translate(256,108) scale(0.90)",
+            },
+            pa({ d: STAR4 }),
+          ),
+        );
+        ap(
+          s,
+          gp(
+            {
+              fill: "rgba(255,250,220,.64)",
+              transform: "translate(374,122) scale(0.54)",
+            },
+            pa({ d: STAR4 }),
+          ),
+        );
+        ap(
+          s,
+          gp(
+            {
+              fill: "rgba(255,250,220,.52)",
+              transform: "translate(150,136) scale(0.40)",
+            },
+            pa({ d: STAR4 }),
+          ),
+        );
+        return s;
+      }
+
+      // ═══════════════════════════════════════════════════════════════
+      // RENDER FUNCTIONS
+      // ═══════════════════════════════════════════════════════════════
+
+      function clearEl(id) {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = "";
+      }
+
+      function makeCard(
+        svgEl,
+        label,
+        sub,
+        bg = "bg-ivory",
+        badge = null,
+        size = 160,
+      ) {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.onclick = () => card.classList.toggle("selected");
+        if (badge) {
+          const b = document.createElement("div");
+          b.className = "card-badge";
+          b.textContent = badge;
+          card.appendChild(b);
+        }
+        const wrap = document.createElement("div");
+        wrap.className = `logo-wrap ${bg}`;
+        svgEl.setAttribute("width", size);
+        svgEl.setAttribute("height", size);
+        wrap.appendChild(svgEl);
+        card.appendChild(wrap);
+        const lbl = document.createElement("div");
+        lbl.className = "card-label";
+        lbl.textContent = label;
+        card.appendChild(lbl);
+        if (sub) {
+          const s = document.createElement("div");
+          s.className = "card-sub";
+          s.textContent = sub;
+          card.appendChild(s);
+        }
+        return card;
+      }
+
+      function renderGradients() {
+        clearEl("grid-gradients");
+        const g = document.getElementById("grid-gradients");
+        GRADIENTS.forEach((v) => {
+          const bg = [
+            "cosmos",
+            "midnight",
+            "deep-red",
+            "navy-gold",
+            "holographic",
+          ].includes(v.id)
+            ? "bg-dark-surf"
+            : "bg-checker";
+          g.appendChild(
+            makeCard(v.build(160), v.name, v.sub, bg, v.badge || null),
+          );
+        });
+      }
+
+      function renderMStyles() {
+        clearEl("grid-mstyles");
+        const g = document.getElementById("grid-mstyles");
+        MSTYLES.forEach((v) => {
+          g.appendChild(
+            makeCard(
+              v.build(160),
+              v.name,
+              v.sub,
+              "bg-checker",
+              v.badge || null,
+            ),
+          );
+        });
+      }
+
+      function renderDecorative() {
+        clearEl("grid-decorative");
+        const g = document.getElementById("grid-decorative");
+        DECORATIVE.forEach((v) => {
+          g.appendChild(makeCard(v.build(160), v.name, v.sub, "bg-checker"));
+        });
+      }
+
+      function renderShapes() {
+        clearEl("compare-shapes");
+        const row = document.getElementById("compare-shapes");
+        SHAPES.forEach((v) => {
+          const cell = document.createElement("div");
+          cell.className = "compare-cell";
+          const s = buildShape(v.rx, 120);
+          const wrap = document.createElement("div");
+          wrap.className = "logo-wrap bg-checker";
+          wrap.style.minHeight = "140px";
+          wrap.appendChild(s);
+          cell.appendChild(wrap);
+          const lbl = document.createElement("span");
+          lbl.textContent = v.name;
+          cell.appendChild(lbl);
+          const sub = document.createElement("div");
+          sub.className = "card-sub";
+          sub.textContent = v.sub;
+          cell.appendChild(sub);
+          if (v.badge) {
+            const b = document.createElement("div");
+            b.className = "card-badge";
+            b.textContent = v.badge;
+            cell.appendChild(b);
+          }
+          row.appendChild(cell);
+        });
+      }
+
+      function renderWordmarks() {
+        clearEl("grid-wordmark");
+        const g = document.getElementById("grid-wordmark");
+        WORDMARKS.forEach((v) => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.onclick = () => card.classList.toggle("selected");
+          const wrap = document.createElement("div");
+          wrap.className = "logo-wrap bg-checker";
+          wrap.style.minHeight = "130px";
+          const svgEl = v.build(v.w, v.h);
+          wrap.appendChild(svgEl);
+          card.appendChild(wrap);
+          const lbl = document.createElement("div");
+          lbl.className = "card-label";
+          lbl.textContent = v.name;
+          const sub = document.createElement("div");
+          sub.className = "card-sub";
+          sub.textContent = v.sub;
+          card.appendChild(lbl);
+          card.appendChild(sub);
+          g.appendChild(card);
+        });
+      }
+
+      function renderSizes() {
+        clearEl("size-strip");
+        const strip = document.getElementById("size-strip");
+        [
+          [256, "256px — App Store"],
+          [180, "180px — iPhone @3x"],
+          [120, "120px — iPhone @2x"],
+          [96, "96px — Android"],
+          [64, "64px — Küçük"],
+          [32, "32px — Mini"],
+        ].forEach(([sz, label]) => {
+          const item = document.createElement("div");
+          item.className = "size-item";
+          const wrap = document.createElement("div");
+          wrap.style.cssText = `background:${D() ? "#10101c" : "#f0ece4"};border-radius:${Math.round(sz * 0.225)}px;display:flex;align-items:center;justify-content:center;width:${sz + 16}px;height:${sz + 16}px;`;
+          wrap.appendChild(buildFinalIcon(sz));
+          item.appendChild(wrap);
+          const sp = document.createElement("span");
+          sp.textContent = label;
+          item.appendChild(sp);
+          strip.appendChild(item);
+        });
+      }
+
+      function renderPlatform() {
+        clearEl("platform-row");
+        const row = document.getElementById("platform-row");
+        const platforms = [
+          { name: "App Store", size: 160, bg: "bg-white", note: "1024×1024" },
+          {
+            name: "iPhone Ana Ekran",
+            size: 120,
+            bg: "bg-dark-surf",
+            note: "iOS @2x",
+          },
+          {
+            name: "Android Launcher",
+            size: 108,
+            bg: "bg-dark-surf",
+            note: "192×192 adaptive",
+          },
+          { name: "Bildirim", size: 40, bg: "bg-white", note: "iOS @3x" },
+          { name: "Spotlight", size: 58, bg: "bg-dark-surf", note: "iOS @2x" },
+        ];
+        platforms.forEach((p) => {
+          const card = document.createElement("div");
+          card.className = "platform-card";
+          const wrap = document.createElement("div");
+          wrap.className = `logo-wrap ${p.bg}`;
+          wrap.style.cssText =
+            "min-height:unset;padding:16px;border-radius:16px;width:auto;";
+          wrap.appendChild(buildFinalIcon(p.size));
+          card.appendChild(wrap);
+          const plbl = document.createElement("div");
+          plbl.className = "plabel";
+          plbl.textContent = p.name;
+          const psz = document.createElement("div");
+          psz.className = "psize";
+          psz.textContent = p.note;
+          card.appendChild(plbl);
+          card.appendChild(psz);
+          row.appendChild(card);
+        });
+      }
+
+      function renderAll() {
+        renderGradients();
+        renderMStyles();
+        renderDecorative();
+        renderShapes();
+        renderWordmarks();
+        renderSizes();
+        renderPlatform();
+      }
+
+      renderAll();
+    </script>
+  </body>
+</html>

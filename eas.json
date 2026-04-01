@@ -1,0 +1,32 @@
+{
+  "cli": {
+    "version": ">= 5.0.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "store",
+      "channel": "preview"
+    },
+    "production": {
+      "channel": "production",
+      "autoIncrement": true
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "ascApiKeyId": "D9R9SQPLM2",
+        "ascApiKeyIssuerId": "0c203279-bcf4-49ec-8e75-40b7618c5f94",
+        "ascApiKeyPath": "../AuthKey_D9R9SQPLM2.p8"
+      },
+      "android": {
+        "serviceAccountKeyPath": "../google-service-account.json",
+        "track": "internal"
+      }
+    }
+  }
+}

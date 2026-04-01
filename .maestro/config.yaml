@@ -1,0 +1,19 @@
+---
+# Momentra – Maestro E2E Configuration
+# App bundle ID (iOS & Android)
+appId: com.momentra.app
+
+# How to run all flows:
+#   maestro test .maestro/flows/
+#
+# How to run a single flow:
+#   maestro test .maestro/flows/auth_login.yaml
+#
+# Prerequisites:
+#   1. Install Maestro CLI: curl -Ls "https://get.maestro.mobile.dev" | bash
+#   2. Start an iOS Simulator or Android Emulator
+#   3. Build the app: eas build --platform ios --profile development
+#      (or use Expo Go for most flows)
+#   4. Set E2E_EMAIL and E2E_PASSWORD env vars with valid test credentials:
+#        export E2E_EMAIL=test@momentra.app
+#        export E2E_PASSWORD=Test1234!

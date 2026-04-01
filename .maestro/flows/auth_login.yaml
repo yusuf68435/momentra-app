@@ -1,0 +1,36 @@
+appId: com.momentra.app
+---
+# Flow: Login with valid credentials and verify home tab loads
+- launchApp:
+    clearState: true
+
+# Wait for login screen
+- assertVisible:
+    id: "email-input"
+  timeout: 10000
+
+# Enter email
+- tapOn:
+    id: "email-input"
+- clearText
+- inputText: ${E2E_EMAIL:-"test@momentra.app"}
+
+# Enter password
+- tapOn:
+    id: "password-input"
+- clearText
+- inputText: ${E2E_PASSWORD:-"Test1234!"}
+
+# Tap login button
+- tapOn:
+    text: "Giriş Yap"
+  optional: true
+- tapOn:
+    text: "Sign In"
+  optional: true
+
+# Wait for home screen
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Anasayfa"
+  timeout: 15000

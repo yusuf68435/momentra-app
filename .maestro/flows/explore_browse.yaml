@@ -1,0 +1,33 @@
+appId: com.momentra.app
+---
+# Flow: Browse Explore/Discover tab for categories and scenarios
+- launchApp
+
+# Login
+- runFlow: auth_login.yaml
+
+# Tap Explore tab
+- tapOn:
+    text: "Keşfet"
+  optional: true
+- tapOn:
+    text: "Explore"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Explore screen should load
+- assertVisible:
+    text: "Keşfet"
+  optional: true
+- assertVisible:
+    text: "Explore"
+  optional: true
+
+# Scroll down to see categories
+- scrollDown
+
+- waitForAnimationToEnd
+
+# Scroll back to top
+- scrollUp

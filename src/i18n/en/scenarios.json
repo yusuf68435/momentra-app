@@ -1,0 +1,29 @@
+{
+  "featured": "Featured Scenarios",
+  "all_scenarios": "All Scenarios",
+  "difficulty": "Difficulty",
+  "prep_time": "Prep Time",
+  "budget_range": "Budget Range",
+  "people_count": "Number of People",
+  "indoor": "Indoor",
+  "outdoor": "Outdoor",
+  "both": "Both",
+  "steps": "Steps",
+  "step": "Step",
+  "plan_this": "Plan This!",
+  "reviews": "Reviews",
+  "no_reviews": "No reviews yet",
+  "estimated_budget": "Estimated Budget",
+  "days_prep": "{{count}} days prep",
+  "people_range": "{{min}}-{{max}} people",
+  "filters": {
+    "category": "Category",
+    "budget_min": "Min Budget",
+    "budget_max": "Max Budget",
+    "people": "Number of People",
+    "location_type": "Location Type",
+    "difficulty": "Difficulty Level",
+    "clear_all": "Clear All",
+    "apply": "Apply"
+  }
+}

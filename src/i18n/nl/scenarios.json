@@ -1,0 +1,29 @@
+{
+  "featured": "Uitgelichte scenario's",
+  "all_scenarios": "Alle scenario's",
+  "difficulty": "Moeilijkheid",
+  "prep_time": "Voorbereidingstijd",
+  "budget_range": "Budgetrange",
+  "people_count": "Aantal personen",
+  "indoor": "Binnen",
+  "outdoor": "Buiten",
+  "both": "Beide",
+  "steps": "Stappen",
+  "step": "Stap",
+  "plan_this": "Dit plannen!",
+  "reviews": "Beoordelingen",
+  "no_reviews": "Nog geen beoordelingen",
+  "estimated_budget": "Geschat budget",
+  "days_prep": "{{count}} dagen voorbereiding",
+  "people_range": "{{min}}-{{max}} personen",
+  "filters": {
+    "category": "Categorie",
+    "budget_min": "Minimumbudget",
+    "budget_max": "Maximumbudget",
+    "people": "Aantal personen",
+    "location_type": "Locatietype",
+    "difficulty": "Moeilijkheidsniveau",
+    "clear_all": "Alles wissen",
+    "apply": "Toepassen"
+  }
+}

@@ -1,0 +1,45 @@
+appId: com.momentra.app
+---
+# Flow: Community tab — scroll feed and open a story
+- launchApp
+
+- runFlow: auth_login.yaml
+
+# Go to Community tab
+- tapOn:
+    text: "Topluluk"
+  optional: true
+- tapOn:
+    text: "Community"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Verify community screen loaded
+- assertVisible:
+    text: "Topluluk"
+  optional: true
+- assertVisible:
+    text: "Community"
+  optional: true
+
+# Scroll through stories
+- scrollDown
+- waitForAnimationToEnd
+
+# Try tapping a story card (first visible)
+- tapOn:
+    id: "story-card-0"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Go back if navigated
+- back
+  optional: true
+
+- waitForAnimationToEnd
+
+# Scroll back to top
+- scrollUp
+  optional: true

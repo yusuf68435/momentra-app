@@ -1,0 +1,29 @@
+{
+  "featured": "Öne Çıkan Senaryolar",
+  "all_scenarios": "Tüm Senaryolar",
+  "difficulty": "Zorluk",
+  "prep_time": "Hazırlık Süresi",
+  "budget_range": "Bütçe Aralığı",
+  "people_count": "Kişi Sayısı",
+  "indoor": "İç Mekan",
+  "outdoor": "Dış Mekan",
+  "both": "Her İkisi",
+  "steps": "Adımlar",
+  "step": "Adım",
+  "plan_this": "Bunu Planla!",
+  "reviews": "Değerlendirmeler",
+  "no_reviews": "Henüz değerlendirme yok",
+  "estimated_budget": "Tahmini Bütçe",
+  "days_prep": "{{count}} gün hazırlık",
+  "people_range": "{{min}}-{{max}} kişi",
+  "filters": {
+    "category": "Kategori",
+    "budget_min": "Min Bütçe",
+    "budget_max": "Max Bütçe",
+    "people": "Kişi Sayısı",
+    "location_type": "Mekan Tipi",
+    "difficulty": "Zorluk Seviyesi",
+    "clear_all": "Temizle",
+    "apply": "Uygula"
+  }
+}

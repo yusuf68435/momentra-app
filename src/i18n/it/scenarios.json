@@ -1,0 +1,29 @@
+{
+  "featured": "Scenari in evidenza",
+  "all_scenarios": "Tutti gli scenari",
+  "difficulty": "Difficoltà",
+  "prep_time": "Tempo di preparazione",
+  "budget_range": "Fascia di budget",
+  "people_count": "Numero di persone",
+  "indoor": "Al chiuso",
+  "outdoor": "All'aperto",
+  "both": "Entrambi",
+  "steps": "Passi",
+  "step": "Passo",
+  "plan_this": "Pianifica questo!",
+  "reviews": "Recensioni",
+  "no_reviews": "Nessuna recensione ancora",
+  "estimated_budget": "Budget stimato",
+  "days_prep": "{{count}} giorni di preparazione",
+  "people_range": "{{min}}-{{max}} persone",
+  "filters": {
+    "category": "Categoria",
+    "budget_min": "Budget minimo",
+    "budget_max": "Budget massimo",
+    "people": "Numero di persone",
+    "location_type": "Tipo di location",
+    "difficulty": "Livello di difficoltà",
+    "clear_all": "Cancella tutto",
+    "apply": "Applica"
+  }
+}

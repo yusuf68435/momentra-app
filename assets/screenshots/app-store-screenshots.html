@@ -1,0 +1,1950 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momentra — App Store Screenshots</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #0a0a12;
+        font-family:
+          -apple-system, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        padding: 60px 40px;
+      }
+
+      h1 {
+        color: #d4af60;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        opacity: 0.6;
+      }
+
+      /* ── iPhone Frame ── */
+      .frame-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .screenshot-label {
+        color: rgba(212, 175, 96, 0.5);
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      .iphone {
+        width: 393px;
+        height: 852px;
+        background: #13131f;
+        border-radius: 54px;
+        border: 1.5px solid rgba(212, 175, 96, 0.25);
+        position: relative;
+        overflow: hidden;
+        box-shadow:
+          0 0 0 6px #0d0d1a,
+          0 0 0 7.5px rgba(212, 175, 96, 0.15),
+          0 40px 80px rgba(0, 0, 0, 0.7),
+          0 0 60px rgba(212, 175, 96, 0.04);
+      }
+
+      /* Dynamic Island */
+      .iphone::before {
+        content: "";
+        position: absolute;
+        top: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 34px;
+        background: #0a0a12;
+        border-radius: 20px;
+        z-index: 100;
+      }
+
+      /* Side buttons */
+      .iphone::after {
+        content: "";
+        position: absolute;
+        right: -3px;
+        top: 160px;
+        width: 3px;
+        height: 80px;
+        background: rgba(212, 175, 96, 0.2);
+        border-radius: 0 2px 2px 0;
+      }
+
+      .screen {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* ── Status Bar ── */
+      .status-bar {
+        height: 59px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 0 28px 8px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .status-time {
+        font-size: 15px;
+        font-weight: 600;
+        color: #f0f0f5;
+        letter-spacing: -0.3px;
+      }
+
+      .status-icons {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+
+      .status-icons svg {
+        opacity: 0.9;
+      }
+
+      /* ══════════════════════════════════════
+     SCREEN 1 — HOME
+  ══════════════════════════════════════ */
+      .screen-home {
+        background: linear-gradient(
+          160deg,
+          #0d0d1a 0%,
+          #13132a 50%,
+          #0d0d1a 100%
+        );
+      }
+
+      .home-header {
+        padding: 4px 24px 20px;
+      }
+
+      .home-greeting {
+        font-size: 13px;
+        color: rgba(212, 175, 96, 0.55);
+        letter-spacing: 0.3px;
+        margin-bottom: 2px;
+      }
+
+      .home-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #f0f0f5;
+        letter-spacing: -0.8px;
+      }
+
+      .home-title span {
+        color: #d4af60;
+      }
+
+      .countdown-card {
+        margin: 0 20px 16px;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 96, 0.12) 0%,
+          rgba(167, 139, 250, 0.08) 100%
+        );
+        border: 1px solid rgba(212, 175, 96, 0.2);
+        border-radius: 20px;
+        padding: 20px 22px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .countdown-card::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 96, 0.12),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .countdown-tag {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: rgba(212, 175, 96, 0.7);
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+
+      .countdown-plan-name {
+        font-size: 18px;
+        font-weight: 700;
+        color: #f0f0f5;
+        letter-spacing: -0.4px;
+        margin-bottom: 4px;
+      }
+
+      .countdown-for {
+        font-size: 13px;
+        color: rgba(240, 240, 245, 0.5);
+        margin-bottom: 16px;
+      }
+
+      .countdown-digits {
+        display: flex;
+        gap: 8px;
+        align-items: flex-end;
+      }
+
+      .countdown-unit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+      }
+
+      .countdown-number {
+        font-size: 34px;
+        font-weight: 800;
+        color: #d4af60;
+        letter-spacing: -2px;
+        line-height: 1;
+      }
+
+      .countdown-label-sm {
+        font-size: 9px;
+        color: rgba(212, 175, 96, 0.5);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .countdown-sep {
+        font-size: 28px;
+        font-weight: 300;
+        color: rgba(212, 175, 96, 0.3);
+        margin-bottom: 6px;
+      }
+
+      .section-title-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px 12px;
+      }
+
+      .section-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #f0f0f5;
+        letter-spacing: -0.4px;
+      }
+
+      .section-link {
+        font-size: 13px;
+        color: #d4af60;
+        font-weight: 500;
+      }
+
+      .plan-list {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .plan-item {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 16px;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .plan-emoji {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        flex-shrink: 0;
+      }
+
+      .plan-emoji.gold {
+        background: rgba(212, 175, 96, 0.15);
+      }
+      .plan-emoji.violet {
+        background: rgba(167, 139, 250, 0.15);
+      }
+      .plan-emoji.green {
+        background: rgba(52, 211, 153, 0.15);
+      }
+
+      .plan-info {
+        flex: 1;
+      }
+
+      .plan-name {
+        font-size: 15px;
+        font-weight: 600;
+        color: #f0f0f5;
+        letter-spacing: -0.2px;
+        margin-bottom: 3px;
+      }
+
+      .plan-date {
+        font-size: 12px;
+        color: rgba(240, 240, 245, 0.4);
+      }
+
+      .plan-badge {
+        font-size: 11px;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 8px;
+      }
+
+      .plan-badge.active {
+        background: rgba(52, 211, 153, 0.15);
+        color: #34d399;
+      }
+
+      .plan-badge.planning {
+        background: rgba(212, 175, 96, 0.12);
+        color: #d4af60;
+      }
+
+      /* Tab bar */
+      .tab-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 82px;
+        background: rgba(13, 13, 26, 0.92);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        padding-top: 10px;
+        backdrop-filter: blur(20px);
+      }
+
+      .tab-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        opacity: 0.4;
+      }
+
+      .tab-item.active {
+        opacity: 1;
+      }
+
+      .tab-icon {
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .tab-dot {
+        width: 22px;
+        height: 22px;
+        border-radius: 6px;
+        background: rgba(212, 175, 96, 0.2);
+      }
+
+      .tab-dot.active-dot {
+        background: #d4af60;
+        box-shadow: 0 0 12px rgba(212, 175, 96, 0.4);
+      }
+
+      .tab-label {
+        font-size: 10px;
+        color: rgba(212, 175, 96, 0.8);
+        letter-spacing: 0.2px;
+      }
+
+      .tab-label-dim {
+        font-size: 10px;
+        color: rgba(240, 240, 245, 0.35);
+      }
+
+      .fab {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #d4af60, #9a7420);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(212, 175, 96, 0.35);
+        margin-top: -10px;
+        font-size: 22px;
+        color: #0d0d1a;
+        font-weight: 700;
+      }
+
+      /* ══════════════════════════════════════
+     SCREEN 2 — AI ASSISTANT
+  ══════════════════════════════════════ */
+      .screen-ai {
+        background: linear-gradient(
+          160deg,
+          #0d0d1a 0%,
+          #130d26 50%,
+          #0d0d1a 100%
+        );
+      }
+
+      .ai-header {
+        padding: 4px 24px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .ai-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: #f0f0f5;
+        letter-spacing: -0.6px;
+      }
+
+      .ai-subtitle {
+        font-size: 13px;
+        color: rgba(240, 240, 245, 0.4);
+        margin-top: 3px;
+      }
+
+      .ai-credits {
+        background: rgba(212, 175, 96, 0.12);
+        border: 1px solid rgba(212, 175, 96, 0.25);
+        border-radius: 12px;
+        padding: 6px 12px;
+        font-size: 12px;
+        color: #d4af60;
+        font-weight: 600;
+      }
+
+      .chat-container {
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .chat-bubble {
+        max-width: 82%;
+        padding: 12px 14px;
+        border-radius: 16px;
+        font-size: 14px;
+        line-height: 1.5;
+        letter-spacing: -0.1px;
+      }
+
+      .chat-bubble.ai {
+        background: rgba(167, 139, 250, 0.12);
+        border: 1px solid rgba(167, 139, 250, 0.18);
+        color: rgba(240, 240, 245, 0.9);
+        align-self: flex-start;
+        border-bottom-left-radius: 4px;
+      }
+
+      .chat-bubble.user {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 96, 0.2),
+          rgba(212, 175, 96, 0.12)
+        );
+        border: 1px solid rgba(212, 175, 96, 0.25);
+        color: rgba(240, 240, 245, 0.9);
+        align-self: flex-end;
+        border-bottom-right-radius: 4px;
+      }
+
+      .ai-avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #a78bfa, #7c3aed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        margin-bottom: 6px;
+        color: white;
+      }
+
+      .chat-input-bar {
+        position: absolute;
+        bottom: 82px;
+        left: 16px;
+        right: 16px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .chat-input-placeholder {
+        flex: 1;
+        font-size: 14px;
+        color: rgba(240, 240, 245, 0.3);
+      }
+
+      .chat-send-btn {
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #d4af60, #9a7420);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0d0d1a;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      /* ══════════════════════════════════════
+     SCREEN 3 — COMMUNITY
+  ══════════════════════════════════════ */
+      .screen-community {
+        background: linear-gradient(160deg, #0d0d1a, #0d1a13, #0d0d1a);
+      }
+
+      .community-header {
+        padding: 4px 24px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .community-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: #f0f0f5;
+        letter-spacing: -0.6px;
+      }
+
+      .community-subtitle {
+        font-size: 13px;
+        color: rgba(240, 240, 245, 0.4);
+        margin-top: 3px;
+      }
+
+      .story-card {
+        margin: 0 16px 12px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .story-cover {
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        position: relative;
+      }
+
+      .story-cover.proposal {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 96, 0.25),
+          rgba(167, 139, 250, 0.15)
+        );
+      }
+
+      .story-cover.birthday {
+        background: linear-gradient(
+          135deg,
+          rgba(167, 139, 250, 0.2),
+          rgba(52, 211, 153, 0.12)
+        );
+      }
+
+      .story-cover.anniversary {
+        background: linear-gradient(
+          135deg,
+          rgba(52, 211, 153, 0.15),
+          rgba(212, 175, 96, 0.12)
+        );
+      }
+
+      .story-badge {
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        background: rgba(13, 13, 26, 0.7);
+        border: 1px solid rgba(212, 175, 96, 0.3);
+        border-radius: 8px;
+        padding: 3px 9px;
+        font-size: 10px;
+        font-weight: 600;
+        color: #d4af60;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .story-body {
+        padding: 14px 16px;
+      }
+
+      .story-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: #f0f0f5;
+        letter-spacing: -0.3px;
+        margin-bottom: 5px;
+      }
+
+      .story-text {
+        font-size: 12px;
+        color: rgba(240, 240, 245, 0.5);
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+
+      .story-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .story-author {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .author-avatar {
+        width: 20px;
+        height: 20px;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #d4af60, #9a7420);
+      }
+
+      .author-name {
+        font-size: 11px;
+        color: rgba(240, 240, 245, 0.4);
+      }
+
+      .story-likes {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 11px;
+        color: rgba(240, 240, 245, 0.35);
+      }
+
+      /* ══════════════════════════════════════
+     SCREEN 4 — PLAN DETAIL
+  ══════════════════════════════════════ */
+      .screen-plan {
+        background: linear-gradient(
+          160deg,
+          #0d0d1a 0%,
+          #15102a 50%,
+          #0d0d1a 100%
+        );
+      }
+
+      .plan-header {
+        padding: 4px 24px 16px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+
+      .back-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f0f0f5;
+        font-size: 16px;
+      }
+
+      .plan-hero {
+        margin: 0 20px 16px;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 96, 0.14) 0%,
+          rgba(167, 139, 250, 0.1) 100%
+        );
+        border: 1px solid rgba(212, 175, 96, 0.22);
+        border-radius: 22px;
+        padding: 22px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .plan-hero::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        right: -20px;
+        width: 140px;
+        height: 140px;
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 96, 0.1),
+          transparent 70%
+        );
+      }
+
+      .plan-hero-title {
+        font-size: 20px;
+        font-weight: 800;
+        color: #f0f0f5;
+        letter-spacing: -0.6px;
+        margin-bottom: 3px;
+      }
+
+      .plan-hero-sub {
+        font-size: 13px;
+        color: rgba(240, 240, 245, 0.45);
+        margin-bottom: 18px;
+      }
+
+      .plan-hero-countdown {
+        display: flex;
+        gap: 14px;
+      }
+
+      .pcd-unit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .pcd-num {
+        font-size: 30px;
+        font-weight: 800;
+        color: #d4af60;
+        letter-spacing: -1.5px;
+        line-height: 1;
+      }
+
+      .pcd-lbl {
+        font-size: 9px;
+        color: rgba(212, 175, 96, 0.5);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+
+      .pcd-sep {
+        font-size: 24px;
+        color: rgba(212, 175, 96, 0.25);
+        font-weight: 300;
+        align-self: flex-end;
+        margin-bottom: 10px;
+      }
+
+      .features-grid {
+        margin: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .feature-tile {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 16px;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .feature-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      .fi-gold {
+        background: rgba(212, 175, 96, 0.15);
+      }
+      .fi-violet {
+        background: rgba(167, 139, 250, 0.15);
+      }
+      .fi-green {
+        background: rgba(52, 211, 153, 0.15);
+      }
+      .fi-blue {
+        background: rgba(96, 165, 250, 0.15);
+      }
+
+      .feature-name {
+        font-size: 12px;
+        font-weight: 600;
+        color: rgba(240, 240, 245, 0.7);
+      }
+
+      .feature-val {
+        font-size: 16px;
+        font-weight: 700;
+        color: #f0f0f5;
+      }
+
+      .feature-val.gold {
+        color: #d4af60;
+      }
+      .feature-val.violet {
+        color: #a78bfa;
+      }
+      .feature-val.green {
+        color: #34d399;
+      }
+
+      /* ══════════════════════════════════════
+     SCREEN 5 — GIFTS / AI SUGGESTIONS
+  ══════════════════════════════════════ */
+      .screen-gifts {
+        background: linear-gradient(
+          160deg,
+          #0d0d1a 0%,
+          #1a0d2a 50%,
+          #0d0d1a 100%
+        );
+      }
+
+      .gifts-header {
+        padding: 4px 24px 16px;
+        display: flex;
+        align-items: flex-end;
+        gap: 12px;
+      }
+
+      .gifts-title-block {
+        flex: 1;
+      }
+
+      .gifts-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #f0f0f5;
+        letter-spacing: -0.6px;
+      }
+
+      .gifts-subtitle {
+        font-size: 13px;
+        color: rgba(240, 240, 245, 0.4);
+        margin-top: 3px;
+      }
+
+      .ai-suggest-btn {
+        background: linear-gradient(
+          135deg,
+          rgba(167, 139, 250, 0.2),
+          rgba(167, 139, 250, 0.1)
+        );
+        border: 1px solid rgba(167, 139, 250, 0.3);
+        border-radius: 12px;
+        padding: 8px 14px;
+        font-size: 12px;
+        color: #a78bfa;
+        font-weight: 600;
+      }
+
+      .gift-cards {
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .gift-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 18px;
+        padding: 16px;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .gift-emoji {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        flex-shrink: 0;
+      }
+
+      .gift-emoji.tech {
+        background: rgba(96, 165, 250, 0.15);
+      }
+      .gift-emoji.exp {
+        background: rgba(52, 211, 153, 0.15);
+      }
+      .gift-emoji.art {
+        background: rgba(167, 139, 250, 0.15);
+      }
+
+      .gift-info {
+        flex: 1;
+      }
+
+      .gift-name {
+        font-size: 14px;
+        font-weight: 700;
+        color: #f0f0f5;
+        margin-bottom: 4px;
+        letter-spacing: -0.2px;
+      }
+
+      .gift-reason {
+        font-size: 12px;
+        color: rgba(240, 240, 245, 0.45);
+        line-height: 1.4;
+        margin-bottom: 8px;
+      }
+
+      .gift-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .gift-price {
+        font-size: 14px;
+        font-weight: 700;
+        color: #d4af60;
+      }
+
+      .gift-cat-badge {
+        font-size: 10px;
+        font-weight: 600;
+        padding: 3px 8px;
+        border-radius: 6px;
+        background: rgba(167, 139, 250, 0.12);
+        color: #a78bfa;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      /* ══════════════════════════════════════
+     SCREENSHOT GRID LAYOUT
+  ══════════════════════════════════════ */
+      .screenshots-row {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      /* ── CAPTION CARD (below each screenshot) ── */
+      .caption-card {
+        width: 393px;
+        text-align: center;
+      }
+
+      .caption-headline {
+        font-size: 20px;
+        font-weight: 700;
+        color: #f0f0f5;
+        letter-spacing: -0.5px;
+        margin-bottom: 6px;
+      }
+
+      .caption-headline span {
+        color: #d4af60;
+      }
+
+      .caption-body {
+        font-size: 13px;
+        color: rgba(240, 240, 245, 0.45);
+        line-height: 1.6;
+      }
+
+      /* ── PRINT / EXPORT GUIDE ── */
+      .export-guide {
+        width: 100%;
+        max-width: 900px;
+        background: rgba(212, 175, 96, 0.06);
+        border: 1px solid rgba(212, 175, 96, 0.15);
+        border-radius: 16px;
+        padding: 24px 32px;
+        margin-top: 20px;
+      }
+
+      .export-guide h2 {
+        font-size: 13px;
+        color: #d4af60;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+
+      .export-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+
+      .export-table th {
+        color: rgba(212, 175, 96, 0.5);
+        font-weight: 500;
+        text-align: left;
+        padding: 4px 0 8px;
+        border-bottom: 1px solid rgba(212, 175, 96, 0.1);
+      }
+
+      .export-table td {
+        color: rgba(240, 240, 245, 0.6);
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+
+      .export-table td:first-child {
+        color: rgba(240, 240, 245, 0.85);
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Momentra — App Store Screenshots</h1>
+
+    <div class="screenshots-row">
+      <!-- ══ SCREENSHOT 1 — HOME ══ -->
+      <div class="frame-wrapper">
+        <div class="iphone">
+          <div class="screen screen-home">
+            <!-- Status Bar -->
+            <div class="status-bar">
+              <span class="status-time">9:41</span>
+              <div class="status-icons">
+                <svg width="17" height="12" viewBox="0 0 17 12" fill="none">
+                  <rect
+                    x="0"
+                    y="3"
+                    width="3"
+                    height="9"
+                    rx="1"
+                    fill="white"
+                    opacity="0.4"
+                  />
+                  <rect
+                    x="4.5"
+                    y="2"
+                    width="3"
+                    height="10"
+                    rx="1"
+                    fill="white"
+                    opacity="0.6"
+                  />
+                  <rect
+                    x="9"
+                    y="0"
+                    width="3"
+                    height="12"
+                    rx="1"
+                    fill="white"
+                    opacity="0.8"
+                  />
+                  <rect
+                    x="13.5"
+                    y="0"
+                    width="3"
+                    height="12"
+                    rx="1"
+                    fill="white"
+                  />
+                </svg>
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+                  <path
+                    d="M8 2.5C10.5 2.5 12.7 3.5 14.2 5.1L15.5 3.8C13.6 1.8 11 0.5 8 0.5C5 0.5 2.4 1.8 0.5 3.8L1.8 5.1C3.3 3.5 5.5 2.5 8 2.5Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M8 5.5C9.7 5.5 11.2 6.2 12.3 7.3L13.6 6C12.1 4.5 10.2 3.5 8 3.5C5.8 3.5 3.9 4.5 2.4 6L3.7 7.3C4.8 6.2 6.3 5.5 8 5.5Z"
+                    fill="white"
+                    opacity="0.8"
+                  />
+                  <circle cx="8" cy="10" r="1.5" fill="white" opacity="0.9" />
+                </svg>
+                <svg width="25" height="12" viewBox="0 0 25 12" fill="none">
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="21"
+                    height="11"
+                    rx="3.5"
+                    stroke="white"
+                    stroke-opacity="0.35"
+                  />
+                  <rect x="2" y="2" width="16" height="8" rx="2" fill="white" />
+                  <path
+                    d="M23 4.5C23.8 4.9 24.4 5.4 24.4 6C24.4 6.6 23.8 7.1 23 7.5V4.5Z"
+                    fill="white"
+                    fill-opacity="0.4"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Home Header -->
+            <div class="home-header">
+              <div class="home-greeting">Merhaba, Yusuf 👋</div>
+              <div class="home-title">Sürprizlerin <span>hazır!</span></div>
+            </div>
+
+            <!-- Countdown Card -->
+            <div class="countdown-card">
+              <div class="countdown-tag">✨ Yaklaşan Sürpriz</div>
+              <div class="countdown-plan-name">Zeynep'in Doğum Günü</div>
+              <div class="countdown-for">Zeynep için • 12 Nisan 2025</div>
+              <div class="countdown-digits">
+                <div class="countdown-unit">
+                  <div class="countdown-number">05</div>
+                  <div class="countdown-label-sm">GÜN</div>
+                </div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-unit">
+                  <div class="countdown-number">14</div>
+                  <div class="countdown-label-sm">SAAT</div>
+                </div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-unit">
+                  <div class="countdown-number">32</div>
+                  <div class="countdown-label-sm">DAK</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Plans List -->
+            <div class="section-title-row">
+              <div class="section-title">Planlarım</div>
+              <div class="section-link">Tümü →</div>
+            </div>
+
+            <div class="plan-list">
+              <div class="plan-item">
+                <div class="plan-emoji gold">💍</div>
+                <div class="plan-info">
+                  <div class="plan-name">Evlilik Teklifi</div>
+                  <div class="plan-date">Elif için · 20 Mayıs</div>
+                </div>
+                <div class="plan-badge planning">Planlıyor</div>
+              </div>
+              <div class="plan-item">
+                <div class="plan-emoji violet">🎓</div>
+                <div class="plan-info">
+                  <div class="plan-name">Mezuniyet Kutlaması</div>
+                  <div class="plan-date">Ahmet için · 15 Haziran</div>
+                </div>
+                <div class="plan-badge active">Aktif</div>
+              </div>
+              <div class="plan-item">
+                <div class="plan-emoji green">🎉</div>
+                <div class="plan-info">
+                  <div class="plan-name">Yıldönümü Sürprizi</div>
+                  <div class="plan-date">Selin için · 3 Temmuz</div>
+                </div>
+                <div class="plan-badge planning">Planlıyor</div>
+              </div>
+            </div>
+
+            <!-- Tab Bar -->
+            <div class="tab-bar">
+              <div class="tab-item active">
+                <div class="tab-dot active-dot"></div>
+                <div class="tab-label">Ana Sayfa</div>
+              </div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(167, 139, 250, 0.15)"
+                ></div>
+                <div class="tab-label-dim">Keşfet</div>
+              </div>
+              <div class="tab-item">
+                <div class="fab">+</div>
+              </div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(52, 211, 153, 0.15)"
+                ></div>
+                <div class="tab-label-dim">Topluluk</div>
+              </div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(240, 240, 245, 0.08)"
+                ></div>
+                <div class="tab-label-dim">Profil</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="caption-card">
+          <div class="caption-headline">Her sürpriz <span>zamanında</span></div>
+          <div class="caption-body">
+            Geri sayım takibi ile hiçbir özel anı kaçırma. Tüm planlarını tek
+            yerde görüntüle.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SCREENSHOT 2 — AI ASSISTANT ══ -->
+      <div class="frame-wrapper">
+        <div class="iphone">
+          <div class="screen screen-ai">
+            <div class="status-bar">
+              <span class="status-time">9:41</span>
+              <div class="status-icons">
+                <svg width="17" height="12" viewBox="0 0 17 12" fill="none">
+                  <rect
+                    x="0"
+                    y="3"
+                    width="3"
+                    height="9"
+                    rx="1"
+                    fill="white"
+                    opacity="0.4"
+                  />
+                  <rect
+                    x="4.5"
+                    y="2"
+                    width="3"
+                    height="10"
+                    rx="1"
+                    fill="white"
+                    opacity="0.6"
+                  />
+                  <rect
+                    x="9"
+                    y="0"
+                    width="3"
+                    height="12"
+                    rx="1"
+                    fill="white"
+                    opacity="0.8"
+                  />
+                  <rect
+                    x="13.5"
+                    y="0"
+                    width="3"
+                    height="12"
+                    rx="1"
+                    fill="white"
+                  />
+                </svg>
+                <svg width="25" height="12" viewBox="0 0 25 12" fill="none">
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="21"
+                    height="11"
+                    rx="3.5"
+                    stroke="white"
+                    stroke-opacity="0.35"
+                  />
+                  <rect x="2" y="2" width="16" height="8" rx="2" fill="white" />
+                  <path
+                    d="M23 4.5C23.8 4.9 24.4 5.4 24.4 6C24.4 6.6 23.8 7.1 23 7.5V4.5Z"
+                    fill="white"
+                    fill-opacity="0.4"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="ai-header">
+              <div>
+                <div class="ai-title">AI Asistan ✨</div>
+                <div class="ai-subtitle">Sürpriz planlarında yol arkadaşın</div>
+              </div>
+              <div class="ai-credits">💫 48 kredi</div>
+            </div>
+
+            <div class="chat-container">
+              <div class="ai-avatar">✦</div>
+              <div class="chat-bubble ai">
+                Merhaba! Zeynep için harika bir sürpriz planlamana yardımcı
+                olabilirim. Bütçen ve ilgi alanları hakkında biraz bilgi verir
+                misin? 🎂
+              </div>
+
+              <div class="chat-bubble user">
+                Bütçem 2000 TL, Zeynep fotoğrafçılığı çok seviyor. Romantik bir
+                doğum günü sürprizi planlamak istiyorum.
+              </div>
+
+              <div class="chat-bubble ai" style="max-width: 90%">
+                Harika! Zeynep için
+                <strong style="color: #a78bfa">3 adımlı romantik plan</strong>
+                hazırladım:
+
+                <br /><br />🌅 <strong>Adım 1:</strong> Gün batımında fotoğraf
+                turu (Boğaz) <br />🍽️ <strong>Adım 2:</strong> Rezervasyonlu
+                şaşırtma yemeği <br />📸 <strong>Adım 3:</strong> Anı fotoğraf
+                kitabı hediyesi
+
+                <br /><br />Toplam tahmini:
+                <strong style="color: #d4af60">1.850 TL</strong>
+              </div>
+
+              <div class="chat-bubble user">
+                Mükemmel! Zaman çizelgesi oluşturabilir misin?
+              </div>
+            </div>
+
+            <div class="chat-input-bar">
+              <div class="chat-input-placeholder">Bir mesaj yazın...</div>
+              <div class="chat-send-btn">↑</div>
+            </div>
+
+            <!-- Tab Bar -->
+            <div class="tab-bar">
+              <div class="tab-item">
+                <div class="tab-dot"></div>
+                <div class="tab-label-dim">Ana Sayfa</div>
+              </div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(167, 139, 250, 0.15)"
+                ></div>
+                <div class="tab-label-dim">Keşfet</div>
+              </div>
+              <div class="tab-item"><div class="fab">+</div></div>
+              <div class="tab-item active">
+                <div
+                  class="tab-dot"
+                  style="
+                    background: #a78bfa;
+                    box-shadow: 0 0 12px rgba(167, 139, 250, 0.4);
+                  "
+                ></div>
+                <div class="tab-label" style="color: rgba(167, 139, 250, 0.8)">
+                  AI
+                </div>
+              </div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(240, 240, 245, 0.08)"
+                ></div>
+                <div class="tab-label-dim">Profil</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="caption-card">
+          <div class="caption-headline">
+            AI ile <span>akıllı</span> planlama
+          </div>
+          <div class="caption-body">
+            GPT-4 destekli asistanın bütçene ve kişinin ilgi alanlarına göre
+            kişiselleştirilmiş sürpriz planları hazırlar.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SCREENSHOT 3 — COMMUNITY ══ -->
+      <div class="frame-wrapper">
+        <div class="iphone">
+          <div class="screen screen-community">
+            <div class="status-bar">
+              <span class="status-time">9:41</span>
+              <div class="status-icons">
+                <svg width="17" height="12" viewBox="0 0 17 12" fill="none">
+                  <rect
+                    x="0"
+                    y="3"
+                    width="3"
+                    height="9"
+                    rx="1"
+                    fill="white"
+                    opacity="0.4"
+                  />
+                  <rect
+                    x="4.5"
+                    y="2"
+                    width="3"
+                    height="10"
+                    rx="1"
+                    fill="white"
+                    opacity="0.6"
+                  />
+                  <rect
+                    x="9"
+                    y="0"
+                    width="3"
+                    height="12"
+                    rx="1"
+                    fill="white"
+                    opacity="0.8"
+                  />
+                  <rect
+                    x="13.5"
+                    y="0"
+                    width="3"
+                    height="12"
+                    rx="1"
+                    fill="white"
+                  />
+                </svg>
+                <svg width="25" height="12" viewBox="0 0 25 12" fill="none">
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="21"
+                    height="11"
+                    rx="3.5"
+                    stroke="white"
+                    stroke-opacity="0.35"
+                  />
+                  <rect x="2" y="2" width="16" height="8" rx="2" fill="white" />
+                  <path
+                    d="M23 4.5C23.8 4.9 24.4 5.4 24.4 6C24.4 6.6 23.8 7.1 23 7.5V4.5Z"
+                    fill="white"
+                    fill-opacity="0.4"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="community-header">
+              <div>
+                <div class="community-title">Topluluk 🌟</div>
+                <div class="community-subtitle">
+                  İlham veren sürpriz hikayeleri
+                </div>
+              </div>
+            </div>
+
+            <div class="story-card">
+              <div class="story-cover proposal">
+                <div class="story-badge">💍 Evlilik Teklifi</div>
+                💍
+              </div>
+              <div class="story-body">
+                <div class="story-title">Boğaz'da Teknede Unutulmaz An</div>
+                <div class="story-text">
+                  Sevgilime Boğaz'da teknede 4 yıllık birlikteliğimizin ardından
+                  evlilik teklifi ettim. Her şeyi Momentra ile planladım...
+                </div>
+                <div class="story-footer">
+                  <div class="story-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-name">Anonim</div>
+                  </div>
+                  <div class="story-likes">❤️ 847</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="story-card">
+              <div class="story-cover birthday">
+                <div class="story-badge">🎂 Doğum Günü</div>
+                🎂
+              </div>
+              <div class="story-body">
+                <div class="story-title">
+                  Annemin 60. Yaşı için Sürpriz Parti
+                </div>
+                <div class="story-text">
+                  60 kişilik sürpriz bir parti planladım. AI asistan ile tüm
+                  detayları mükemmel şekilde organize ettim...
+                </div>
+                <div class="story-footer">
+                  <div class="story-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-name">Mehmet K.</div>
+                  </div>
+                  <div class="story-likes">❤️ 312</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Bar -->
+            <div class="tab-bar">
+              <div class="tab-item">
+                <div class="tab-dot"></div>
+                <div class="tab-label-dim">Ana Sayfa</div>
+              </div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(167, 139, 250, 0.15)"
+                ></div>
+                <div class="tab-label-dim">Keşfet</div>
+              </div>
+              <div class="tab-item"><div class="fab">+</div></div>
+              <div class="tab-item active">
+                <div
+                  class="tab-dot"
+                  style="
+                    background: #34d399;
+                    box-shadow: 0 0 12px rgba(52, 211, 153, 0.4);
+                  "
+                ></div>
+                <div class="tab-label" style="color: rgba(52, 211, 153, 0.8)">
+                  Topluluk
+                </div>
+              </div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(240, 240, 245, 0.08)"
+                ></div>
+                <div class="tab-label-dim">Profil</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="caption-card">
+          <div class="caption-headline"><span>İlham</span> al, paylaş</div>
+          <div class="caption-body">
+            Binlerce gerçek sürpriz hikayesinden ilham al. Kendi başarı hikayen
+            topluluğu motive etsin.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SCREENSHOT 4 — PLAN DETAIL ══ -->
+      <div class="frame-wrapper">
+        <div class="iphone">
+          <div class="screen screen-plan">
+            <div class="status-bar">
+              <span class="status-time">9:41</span>
+              <div class="status-icons">
+                <svg width="17" height="12" viewBox="0 0 17 12" fill="none">
+                  <rect
+                    x="0"
+                    y="3"
+                    width="3"
+                    height="9"
+                    rx="1"
+                    fill="white"
+                    opacity="0.4"
+                  />
+                  <rect
+                    x="4.5"
+                    y="2"
+                    width="3"
+                    height="10"
+                    rx="1"
+                    fill="white"
+                    opacity="0.6"
+                  />
+                  <rect
+                    x="9"
+                    y="0"
+                    width="3"
+                    height="12"
+                    rx="1"
+                    fill="white"
+                    opacity="0.8"
+                  />
+                  <rect
+                    x="13.5"
+                    y="0"
+                    width="3"
+                    height="12"
+                    rx="1"
+                    fill="white"
+                  />
+                </svg>
+                <svg width="25" height="12" viewBox="0 0 25 12" fill="none">
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="21"
+                    height="11"
+                    rx="3.5"
+                    stroke="white"
+                    stroke-opacity="0.35"
+                  />
+                  <rect x="2" y="2" width="16" height="8" rx="2" fill="white" />
+                  <path
+                    d="M23 4.5C23.8 4.9 24.4 5.4 24.4 6C24.4 6.6 23.8 7.1 23 7.5V4.5Z"
+                    fill="white"
+                    fill-opacity="0.4"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="plan-header">
+              <div class="back-btn">←</div>
+              <div style="flex: 1; padding-left: 12px">
+                <div
+                  style="
+                    font-size: 11px;
+                    color: rgba(240, 240, 245, 0.35);
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    margin-bottom: 2px;
+                  "
+                >
+                  Plan Detayı
+                </div>
+                <div
+                  style="
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #f0f0f5;
+                    letter-spacing: -0.4px;
+                  "
+                >
+                  Zeynep'in Doğum Günü
+                </div>
+              </div>
+            </div>
+
+            <div class="plan-hero">
+              <div class="plan-hero-title">🎂 Zeynep'in Doğum Günü</div>
+              <div class="plan-hero-sub">Zeynep için · 12 Nisan 2025</div>
+              <div class="plan-hero-countdown">
+                <div class="pcd-unit">
+                  <div class="pcd-num">05</div>
+                  <div class="pcd-lbl">GÜN</div>
+                </div>
+                <div class="pcd-sep">:</div>
+                <div class="pcd-unit">
+                  <div class="pcd-num">14</div>
+                  <div class="pcd-lbl">SAAT</div>
+                </div>
+                <div class="pcd-sep">:</div>
+                <div class="pcd-unit">
+                  <div class="pcd-num">32</div>
+                  <div class="pcd-lbl">DAK</div>
+                </div>
+                <div class="pcd-sep">:</div>
+                <div class="pcd-unit">
+                  <div class="pcd-num">07</div>
+                  <div class="pcd-lbl">SAN</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="features-grid">
+              <div class="feature-tile">
+                <div class="feature-icon fi-gold">📋</div>
+                <div class="feature-name">Yapılacaklar</div>
+                <div class="feature-val gold">7/12 ✓</div>
+              </div>
+              <div class="feature-tile">
+                <div class="feature-icon fi-violet">💰</div>
+                <div class="feature-name">Bütçe</div>
+                <div class="feature-val violet">1.850 TL</div>
+              </div>
+              <div class="feature-tile">
+                <div class="feature-icon fi-green">👥</div>
+                <div class="feature-name">Misafirler</div>
+                <div class="feature-val green">8 kişi</div>
+              </div>
+              <div class="feature-tile">
+                <div class="feature-icon fi-blue">🌤️</div>
+                <div class="feature-name">Hava Durumu</div>
+                <div class="feature-val" style="color: #60a5fa">18°C ☀️</div>
+              </div>
+              <div class="feature-tile">
+                <div class="feature-icon fi-gold">🎁</div>
+                <div class="feature-name">Hediyeler</div>
+                <div class="feature-val gold">3 öneri</div>
+              </div>
+              <div class="feature-tile">
+                <div class="feature-icon fi-violet">🎵</div>
+                <div class="feature-name">Müzik</div>
+                <div class="feature-val violet">Playlist ✓</div>
+              </div>
+            </div>
+
+            <!-- Tab Bar -->
+            <div class="tab-bar">
+              <div class="tab-item active">
+                <div class="tab-dot active-dot"></div>
+                <div class="tab-label">Ana Sayfa</div>
+              </div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(167, 139, 250, 0.15)"
+                ></div>
+                <div class="tab-label-dim">Keşfet</div>
+              </div>
+              <div class="tab-item"><div class="fab">+</div></div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(52, 211, 153, 0.15)"
+                ></div>
+                <div class="tab-label-dim">Topluluk</div>
+              </div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(240, 240, 245, 0.08)"
+                ></div>
+                <div class="tab-label-dim">Profil</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="caption-card">
+          <div class="caption-headline">
+            Her detay <span>kontrol altında</span>
+          </div>
+          <div class="caption-body">
+            Yapılacaklar, bütçe, misafirler, hava durumu, müzik ve hediyeler —
+            hepsi tek ekranda.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SCREENSHOT 5 — GIFT SUGGESTIONS ══ -->
+      <div class="frame-wrapper">
+        <div class="iphone">
+          <div class="screen screen-gifts">
+            <div class="status-bar">
+              <span class="status-time">9:41</span>
+              <div class="status-icons">
+                <svg width="17" height="12" viewBox="0 0 17 12" fill="none">
+                  <rect
+                    x="0"
+                    y="3"
+                    width="3"
+                    height="9"
+                    rx="1"
+                    fill="white"
+                    opacity="0.4"
+                  />
+                  <rect
+                    x="4.5"
+                    y="2"
+                    width="3"
+                    height="10"
+                    rx="1"
+                    fill="white"
+                    opacity="0.6"
+                  />
+                  <rect
+                    x="9"
+                    y="0"
+                    width="3"
+                    height="12"
+                    rx="1"
+                    fill="white"
+                    opacity="0.8"
+                  />
+                  <rect
+                    x="13.5"
+                    y="0"
+                    width="3"
+                    height="12"
+                    rx="1"
+                    fill="white"
+                  />
+                </svg>
+                <svg width="25" height="12" viewBox="0 0 25 12" fill="none">
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="21"
+                    height="11"
+                    rx="3.5"
+                    stroke="white"
+                    stroke-opacity="0.35"
+                  />
+                  <rect x="2" y="2" width="16" height="8" rx="2" fill="white" />
+                  <path
+                    d="M23 4.5C23.8 4.9 24.4 5.4 24.4 6C24.4 6.6 23.8 7.1 23 7.5V4.5Z"
+                    fill="white"
+                    fill-opacity="0.4"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="gifts-header">
+              <div class="gifts-title-block">
+                <div class="gifts-title">🎁 Hediye Fikirleri</div>
+                <div class="gifts-subtitle">Zeynep için AI önerileri</div>
+              </div>
+              <div class="ai-suggest-btn">✦ AI Öner</div>
+            </div>
+
+            <div class="gift-cards">
+              <div class="gift-card">
+                <div class="gift-emoji tech">📷</div>
+                <div class="gift-info">
+                  <div class="gift-name">Polaroid Fotoğraf Makinesi</div>
+                  <div class="gift-reason">
+                    Fotoğrafçılık tutkusuna çok uygun, anında baskı keyfi
+                  </div>
+                  <div class="gift-footer">
+                    <div class="gift-price">850 TL</div>
+                    <div class="gift-cat-badge">Teknoloji</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gift-card">
+                <div class="gift-emoji exp">🏙️</div>
+                <div class="gift-info">
+                  <div class="gift-name">Profesyonel Fotoğraf Turu</div>
+                  <div class="gift-reason">
+                    İstanbul'da güzel mekanlarla profesyonel çekim deneyimi
+                  </div>
+                  <div class="gift-footer">
+                    <div class="gift-price">600 TL</div>
+                    <div class="gift-cat-badge">Deneyim</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gift-card">
+                <div class="gift-emoji art">📚</div>
+                <div class="gift-info">
+                  <div class="gift-name">Fotoğraf Sanatı Kitabı Seti</div>
+                  <div class="gift-reason">
+                    Dünyaca ünlü fotoğrafçılardan ilham verici koleksiyon
+                  </div>
+                  <div class="gift-footer">
+                    <div class="gift-price">420 TL</div>
+                    <div class="gift-cat-badge">Kişisel</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Bar -->
+            <div class="tab-bar">
+              <div class="tab-item active">
+                <div class="tab-dot active-dot"></div>
+                <div class="tab-label">Ana Sayfa</div>
+              </div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(167, 139, 250, 0.15)"
+                ></div>
+                <div class="tab-label-dim">Keşfet</div>
+              </div>
+              <div class="tab-item"><div class="fab">+</div></div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(52, 211, 153, 0.15)"
+                ></div>
+                <div class="tab-label-dim">Topluluk</div>
+              </div>
+              <div class="tab-item">
+                <div
+                  class="tab-dot"
+                  style="background: rgba(240, 240, 245, 0.08)"
+                ></div>
+                <div class="tab-label-dim">Profil</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="caption-card">
+          <div class="caption-headline">Mükemmel <span>hediyeyi</span> bul</div>
+          <div class="caption-body">
+            AI, kişinin yaşına, ilgi alanlarına ve bütçene göre
+            kişiselleştirilmiş hediye önerileri sunar.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Export Guide -->
+    <div class="export-guide">
+      <h2>Dışa Aktarma Kılavuzu</h2>
+      <table class="export-table">
+        <tr>
+          <th>Platform</th>
+          <th>Boyut</th>
+          <th>Ekran</th>
+          <th>Not</th>
+        </tr>
+        <tr>
+          <td>App Store — iPhone 6.7"</td>
+          <td>1290 × 2796 px</td>
+          <td>5 ekran gerekli</td>
+          <td>Her frame'i ayrı kaydet</td>
+        </tr>
+        <tr>
+          <td>App Store — iPhone 6.5"</td>
+          <td>1242 × 2688 px</td>
+          <td>5 ekran</td>
+          <td>6.7" kabul ederse aynı</td>
+        </tr>
+        <tr>
+          <td>App Store — iPad Pro 12.9"</td>
+          <td>2048 × 2732 px</td>
+          <td>5 ekran</td>
+          <td>Yatay/dikey seçeneği</td>
+        </tr>
+        <tr>
+          <td>Google Play — Telefon</td>
+          <td>1080 × 1920 px</td>
+          <td>2–8 ekran</td>
+          <td>Min 320px genişlik</td>
+        </tr>
+        <tr>
+          <td>Google Play — Feature Graphic</td>
+          <td>1024 × 500 px</td>
+          <td>1 banner</td>
+          <td>Store listeleme bannerı</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

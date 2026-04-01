@@ -1,0 +1,2265 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Momentra — App Store Screenshots v2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #06060f;
+        font-family:
+          "Inter",
+          -apple-system,
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        color: #fff;
+        padding: 48px 32px 64px;
+      }
+      .page-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .page-header h1 {
+        font-size: 18px;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .tabs-row {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        margin-bottom: 36px;
+      }
+      .tab-btn {
+        padding: 8px 24px;
+        border-radius: 20px;
+        border: 1.5px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.05);
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .tab-btn.active {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.3);
+        color: #fff;
+      }
+
+      .screenshots-section {
+        display: none;
+      }
+      .screenshots-section.active {
+        display: block;
+      }
+      .screenshots-row {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        padding-bottom: 20px;
+      }
+      .screenshots-row::-webkit-scrollbar {
+        height: 4px;
+      }
+      .screenshots-row::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 2px;
+      }
+
+      /* ── Core shell ─────────────────────────────── */
+      .ss {
+        flex-shrink: 0;
+        width: 310px;
+        height: 672px;
+        border-radius: 40px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.75);
+      }
+
+      /* ── Full-height flex layout ─────────────────── */
+      .ssl {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 34px 18px 20px;
+        gap: 16px;
+        z-index: 2;
+      }
+      .ssl-top {
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 9px;
+      }
+      .ssl-card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+      }
+
+      /* ── Backgrounds ─────────────────────────────── */
+      .bg {
+        position: absolute;
+        inset: 0;
+      }
+      .bg1 {
+        background: radial-gradient(
+          ellipse 120% 80% at 50% 30%,
+          #3a1a5c 0%,
+          #1a0a2e 40%,
+          #0a0615 100%
+        );
+      }
+      .bg2 {
+        background: radial-gradient(
+          ellipse 140% 90% at 50% 20%,
+          #1e1040 0%,
+          #0d0720 50%,
+          #050310 100%
+        );
+      }
+      .bg3 {
+        background: radial-gradient(
+          ellipse 140% 90% at 40% 20%,
+          #0e2a2a 0%,
+          #071515 50%,
+          #030a0a 100%
+        );
+      }
+      .bg4 {
+        background: radial-gradient(
+          ellipse 150% 90% at 50% 10%,
+          #2a0a1a 0%,
+          #180611 50%,
+          #080308 100%
+        );
+      }
+      .bg5 {
+        background: radial-gradient(
+          ellipse 140% 90% at 50% 15%,
+          #0a0e30 0%,
+          #05091a 50%,
+          #020408 100%
+        );
+      }
+      .bg6 {
+        background: radial-gradient(
+          ellipse 140% 90% at 50% 20%,
+          #1f1200 0%,
+          #110b00 50%,
+          #060400 100%
+        );
+      }
+      .bg7 {
+        background: radial-gradient(
+          ellipse 140% 90% at 50% 20%,
+          #1a0f00 0%,
+          #0f0800 50%,
+          #060400 100%
+        );
+      }
+
+      /* ── Bokeh ───────────────────────────────────── */
+      .bk {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        pointer-events: none;
+      }
+      .bk1a {
+        width: 260px;
+        height: 260px;
+        background: rgba(180, 80, 240, 0.35);
+        top: -60px;
+        left: -60px;
+      }
+      .bk1b {
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 90, 130, 0.25);
+        bottom: 60px;
+        right: -40px;
+      }
+      .bk2a {
+        width: 220px;
+        height: 220px;
+        background: rgba(120, 60, 255, 0.4);
+        top: -40px;
+        right: -60px;
+      }
+      .bk2b {
+        width: 160px;
+        height: 160px;
+        background: rgba(255, 100, 160, 0.25);
+        bottom: 80px;
+        left: -30px;
+      }
+      .bk3a {
+        width: 220px;
+        height: 220px;
+        background: rgba(20, 200, 180, 0.3);
+        top: -40px;
+        left: -40px;
+      }
+      .bk3b {
+        width: 160px;
+        height: 160px;
+        background: rgba(0, 180, 160, 0.2);
+        bottom: 100px;
+        right: -30px;
+      }
+      .bk4a {
+        width: 260px;
+        height: 260px;
+        background: rgba(255, 80, 130, 0.3);
+        top: -60px;
+        right: -60px;
+      }
+      .bk4b {
+        width: 180px;
+        height: 180px;
+        background: rgba(200, 60, 120, 0.2);
+        bottom: 80px;
+        left: -20px;
+      }
+      .bk5a {
+        width: 240px;
+        height: 240px;
+        background: rgba(60, 100, 255, 0.35);
+        top: -50px;
+        left: -50px;
+      }
+      .bk5b {
+        width: 180px;
+        height: 180px;
+        background: rgba(100, 150, 255, 0.2);
+        bottom: 100px;
+        right: -30px;
+      }
+      .bk6a {
+        width: 240px;
+        height: 240px;
+        background: rgba(255, 180, 30, 0.35);
+        top: -50px;
+        right: -50px;
+      }
+      .bk6b {
+        width: 160px;
+        height: 160px;
+        background: rgba(255, 140, 20, 0.2);
+        bottom: 100px;
+        left: -20px;
+      }
+      .bk7a {
+        width: 260px;
+        height: 260px;
+        background: rgba(220, 150, 20, 0.35);
+        top: -60px;
+        left: -60px;
+      }
+      .bk7b {
+        width: 200px;
+        height: 200px;
+        background: rgba(200, 120, 10, 0.25);
+        bottom: 80px;
+        right: -40px;
+      }
+
+      /* ── Sparkles ────────────────────────────────── */
+      .spk {
+        position: absolute;
+        pointer-events: none;
+      }
+
+      /* ── Eyebrow badge ───────────────────────────── */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 20px;
+        padding: 5px 12px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(8px);
+      }
+
+      /* ── Headline ────────────────────────────────── */
+      .hl {
+        font-size: 46px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -2px;
+        color: #fff;
+      }
+      .hl-lg {
+        font-size: 52px;
+        letter-spacing: -2.5px;
+      }
+      .hl em {
+        font-style: normal;
+      }
+      .c-gold {
+        color: #ffd166;
+      }
+      .c-violet {
+        color: #c4b5fd;
+      }
+      .c-teal {
+        color: #5eead4;
+      }
+      .c-sky {
+        color: #7dd3fc;
+      }
+      .c-rose {
+        color: #ff6b8a;
+      }
+      .sub {
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.55);
+        line-height: 1.5;
+        max-width: 240px;
+      }
+
+      /* ══════════════════════════════════════════════
+         SS1 — HERO (full poster, no phone)
+      ══════════════════════════════════════════════ */
+      .ss1-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 44px 28px;
+        text-align: center;
+        gap: 0;
+        z-index: 2;
+      }
+      .ss1-rating {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 5px 14px;
+        margin-bottom: 24px;
+        backdrop-filter: blur(10px);
+      }
+      .ss1-rating .stars {
+        color: #ffd166;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+      .ss1-rating .rt {
+        font-size: 10px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 0.5px;
+      }
+      .ss1-hl {
+        font-size: 62px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -3px;
+        color: #fff;
+        margin-bottom: 16px;
+      }
+      .ss1-sub {
+        font-size: 15px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.5;
+        margin-bottom: 32px;
+        max-width: 240px;
+      }
+      .ss1-proof {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+      .ss1-p1 {
+        font-size: 15px;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .ss1-p1 span {
+        color: #ffd166;
+      }
+      .ss1-div {
+        width: 32px;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.15);
+      }
+      .ss1-p2 {
+        font-size: 10px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.4);
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+      }
+
+      /* ══════════════════════════════════════════════
+         SS2 — AI CHAT
+      ══════════════════════════════════════════════ */
+      .chat-wrap {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(167, 139, 250, 0.15);
+        border-radius: 20px;
+        padding: 14px 12px 12px;
+        gap: 10px;
+        overflow: hidden;
+      }
+      .chat-hdr {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        flex-shrink: 0;
+      }
+      .chat-hdr-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #a78bfa, #7c3aed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        flex-shrink: 0;
+      }
+      .chat-hdr-text {
+        font-size: 11px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .chat-hdr-sub {
+        font-size: 9px;
+        color: rgba(167, 139, 250, 0.8);
+        margin-top: 1px;
+      }
+      .chat-msgs {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        justify-content: flex-end;
+      }
+      .cmsg {
+        display: flex;
+        gap: 8px;
+        align-items: flex-end;
+      }
+      .cmsg.user {
+        flex-direction: row-reverse;
+      }
+      .cmsg-av {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .cbub {
+        padding: 9px 11px;
+        border-radius: 14px;
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 1.4;
+        max-width: 188px;
+      }
+      .cbub.ai {
+        background: rgba(167, 139, 250, 0.15);
+        border: 1px solid rgba(167, 139, 250, 0.2);
+        color: rgba(255, 255, 255, 0.88);
+      }
+      .cbub.usr {
+        background: rgba(255, 107, 138, 0.2);
+        border: 1px solid rgba(255, 107, 138, 0.25);
+        color: rgba(255, 255, 255, 0.88);
+        text-align: right;
+      }
+      .chat-chips {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        padding-top: 4px;
+      }
+      .chip {
+        background: rgba(167, 139, 250, 0.12);
+        border: 1px solid rgba(167, 139, 250, 0.22);
+        border-radius: 10px;
+        padding: 6px 10px;
+        font-size: 10px;
+        font-weight: 600;
+        color: #c4b5fd;
+      }
+      .chat-input-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 8px 10px;
+      }
+      .chat-input-text {
+        flex: 1;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.35);
+      }
+      .chat-send {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #a78bfa, #7c3aed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        flex-shrink: 0;
+      }
+
+      /* ══════════════════════════════════════════════
+         SS3 — CO-ORGANIZER
+      ══════════════════════════════════════════════ */
+      .team-wrap {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(94, 234, 212, 0.15);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .team-hdr {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 14px;
+        border-bottom: 1px solid rgba(94, 234, 212, 0.08);
+        flex-shrink: 0;
+        background: rgba(94, 234, 212, 0.06);
+      }
+      .team-hdr-icon {
+        font-size: 14px;
+      }
+      .team-hdr-title {
+        font-size: 11px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .team-hdr-sub {
+        font-size: 9px;
+        color: rgba(94, 234, 212, 0.7);
+        margin-top: 1px;
+      }
+      .team-rows {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .team-row {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding: 0 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .team-row:last-child {
+        border-bottom: none;
+      }
+      .tav {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: 800;
+        flex-shrink: 0;
+      }
+      .tinfo {
+        flex: 1;
+      }
+      .tname {
+        font-size: 12px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.92);
+      }
+      .ttask {
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.48);
+        margin-top: 2px;
+      }
+      .tbadge {
+        font-size: 10px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 8px;
+        white-space: nowrap;
+      }
+      .team-footer {
+        padding: 12px 14px;
+        border-top: 1px solid rgba(94, 234, 212, 0.08);
+        flex-shrink: 0;
+      }
+      .team-footer-btn {
+        width: 100%;
+        padding: 10px;
+        border-radius: 12px;
+        text-align: center;
+        background: rgba(94, 234, 212, 0.12);
+        border: 1px solid rgba(94, 234, 212, 0.2);
+        font-size: 11px;
+        font-weight: 700;
+        color: #5eead4;
+      }
+
+      /* ══════════════════════════════════════════════
+         SS4 — COMMUNITY
+      ══════════════════════════════════════════════ */
+      .ss4-num {
+        font-size: 80px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -4px;
+      }
+      .ss4-numhl {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        margin-top: -4px;
+      }
+      .stories-wrap {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .story-card {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 107, 138, 0.12);
+        border-radius: 14px;
+        padding: 0 12px;
+      }
+      .story-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+      .story-text {
+        flex: 1;
+      }
+      .story-title {
+        font-size: 12px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.92);
+      }
+      .story-meta {
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.42);
+        margin-top: 2px;
+      }
+      .story-hearts {
+        font-size: 11px;
+        color: #ff6b8a;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      /* ══════════════════════════════════════════════
+         SS5 — TIMELINE
+      ══════════════════════════════════════════════ */
+      .tl-wrap {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(125, 211, 252, 0.12);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .tl-hdr {
+        padding: 12px 14px;
+        border-bottom: 1px solid rgba(125, 211, 252, 0.08);
+        flex-shrink: 0;
+        background: rgba(125, 211, 252, 0.05);
+      }
+      .tl-hdr-title {
+        font-size: 10px;
+        font-weight: 700;
+        color: rgba(125, 211, 252, 0.8);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .tl-prog-track {
+        height: 4px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 2px;
+        margin-top: 6px;
+        overflow: hidden;
+      }
+      .tl-prog-fill {
+        height: 100%;
+        width: 35%;
+        background: linear-gradient(90deg, #5eead4, #7dd3fc);
+        border-radius: 2px;
+      }
+      .tl-rows {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .tl-item {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .tl-item:last-child {
+        border-bottom: none;
+      }
+      .tl-dot {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .tl-txt {
+        flex: 1;
+      }
+      .tl-title {
+        font-size: 12px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.92);
+      }
+      .tl-time {
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.42);
+        margin-top: 2px;
+      }
+      .tl-days {
+        font-size: 10px;
+        font-weight: 700;
+        padding: 4px 9px;
+        border-radius: 8px;
+        white-space: nowrap;
+      }
+
+      /* ══════════════════════════════════════════════
+         SS6 — BUDGET
+      ══════════════════════════════════════════════ */
+      .budget-wrap {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 209, 102, 0.15);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .budget-donut-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1.2;
+        border-bottom: 1px solid rgba(255, 209, 102, 0.08);
+        padding: 8px;
+        position: relative;
+      }
+      .donut-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      .donut-amount {
+        font-size: 18px;
+        font-weight: 900;
+        color: #ffd166;
+        letter-spacing: -0.5px;
+      }
+      .donut-label {
+        font-size: 8px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.45);
+        letter-spacing: 0.5px;
+      }
+      .budget-cats {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .cat-row {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .cat-row:last-child {
+        border-bottom: none;
+      }
+      .cat-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .cat-name {
+        font-size: 11px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.72);
+        flex: 1;
+      }
+      .cat-bar {
+        flex: 1;
+        height: 5px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .cat-fill {
+        height: 100%;
+        border-radius: 3px;
+      }
+      .cat-pct {
+        font-size: 11px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.9);
+        width: 30px;
+        text-align: right;
+        flex-shrink: 0;
+      }
+
+      /* ══════════════════════════════════════════════
+         SS7 — PREMIUM
+      ══════════════════════════════════════════════ */
+      .prem-wrap {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 209, 102, 0.15);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .prem-rows {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .prem-row {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .prem-row:last-child {
+        border-bottom: none;
+      }
+      .prem-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: rgba(255, 209, 102, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px;
+        flex-shrink: 0;
+      }
+      .prem-txt {
+        flex: 1;
+      }
+      .prem-title {
+        font-size: 12px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.92);
+      }
+      .prem-desc {
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.42);
+        margin-top: 2px;
+      }
+      .prem-check {
+        font-size: 14px;
+        color: #ffd166;
+        flex-shrink: 0;
+      }
+      .prem-cta {
+        padding: 14px 14px 16px;
+        flex-shrink: 0;
+        border-top: 1px solid rgba(255, 209, 102, 0.1);
+      }
+      .prem-btn {
+        width: 100%;
+        padding: 13px;
+        border-radius: 14px;
+        text-align: center;
+        background: linear-gradient(135deg, #d97706, #ffd166, #b45309);
+        font-size: 14px;
+        font-weight: 900;
+        color: #1a0f00;
+        letter-spacing: 0.2px;
+      }
+      .prem-btn-sub {
+        font-size: 9px;
+        font-weight: 600;
+        color: rgba(26, 15, 0, 0.6);
+        margin-top: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-header">
+      <h1>Momentra — App Store Screenshots v2 · High-Impact</h1>
+    </div>
+
+    <div class="tabs-row">
+      <button class="tab-btn active" onclick="switchLang('en', this)">
+        🇬🇧 English
+      </button>
+      <button class="tab-btn" onclick="switchLang('tr', this)">
+        🇹🇷 Türkçe
+      </button>
+    </div>
+
+    <!-- ═══════════ ENGLISH ═══════════ -->
+    <div class="screenshots-section active" id="sec-en">
+      <div class="screenshots-row">
+        <!-- SS1 EN: HERO -->
+        <div class="ss">
+          <div class="bg bg1"></div>
+          <div class="bk bk1a"></div>
+          <div class="bk bk1b"></div>
+          <svg
+            class="spk"
+            style="top: 62px; right: 52px; width: 18px; height: 18px"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2l1.8 5.5L19.5 6l-4 4 1.5 6-5-3-5 3 1.5-6-4-4 5.7 1.5Z"
+              fill="#FFD166"
+              opacity="0.85"
+            />
+          </svg>
+          <svg
+            class="spk"
+            style="top: 115px; left: 36px; width: 12px; height: 12px"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2l1.8 5.5L19.5 6l-4 4 1.5 6-5-3-5 3 1.5-6-4-4 5.7 1.5Z"
+              fill="#FFD166"
+              opacity="0.5"
+            />
+          </svg>
+          <svg
+            class="spk"
+            style="bottom: 130px; right: 40px; width: 14px; height: 14px"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2l1.8 5.5L19.5 6l-4 4 1.5 6-5-3-5 3 1.5-6-4-4 5.7 1.5Z"
+              fill="#C4B5FD"
+              opacity="0.6"
+            />
+          </svg>
+          <div class="ss1-content">
+            <div class="ss1-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rt">4.8 · App Store</span>
+            </div>
+            <div class="ss1-hl">
+              She Has<br /><span class="c-gold">No Idea.</span>
+            </div>
+            <div class="ss1-sub">
+              Plan the perfect surprise while she suspects nothing at all.
+            </div>
+            <div class="ss1-proof">
+              <div class="ss1-p1"><span>10,000+</span> Surprises Planned</div>
+              <div class="ss1-div"></div>
+              <div class="ss1-p2">#1 Surprise Planner App</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SS2 EN: AI -->
+        <div class="ss">
+          <div class="bg bg2"></div>
+          <div class="bk bk2a"></div>
+          <div class="bk bk2b"></div>
+          <div class="ssl">
+            <div class="ssl-top">
+              <div class="eyebrow">
+                ✦ <span class="c-violet">AI-Powered</span>
+              </div>
+              <div class="hl">
+                Your AI<br />Knows<br /><em class="c-violet">She Loves</em>
+              </div>
+              <div class="sub">
+                Tell it who she is — it plans every detail for you.
+              </div>
+            </div>
+            <div class="ssl-card">
+              <div class="chat-wrap">
+                <div class="chat-hdr">
+                  <div class="chat-hdr-icon">✦</div>
+                  <div>
+                    <div class="chat-hdr-text">Momentra AI</div>
+                    <div class="chat-hdr-sub">● Online · Planning mode</div>
+                  </div>
+                </div>
+                <div class="chat-msgs">
+                  <div class="cmsg user">
+                    <div
+                      class="cmsg-av"
+                      style="
+                        background: linear-gradient(135deg, #ff6b8a, #c0392b);
+                      "
+                    >
+                      Y
+                    </div>
+                    <div class="cbub usr">
+                      She loves photography and cozy cafés 📸
+                    </div>
+                  </div>
+                  <div class="cmsg">
+                    <div
+                      class="cmsg-av"
+                      style="
+                        background: linear-gradient(135deg, #a78bfa, #7c3aed);
+                      "
+                    >
+                      ✦
+                    </div>
+                    <div class="cbub ai">
+                      Perfect! Here are 3 ideas she'll absolutely love for her
+                      birthday…
+                    </div>
+                  </div>
+                  <div class="cmsg user">
+                    <div
+                      class="cmsg-av"
+                      style="
+                        background: linear-gradient(135deg, #ff6b8a, #c0392b);
+                      "
+                    >
+                      Y
+                    </div>
+                    <div class="cbub usr">She prefers outdoor spots 🌿</div>
+                  </div>
+                  <div class="cmsg">
+                    <div
+                      class="cmsg-av"
+                      style="
+                        background: linear-gradient(135deg, #a78bfa, #7c3aed);
+                      "
+                    >
+                      ✦
+                    </div>
+                    <div class="cbub ai">
+                      Got it! Updating your plan with sunset rooftop &
+                      golden-hour photo walk options ✨
+                    </div>
+                  </div>
+                </div>
+                <div class="chat-chips">
+                  <div class="chip">🌅 Sunset Picnic</div>
+                  <div class="chip">📸 Photo Walk</div>
+                  <div class="chip">☕ Café Crawl</div>
+                </div>
+                <div class="chat-input-row">
+                  <div class="chat-input-text">
+                    Ask anything about her surprise…
+                  </div>
+                  <div class="chat-send">↑</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SS3 EN: CO-ORGANIZER -->
+        <div class="ss">
+          <div class="bg bg3"></div>
+          <div class="bk bk3a"></div>
+          <div class="bk bk3b"></div>
+          <div class="ssl">
+            <div class="ssl-top">
+              <div class="eyebrow">👥 <span class="c-teal">Team Up</span></div>
+              <div class="hl">
+                You're Not<br />Alone in<br /><em class="c-teal">This</em>
+              </div>
+              <div class="sub">
+                Invite friends. Split tasks. Make magic together.
+              </div>
+            </div>
+            <div class="ssl-card">
+              <div class="team-wrap">
+                <div class="team-hdr">
+                  <div class="team-hdr-icon">🎂</div>
+                  <div>
+                    <div class="team-hdr-title">
+                      Birthday Surprise · 3 helpers
+                    </div>
+                    <div class="team-hdr-sub">2 tasks done · 1 in progress</div>
+                  </div>
+                </div>
+                <div class="team-rows">
+                  <div class="team-row">
+                    <div
+                      class="tav"
+                      style="
+                        background: linear-gradient(135deg, #5eead4, #0d9488);
+                      "
+                    >
+                      A
+                    </div>
+                    <div class="tinfo">
+                      <div class="tname">Alex</div>
+                      <div class="ttask">Books the restaurant 🍽️</div>
+                    </div>
+                    <div
+                      class="tbadge"
+                      style="
+                        background: rgba(94, 234, 212, 0.15);
+                        color: #5eead4;
+                      "
+                    >
+                      Done ✓
+                    </div>
+                  </div>
+                  <div class="team-row">
+                    <div
+                      class="tav"
+                      style="
+                        background: linear-gradient(135deg, #fbbf24, #d97706);
+                      "
+                    >
+                      M
+                    </div>
+                    <div class="tinfo">
+                      <div class="tname">Maya</div>
+                      <div class="ttask">Gets the flowers 💐</div>
+                    </div>
+                    <div
+                      class="tbadge"
+                      style="
+                        background: rgba(251, 191, 36, 0.15);
+                        color: #fbbf24;
+                      "
+                    >
+                      On it
+                    </div>
+                  </div>
+                  <div class="team-row">
+                    <div
+                      class="tav"
+                      style="
+                        background: linear-gradient(135deg, #c4b5fd, #7c3aed);
+                      "
+                    >
+                      J
+                    </div>
+                    <div class="tinfo">
+                      <div class="tname">Jake</div>
+                      <div class="ttask">Handles the cake 🎂</div>
+                    </div>
+                    <div
+                      class="tbadge"
+                      style="
+                        background: rgba(196, 181, 253, 0.15);
+                        color: #c4b5fd;
+                      "
+                    >
+                      Pending
+                    </div>
+                  </div>
+                </div>
+                <div class="team-footer">
+                  <div class="team-footer-btn">📨 Send reminder to Jake</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SS4 EN: COMMUNITY -->
+        <div class="ss">
+          <div class="bg bg4"></div>
+          <div class="bk bk4a"></div>
+          <div class="bk bk4b"></div>
+          <div class="ssl">
+            <div class="ssl-top">
+              <div class="eyebrow">❤️ Real Stories</div>
+              <div class="ss4-num c-rose">10K+</div>
+              <div class="ss4-numhl">Magical Moments Shared</div>
+              <div class="sub">
+                A community who believes in the power of surprise.
+              </div>
+            </div>
+            <div class="ssl-card">
+              <div class="stories-wrap">
+                <div class="story-card">
+                  <div
+                    class="story-icon"
+                    style="background: rgba(255, 107, 138, 0.15)"
+                  >
+                    💍
+                  </div>
+                  <div class="story-text">
+                    <div class="story-title">She said YES 🥹</div>
+                    <div class="story-meta">Rooftop proposal · Istanbul</div>
+                  </div>
+                  <div class="story-hearts">❤️ 428</div>
+                </div>
+                <div class="story-card">
+                  <div
+                    class="story-icon"
+                    style="background: rgba(255, 200, 50, 0.15)"
+                  >
+                    🎂
+                  </div>
+                  <div class="story-text">
+                    <div class="story-title">Best birthday ever</div>
+                    <div class="story-meta">Surprise dinner · London</div>
+                  </div>
+                  <div class="story-hearts">❤️ 291</div>
+                </div>
+                <div class="story-card">
+                  <div
+                    class="story-icon"
+                    style="background: rgba(100, 200, 255, 0.15)"
+                  >
+                    ✈️
+                  </div>
+                  <div class="story-text">
+                    <div class="story-title">Secret trip revealed!</div>
+                    <div class="story-meta">Weekend getaway · Barcelona</div>
+                  </div>
+                  <div class="story-hearts">❤️ 184</div>
+                </div>
+                <div class="story-card">
+                  <div
+                    class="story-icon"
+                    style="background: rgba(255, 150, 50, 0.15)"
+                  >
+                    🎸
+                  </div>
+                  <div class="story-text">
+                    <div class="story-title">Concert night magic</div>
+                    <div class="story-meta">Secret show · New York</div>
+                  </div>
+                  <div class="story-hearts">❤️ 142</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SS5 EN: TIMELINE -->
+        <div class="ss">
+          <div class="bg bg5"></div>
+          <div class="bk bk5a"></div>
+          <div class="bk bk5b"></div>
+          <div class="ssl">
+            <div class="ssl-top">
+              <div class="eyebrow">
+                📅 <span class="c-sky">Smart Planning</span>
+              </div>
+              <div class="hl">
+                Zero Stress.<br /><em class="c-sky">All Magic.</em>
+              </div>
+              <div class="sub">
+                AI builds your full timeline so you never miss a step.
+              </div>
+            </div>
+            <div class="ssl-card">
+              <div class="tl-wrap">
+                <div class="tl-hdr">
+                  <div class="tl-hdr-title">
+                    Preparation timeline · 35% done
+                  </div>
+                  <div class="tl-prog-track">
+                    <div class="tl-prog-fill"></div>
+                  </div>
+                </div>
+                <div class="tl-rows">
+                  <div class="tl-item">
+                    <div class="tl-dot" style="background: #5eead4"></div>
+                    <div class="tl-txt">
+                      <div class="tl-title">Book the venue</div>
+                      <div class="tl-time">3 weeks before · Done ✓</div>
+                    </div>
+                    <div
+                      class="tl-days"
+                      style="
+                        background: rgba(94, 234, 212, 0.12);
+                        color: #5eead4;
+                      "
+                    >
+                      Done
+                    </div>
+                  </div>
+                  <div class="tl-item">
+                    <div class="tl-dot" style="background: #7dd3fc"></div>
+                    <div class="tl-txt">
+                      <div class="tl-title">Order flowers</div>
+                      <div class="tl-time">1 week before</div>
+                    </div>
+                    <div
+                      class="tl-days"
+                      style="
+                        background: rgba(125, 211, 252, 0.12);
+                        color: #7dd3fc;
+                      "
+                    >
+                      7 days
+                    </div>
+                  </div>
+                  <div class="tl-item">
+                    <div class="tl-dot" style="background: #fbbf24"></div>
+                    <div class="tl-txt">
+                      <div class="tl-title">Prepare the speech</div>
+                      <div class="tl-time">3 days before</div>
+                    </div>
+                    <div
+                      class="tl-days"
+                      style="
+                        background: rgba(251, 191, 36, 0.12);
+                        color: #fbbf24;
+                      "
+                    >
+                      3 days
+                    </div>
+                  </div>
+                  <div class="tl-item">
+                    <div class="tl-dot" style="background: #ff6b8a"></div>
+                    <div class="tl-txt">
+                      <div class="tl-title">The big moment 🎉</div>
+                      <div class="tl-time">Tonight · Almost here!</div>
+                    </div>
+                    <div
+                      class="tl-days"
+                      style="
+                        background: rgba(255, 107, 138, 0.12);
+                        color: #ff6b8a;
+                      "
+                    >
+                      Today
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SS6 EN: BUDGET -->
+        <div class="ss">
+          <div class="bg bg6"></div>
+          <div class="bk bk6a"></div>
+          <div class="bk bk6b"></div>
+          <div class="ssl">
+            <div class="ssl-top">
+              <div class="eyebrow">
+                💰 <span class="c-gold">Budget Smart</span>
+              </div>
+              <div class="hl">
+                Magic on<br /><em class="c-gold">Any</em> Budget
+              </div>
+              <div class="sub">Track every penny. Make every moment count.</div>
+            </div>
+            <div class="ssl-card">
+              <div class="budget-wrap">
+                <div class="budget-donut-area">
+                  <svg width="130" height="130" viewBox="0 0 130 130">
+                    <circle
+                      cx="65"
+                      cy="65"
+                      r="50"
+                      fill="none"
+                      stroke="rgba(255,255,255,0.06)"
+                      stroke-width="16"
+                    />
+                    <circle
+                      cx="65"
+                      cy="65"
+                      r="50"
+                      fill="none"
+                      stroke="#FFD166"
+                      stroke-width="16"
+                      stroke-dasharray="126 188"
+                      stroke-dashoffset="0"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="65"
+                      cy="65"
+                      r="50"
+                      fill="none"
+                      stroke="#FF6B8A"
+                      stroke-width="16"
+                      stroke-dasharray="79 235"
+                      stroke-dashoffset="-126"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="65"
+                      cy="65"
+                      r="50"
+                      fill="none"
+                      stroke="#5EEAD4"
+                      stroke-width="16"
+                      stroke-dasharray="53 261"
+                      stroke-dashoffset="-205"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="65"
+                      cy="65"
+                      r="50"
+                      fill="none"
+                      stroke="#C4B5FD"
+                      stroke-width="16"
+                      stroke-dasharray="28 286"
+                      stroke-dashoffset="-258"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <div class="donut-center">
+                    <div class="donut-amount">$420</div>
+                    <div class="donut-label">TOTAL</div>
+                  </div>
+                </div>
+                <div class="budget-cats">
+                  <div class="cat-row">
+                    <div class="cat-dot" style="background: #ffd166"></div>
+                    <div class="cat-name">Venue & Dining</div>
+                    <div class="cat-bar">
+                      <div
+                        class="cat-fill"
+                        style="width: 40%; background: #ffd166"
+                      ></div>
+                    </div>
+                    <div class="cat-pct">40%</div>
+                  </div>
+                  <div class="cat-row">
+                    <div class="cat-dot" style="background: #ff6b8a"></div>
+                    <div class="cat-name">Gifts</div>
+                    <div class="cat-bar">
+                      <div
+                        class="cat-fill"
+                        style="width: 25%; background: #ff6b8a"
+                      ></div>
+                    </div>
+                    <div class="cat-pct">25%</div>
+                  </div>
+                  <div class="cat-row">
+                    <div class="cat-dot" style="background: #5eead4"></div>
+                    <div class="cat-name">Decorations</div>
+                    <div class="cat-bar">
+                      <div
+                        class="cat-fill"
+                        style="width: 17%; background: #5eead4"
+                      ></div>
+                    </div>
+                    <div class="cat-pct">17%</div>
+                  </div>
+                  <div class="cat-row">
+                    <div class="cat-dot" style="background: #c4b5fd"></div>
+                    <div class="cat-name">Other</div>
+                    <div class="cat-bar">
+                      <div
+                        class="cat-fill"
+                        style="width: 11%; background: #c4b5fd"
+                      ></div>
+                    </div>
+                    <div class="cat-pct">11%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SS7 EN: PREMIUM -->
+        <div class="ss">
+          <div class="bg bg7"></div>
+          <div class="bk bk7a"></div>
+          <div class="bk bk7b"></div>
+          <svg
+            class="spk"
+            style="top: 58px; right: 46px; width: 16px; height: 16px"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2l1.8 5.5L19.5 6l-4 4 1.5 6-5-3-5 3 1.5-6-4-4 5.7 1.5Z"
+              fill="#FFD166"
+              opacity="0.7"
+            />
+          </svg>
+          <div class="ssl">
+            <div class="ssl-top">
+              <div class="eyebrow">👑 <span class="c-gold">Premium</span></div>
+              <div class="hl hl-lg">
+                They<br />Deserve<br /><em class="c-gold">the Best</em>
+              </div>
+              <div class="sub">
+                Unlock every tool to plan an unforgettable surprise.
+              </div>
+            </div>
+            <div class="ssl-card">
+              <div class="prem-wrap">
+                <div class="prem-rows">
+                  <div class="prem-row">
+                    <div class="prem-icon">✦</div>
+                    <div class="prem-txt">
+                      <div class="prem-title">Unlimited AI Suggestions</div>
+                      <div class="prem-desc">Personalized ideas, no limits</div>
+                    </div>
+                    <div class="prem-check">✓</div>
+                  </div>
+                  <div class="prem-row">
+                    <div class="prem-icon">👥</div>
+                    <div class="prem-txt">
+                      <div class="prem-title">Unlimited Co-Organizers</div>
+                      <div class="prem-desc">Get the whole squad involved</div>
+                    </div>
+                    <div class="prem-check">✓</div>
+                  </div>
+                  <div class="prem-row">
+                    <div class="prem-icon">🔐</div>
+                    <div class="prem-txt">
+                      <div class="prem-title">Secret Messaging</div>
+                      <div class="prem-desc">End-to-end encrypted chat</div>
+                    </div>
+                    <div class="prem-check">✓</div>
+                  </div>
+                  <div class="prem-row">
+                    <div class="prem-icon">📦</div>
+                    <div class="prem-txt">
+                      <div class="prem-title">Vendor Directory</div>
+                      <div class="prem-desc">Trusted local suppliers</div>
+                    </div>
+                    <div class="prem-check">✓</div>
+                  </div>
+                </div>
+                <div class="prem-cta">
+                  <div class="prem-btn">
+                    Start Free Trial
+                    <div class="prem-btn-sub">3 days free · Then $4.99/mo</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #sec-en -->
+
+    <!-- ═══════════ TÜRKÇE ═══════════ -->
+    <div class="screenshots-section" id="sec-tr">
+      <div class="screenshots-row">
+        <!-- SS1 TR: HERO -->
+        <div class="ss">
+          <div class="bg bg1"></div>
+          <div class="bk bk1a"></div>
+          <div class="bk bk1b"></div>
+          <svg
+            class="spk"
+            style="top: 62px; right: 52px; width: 18px; height: 18px"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2l1.8 5.5L19.5 6l-4 4 1.5 6-5-3-5 3 1.5-6-4-4 5.7 1.5Z"
+              fill="#FFD166"
+              opacity="0.85"
+            />
+          </svg>
+          <svg
+            class="spk"
+            style="top: 115px; left: 36px; width: 12px; height: 12px"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2l1.8 5.5L19.5 6l-4 4 1.5 6-5-3-5 3 1.5-6-4-4 5.7 1.5Z"
+              fill="#FFD166"
+              opacity="0.5"
+            />
+          </svg>
+          <div class="ss1-content">
+            <div class="ss1-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rt">4.8 · App Store</span>
+            </div>
+            <div class="ss1-hl">
+              Onun<br /><span class="c-gold">Haberi Yok.</span>
+            </div>
+            <div class="ss1-sub">
+              Mükemmel sürprizi planla — o hiçbir şeyden şüphelenmesin.
+            </div>
+            <div class="ss1-proof">
+              <div class="ss1-p1"><span>10.000+</span> Sürpriz Planlandı</div>
+              <div class="ss1-div"></div>
+              <div class="ss1-p2">#1 Sürpriz Planlama Uygulaması</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SS2 TR: AI -->
+        <div class="ss">
+          <div class="bg bg2"></div>
+          <div class="bk bk2a"></div>
+          <div class="bk bk2b"></div>
+          <div class="ssl">
+            <div class="ssl-top">
+              <div class="eyebrow">
+                ✦ <span class="c-violet">Yapay Zeka</span>
+              </div>
+              <div class="hl">
+                AI Onun<br />Zevkini<br /><em class="c-violet">Biliyor</em>
+              </div>
+              <div class="sub">
+                Kim olduğunu anlat — tüm detayları o planlasın.
+              </div>
+            </div>
+            <div class="ssl-card">
+              <div class="chat-wrap">
+                <div class="chat-hdr">
+                  <div class="chat-hdr-icon">✦</div>
+                  <div>
+                    <div class="chat-hdr-text">Momentra AI</div>
+                    <div class="chat-hdr-sub">● Çevrimiçi · Planlama modu</div>
+                  </div>
+                </div>
+                <div class="chat-msgs">
+                  <div class="cmsg user">
+                    <div
+                      class="cmsg-av"
+                      style="
+                        background: linear-gradient(135deg, #ff6b8a, #c0392b);
+                      "
+                    >
+                      Y
+                    </div>
+                    <div class="cbub usr">
+                      Fotoğraf çekmeyi ve sahil yürüyüşlerini çok seviyor 📸
+                    </div>
+                  </div>
+                  <div class="cmsg">
+                    <div
+                      class="cmsg-av"
+                      style="
+                        background: linear-gradient(135deg, #a78bfa, #7c3aed);
+                      "
+                    >
+                      ✦
+                    </div>
+                    <div class="cbub ai">
+                      Harika! Doğum günü için kesinlikle seveceği 3 fikrim var…
+                    </div>
+                  </div>
+                  <div class="cmsg user">
+                    <div
+                      class="cmsg-av"
+                      style="
+                        background: linear-gradient(135deg, #ff6b8a, #c0392b);
+                      "
+                    >
+                      Y
+                    </div>
+                    <div class="cbub usr">
+                      Açık hava mekanlarını tercih ediyor 🌿
+                    </div>
+                  </div>
+                  <div class="cmsg">
+                    <div
+                      class="cmsg-av"
+                      style="
+                        background: linear-gradient(135deg, #a78bfa, #7c3aed);
+                      "
+                    >
+                      ✦
+                    </div>
+                    <div class="cbub ai">
+                      Anlaşıldı! Gün batımı çatı katı ve altın saat fotoğraf
+                      turu ekleniyor ✨
+                    </div>
+                  </div>
+                </div>
+                <div class="chat-chips">
+                  <div class="chip">🌅 Gün batımı pikniği</div>
+                  <div class="chip">📸 Fotoğraf turu</div>
+                  <div class="chip">☕ Kafe keşfi</div>
+                </div>
+                <div class="chat-input-row">
+                  <div class="chat-input-text">
+                    Sürprizi hakkında bir şey sor…
+                  </div>
+                  <div class="chat-send">↑</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SS3 TR: CO-ORGANIZER -->
+        <div class="ss">
+          <div class="bg bg3"></div>
+          <div class="bk bk3a"></div>
+          <div class="bk bk3b"></div>
+          <div class="ssl">
+            <div class="ssl-top">
+              <div class="eyebrow">
+                👥 <span class="c-teal">Birlikte Plan</span>
+              </div>
+              <div class="hl">
+                Bu İşte<br />Yalnız<br /><em class="c-teal">Değilsin</em>
+              </div>
+              <div class="sub">
+                Arkadaşlarını davet et. Görevleri paylaş. Sihir yarat.
+              </div>
+            </div>
+            <div class="ssl-card">
+              <div class="team-wrap">
+                <div class="team-hdr">
+                  <div class="team-hdr-icon">🎂</div>
+                  <div>
+                    <div class="team-hdr-title">
+                      Doğum Günü Sürprizi · 3 kişi
+                    </div>
+                    <div class="team-hdr-sub">
+                      2 görev tamamlandı · 1 devam ediyor
+                    </div>
+                  </div>
+                </div>
+                <div class="team-rows">
+                  <div class="team-row">
+                    <div
+                      class="tav"
+                      style="
+                        background: linear-gradient(135deg, #5eead4, #0d9488);
+                      "
+                    >
+                      A
+                    </div>
+                    <div class="tinfo">
+                      <div class="tname">Ayşe</div>
+                      <div class="ttask">Restoranı rezerve ediyor 🍽️</div>
+                    </div>
+                    <div
+                      class="tbadge"
+                      style="
+                        background: rgba(94, 234, 212, 0.15);
+                        color: #5eead4;
+                      "
+                    >
+                      Tamam ✓
+                    </div>
+                  </div>
+                  <div class="team-row">
+                    <div
+                      class="tav"
+                      style="
+                        background: linear-gradient(135deg, #fbbf24, #d97706);
+                      "
+                    >
+                      M
+                    </div>
+                    <div class="tinfo">
+                      <div class="tname">Mert</div>
+                      <div class="ttask">Çiçekleri alıyor 💐</div>
+                    </div>
+                    <div
+                      class="tbadge"
+                      style="
+                        background: rgba(251, 191, 36, 0.15);
+                        color: #fbbf24;
+                      "
+                    >
+                      Devam ediyor
+                    </div>
+                  </div>
+                  <div class="team-row">
+                    <div
+                      class="tav"
+                      style="
+                        background: linear-gradient(135deg, #c4b5fd, #7c3aed);
+                      "
+                    >
+                      B
+                    </div>
+                    <div class="tinfo">
+                      <div class="tname">Burak</div>
+                      <div class="ttask">Pastayı hallediyor 🎂</div>
+                    </div>
+                    <div
+                      class="tbadge"
+                      style="
+                        background: rgba(196, 181, 253, 0.15);
+                        color: #c4b5fd;
+                      "
+                    >
+                      Bekliyor
+                    </div>
+                  </div>
+                </div>
+                <div class="team-footer">
+                  <div class="team-footer-btn">
+                    📨 Burak'a hatırlatma gönder
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SS4 TR: COMMUNITY -->
+        <div class="ss">
+          <div class="bg bg4"></div>
+          <div class="bk bk4a"></div>
+          <div class="bk bk4b"></div>
+          <div class="ssl">
+            <div class="ssl-top">
+              <div class="eyebrow">❤️ Gerçek Hikayeler</div>
+              <div class="ss4-num c-rose">10B+</div>
+              <div class="ss4-numhl">Büyülü An Paylaşıldı</div>
+              <div class="sub">Sürprizin gücüne inanan bir topluluk.</div>
+            </div>
+            <div class="ssl-card">
+              <div class="stories-wrap">
+                <div class="story-card">
+                  <div
+                    class="story-icon"
+                    style="background: rgba(255, 107, 138, 0.15)"
+                  >
+                    💍
+                  </div>
+                  <div class="story-text">
+                    <div class="story-title">Evet dedi 🥹</div>
+                    <div class="story-meta">Çatı katı teklif · İstanbul</div>
+                  </div>
+                  <div class="story-hearts">❤️ 428</div>
+                </div>
+                <div class="story-card">
+                  <div
+                    class="story-icon"
+                    style="background: rgba(255, 200, 50, 0.15)"
+                  >
+                    🎂
+                  </div>
+                  <div class="story-text">
+                    <div class="story-title">En iyi doğum günü</div>
+                    <div class="story-meta">Sürpriz yemek · Ankara</div>
+                  </div>
+                  <div class="story-hearts">❤️ 291</div>
+                </div>
+                <div class="story-card">
+                  <div
+                    class="story-icon"
+                    style="background: rgba(100, 200, 255, 0.15)"
+                  >
+                    ✈️
+                  </div>
+                  <div class="story-text">
+                    <div class="story-title">Gizli tatil ifşa!</div>
+                    <div class="story-meta">Hafta sonu kaçamağı · Bodrum</div>
+                  </div>
+                  <div class="story-hearts">❤️ 184</div>
+                </div>
+                <div class="story-card">
+                  <div
+                    class="story-icon"
+                    style="background: rgba(255, 150, 50, 0.15)"
+                  >
+                    🎸
+                  </div>
+                  <div class="story-text">
+                    <div class="story-title">Konserde sürpriz</div>
+                    <div class="story-meta">Gizli konser · İzmir</div>
+                  </div>
+                  <div class="story-hearts">❤️ 142</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SS5 TR: TIMELINE -->
+        <div class="ss">
+          <div class="bg bg5"></div>
+          <div class="bk bk5a"></div>
+          <div class="bk bk5b"></div>
+          <div class="ssl">
+            <div class="ssl-top">
+              <div class="eyebrow">
+                📅 <span class="c-sky">Akıllı Plan</span>
+              </div>
+              <div class="hl">
+                Sıfır Stres.<br /><em class="c-sky">Tam Sihir.</em>
+              </div>
+              <div class="sub">
+                AI tam zaman çizelgeni oluşturur — hiçbir adımı atlama.
+              </div>
+            </div>
+            <div class="ssl-card">
+              <div class="tl-wrap">
+                <div class="tl-hdr">
+                  <div class="tl-hdr-title">
+                    Hazırlık çizelgesi · %35 tamamlandı
+                  </div>
+                  <div class="tl-prog-track">
+                    <div class="tl-prog-fill"></div>
+                  </div>
+                </div>
+                <div class="tl-rows">
+                  <div class="tl-item">
+                    <div class="tl-dot" style="background: #5eead4"></div>
+                    <div class="tl-txt">
+                      <div class="tl-title">Mekanı rezerve et</div>
+                      <div class="tl-time">3 hafta önce · Tamam ✓</div>
+                    </div>
+                    <div
+                      class="tl-days"
+                      style="
+                        background: rgba(94, 234, 212, 0.12);
+                        color: #5eead4;
+                      "
+                    >
+                      Bitti
+                    </div>
+                  </div>
+                  <div class="tl-item">
+                    <div class="tl-dot" style="background: #7dd3fc"></div>
+                    <div class="tl-txt">
+                      <div class="tl-title">Çiçek sipariş et</div>
+                      <div class="tl-time">1 hafta önce</div>
+                    </div>
+                    <div
+                      class="tl-days"
+                      style="
+                        background: rgba(125, 211, 252, 0.12);
+                        color: #7dd3fc;
+                      "
+                    >
+                      7 gün
+                    </div>
+                  </div>
+                  <div class="tl-item">
+                    <div class="tl-dot" style="background: #fbbf24"></div>
+                    <div class="tl-txt">
+                      <div class="tl-title">Konuşmayı hazırla</div>
+                      <div class="tl-time">3 gün önce</div>
+                    </div>
+                    <div
+                      class="tl-days"
+                      style="
+                        background: rgba(251, 191, 36, 0.12);
+                        color: #fbbf24;
+                      "
+                    >
+                      3 gün
+                    </div>
+                  </div>
+                  <div class="tl-item">
+                    <div class="tl-dot" style="background: #ff6b8a"></div>
+                    <div class="tl-txt">
+                      <div class="tl-title">Büyük an 🎉</div>
+                      <div class="tl-time">Bu gece · Neredeyse!</div>
+                    </div>
+                    <div
+                      class="tl-days"
+                      style="
+                        background: rgba(255, 107, 138, 0.12);
+                        color: #ff6b8a;
+                      "
+                    >
+                      Bugün
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SS6 TR: BUDGET -->
+        <div class="ss">
+          <div class="bg bg6"></div>
+          <div class="bk bk6a"></div>
+          <div class="bk bk6b"></div>
+          <div class="ssl">
+            <div class="ssl-top">
+              <div class="eyebrow">
+                💰 <span class="c-gold">Akıllı Bütçe</span>
+              </div>
+              <div class="hl">
+                Her Bütçeye<br /><em class="c-gold">Sihir</em> Sığar
+              </div>
+              <div class="sub">Her kuruşu takip et. Her anı özel kıl.</div>
+            </div>
+            <div class="ssl-card">
+              <div class="budget-wrap">
+                <div class="budget-donut-area">
+                  <svg width="130" height="130" viewBox="0 0 130 130">
+                    <circle
+                      cx="65"
+                      cy="65"
+                      r="50"
+                      fill="none"
+                      stroke="rgba(255,255,255,0.06)"
+                      stroke-width="16"
+                    />
+                    <circle
+                      cx="65"
+                      cy="65"
+                      r="50"
+                      fill="none"
+                      stroke="#FFD166"
+                      stroke-width="16"
+                      stroke-dasharray="126 188"
+                      stroke-dashoffset="0"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="65"
+                      cy="65"
+                      r="50"
+                      fill="none"
+                      stroke="#FF6B8A"
+                      stroke-width="16"
+                      stroke-dasharray="79 235"
+                      stroke-dashoffset="-126"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="65"
+                      cy="65"
+                      r="50"
+                      fill="none"
+                      stroke="#5EEAD4"
+                      stroke-width="16"
+                      stroke-dasharray="53 261"
+                      stroke-dashoffset="-205"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="65"
+                      cy="65"
+                      r="50"
+                      fill="none"
+                      stroke="#C4B5FD"
+                      stroke-width="16"
+                      stroke-dasharray="28 286"
+                      stroke-dashoffset="-258"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <div class="donut-center">
+                    <div class="donut-amount">₺8.500</div>
+                    <div class="donut-label">TOPLAM</div>
+                  </div>
+                </div>
+                <div class="budget-cats">
+                  <div class="cat-row">
+                    <div class="cat-dot" style="background: #ffd166"></div>
+                    <div class="cat-name">Mekan & Yemek</div>
+                    <div class="cat-bar">
+                      <div
+                        class="cat-fill"
+                        style="width: 40%; background: #ffd166"
+                      ></div>
+                    </div>
+                    <div class="cat-pct">40%</div>
+                  </div>
+                  <div class="cat-row">
+                    <div class="cat-dot" style="background: #ff6b8a"></div>
+                    <div class="cat-name">Hediyeler</div>
+                    <div class="cat-bar">
+                      <div
+                        class="cat-fill"
+                        style="width: 25%; background: #ff6b8a"
+                      ></div>
+                    </div>
+                    <div class="cat-pct">25%</div>
+                  </div>
+                  <div class="cat-row">
+                    <div class="cat-dot" style="background: #5eead4"></div>
+                    <div class="cat-name">Dekorasyon</div>
+                    <div class="cat-bar">
+                      <div
+                        class="cat-fill"
+                        style="width: 17%; background: #5eead4"
+                      ></div>
+                    </div>
+                    <div class="cat-pct">17%</div>
+                  </div>
+                  <div class="cat-row">
+                    <div class="cat-dot" style="background: #c4b5fd"></div>
+                    <div class="cat-name">Diğer</div>
+                    <div class="cat-bar">
+                      <div
+                        class="cat-fill"
+                        style="width: 11%; background: #c4b5fd"
+                      ></div>
+                    </div>
+                    <div class="cat-pct">11%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SS7 TR: PREMIUM -->
+        <div class="ss">
+          <div class="bg bg7"></div>
+          <div class="bk bk7a"></div>
+          <div class="bk bk7b"></div>
+          <svg
+            class="spk"
+            style="top: 58px; right: 46px; width: 16px; height: 16px"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2l1.8 5.5L19.5 6l-4 4 1.5 6-5-3-5 3 1.5-6-4-4 5.7 1.5Z"
+              fill="#FFD166"
+              opacity="0.7"
+            />
+          </svg>
+          <div class="ssl">
+            <div class="ssl-top">
+              <div class="eyebrow">👑 <span class="c-gold">Premium</span></div>
+              <div class="hl hl-lg">
+                O En<br />İyisini<br /><em class="c-gold">Hak Ediyor</em>
+              </div>
+              <div class="sub">Unutulmaz sürpriz için her aracı aç.</div>
+            </div>
+            <div class="ssl-card">
+              <div class="prem-wrap">
+                <div class="prem-rows">
+                  <div class="prem-row">
+                    <div class="prem-icon">✦</div>
+                    <div class="prem-txt">
+                      <div class="prem-title">Sınırsız AI Önerileri</div>
+                      <div class="prem-desc">
+                        Kişiselleştirilmiş fikirler, limit yok
+                      </div>
+                    </div>
+                    <div class="prem-check">✓</div>
+                  </div>
+                  <div class="prem-row">
+                    <div class="prem-icon">👥</div>
+                    <div class="prem-txt">
+                      <div class="prem-title">Sınırsız Ortak Planlayıcı</div>
+                      <div class="prem-desc">Tüm ekibi dahil et</div>
+                    </div>
+                    <div class="prem-check">✓</div>
+                  </div>
+                  <div class="prem-row">
+                    <div class="prem-icon">🔐</div>
+                    <div class="prem-txt">
+                      <div class="prem-title">Gizli Mesajlaşma</div>
+                      <div class="prem-desc">Uçtan uca şifreli sohbet</div>
+                    </div>
+                    <div class="prem-check">✓</div>
+                  </div>
+                  <div class="prem-row">
+                    <div class="prem-icon">📦</div>
+                    <div class="prem-txt">
+                      <div class="prem-title">Tedarikçi Rehberi</div>
+                      <div class="prem-desc">Güvenilir yerel sağlayıcılar</div>
+                    </div>
+                    <div class="prem-check">✓</div>
+                  </div>
+                </div>
+                <div class="prem-cta">
+                  <div class="prem-btn">
+                    Ücretsiz Dene
+                    <div class="prem-btn-sub">
+                      3 gün ücretsiz · Sonra ₺149/ay
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #sec-tr -->
+
+    <script>
+      function switchLang(lang, btn) {
+        document
+          .querySelectorAll(".screenshots-section")
+          .forEach((s) => s.classList.remove("active"));
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        const sec = document.getElementById("sec-" + lang);
+        if (sec) sec.classList.add("active");
+        btn.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

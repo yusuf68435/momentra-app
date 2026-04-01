@@ -1,0 +1,139 @@
+{
+  "title": "Settings",
+  "profile": "Profile",
+  "language": "Language",
+  "language_tr": "Turkce",
+  "language_en": "English",
+  "notifications": "Notifications",
+  "notifications_desc": "Reminder and countdown notifications",
+  "subscription": "Subscription",
+  "current_plan": "Current Plan",
+  "free_plan": "Free",
+  "premium_plan": "Premium",
+  "upgrade": "Upgrade to Premium",
+  "dark_mode": "Dark Mode",
+  "about": "About",
+  "privacy_policy": "Privacy Policy",
+  "terms": "Terms of Service",
+  "version": "Version",
+  "rate_app": "Rate the App",
+  "contact_us": "Contact Us",
+  "subscription_screen": {
+    "title": "Subscription",
+    "subtitle": "Choose your plan",
+    "first_surprise_title": "Your first surprise is on us!",
+    "first_surprise_desc": "All features free for your first surprise.",
+    "current_plan_label": "Current Plan: ",
+    "plan_free": "Free",
+    "billing_monthly": "Monthly",
+    "billing_yearly": "Yearly",
+    "most_popular": "Most Popular",
+    "per_month": "/mo",
+    "per_year": "/yr",
+    "active_badge": "Active",
+    "selected": "Selected",
+    "select": "Select",
+    "comparison_title": "Feature Comparison",
+    "comparison_col_feature": "Feature",
+    "comparison_col_free": "Free",
+    "cta_current": "Your Current Plan",
+    "cta_switch_free": "Switch to Free",
+    "cta_upgrade_plus": "Upgrade to Plus",
+    "cta_upgrade_pro": "Upgrade to Pro",
+    "restore_purchases": "Restore Purchases",
+    "terms_privacy": "Terms of Service & Privacy Policy",
+    "disclaimer": "Cancel anytime. Payment is processed through App Store / Google Play. Subscription auto-renews.",
+    "alert_plan_changed_title": "Plan Changed",
+    "alert_plan_changed_msg": "Switched to Free plan.",
+    "alert_package_not_found_title": "Package Not Found",
+    "alert_package_not_found_msg": "No matching package found for this plan. Please try again later.",
+    "alert_success_title": "Success!",
+    "alert_subscribed_plus": "Successfully subscribed to Plus plan.",
+    "alert_subscribed_pro": "Successfully subscribed to Pro plan.",
+    "alert_error_title": "Error",
+    "alert_purchase_error_msg": "An error occurred during purchase. Please try again.",
+    "alert_coming_soon_title": "Coming Soon",
+    "alert_coming_soon_msg": "Payment system will be active soon. Plan changed as demo for now.",
+    "alert_ok": "OK",
+    "alert_restored_title": "Purchases Restored",
+    "alert_restored_plus": "Your Plus subscription has been restored.",
+    "alert_restored_pro": "Your Pro subscription has been restored.",
+    "alert_no_purchases_title": "No Purchases Found",
+    "alert_no_purchases_msg": "No active subscriptions found to restore.",
+    "alert_restore_error_msg": "An error occurred while restoring purchases.",
+    "alert_restored_fallback_msg": "Your previous purchases have been checked.",
+    "plan_free_features": [
+      "3 plans / month",
+      "5 AI queries / month",
+      "Basic templates",
+      "Community scenarios",
+      "10 MB photo storage"
+    ],
+    "plan_plus_features": [
+      "20 plans / month",
+      "50 AI queries / month",
+      "Premium templates & scenarios",
+      "5 co-organizers",
+      "500 MB photo storage",
+      "PDF export",
+      "Custom themes",
+      "Ad-free experience"
+    ],
+    "plan_pro_features": [
+      "Unlimited plans & AI queries",
+      "Unlimited co-organizers",
+      "5 GB photo storage",
+      "PDF export",
+      "Custom themes",
+      "Priority support",
+      "Early access features",
+      "Exclusive surprise consulting"
+    ],
+    "comparison_monthly_plans": "Monthly Plans",
+    "comparison_ai_queries": "AI Queries",
+    "comparison_premium_scenarios": "Premium Scenarios",
+    "comparison_co_organizers": "Co-Organizers",
+    "comparison_photo_storage": "Photo Storage",
+    "comparison_pdf_export": "PDF Export",
+    "comparison_priority_support": "Priority Support",
+    "comparison_custom_themes": "Custom Themes"
+  },
+  "notifications_screen": {
+    "title": "Notifications",
+    "subtitle": "Manage your notification preferences",
+    "permission_denied_title": "Notification Permission Required",
+    "permission_denied_message": "Please enable notification permission in settings to receive notifications.",
+    "permission_denied_button": "OK",
+    "all_notifications": "All Notifications",
+    "all_on": "All notifications enabled",
+    "all_off": "All notifications disabled",
+    "section_title": "Notification Types",
+    "footer": "You can change your notification settings at any time. Your personal data is protected.",
+    "options": {
+      "planReminders": {
+        "title": "Plan reminders",
+        "desc": "Get notified about upcoming surprise plans"
+      },
+      "countdownAlerts": {
+        "title": "Countdown notifications",
+        "desc": "Countdown reminders for special dates"
+      },
+      "aiSuggestions": {
+        "title": "AI suggestions",
+        "desc": "AI-powered surprise suggestions"
+      },
+      "newScenarios": {
+        "title": "New scenarios",
+        "desc": "Get informed about newly added surprise scenarios"
+      },
+      "proactiveSuggestions": {
+        "title": "Proactive suggestions",
+        "desc": "Surprise planning reminders for upcoming special dates"
+      },
+      "promotions": {
+        "title": "Promotions",
+        "desc": "Stay updated on special offers and discounts"
+      }
+    }
+  }
+}

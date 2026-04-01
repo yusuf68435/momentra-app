@@ -1,0 +1,29 @@
+{
+  "featured": "注目のシナリオ",
+  "all_scenarios": "すべてのシナリオ",
+  "difficulty": "難易度",
+  "prep_time": "準備時間",
+  "budget_range": "予算範囲",
+  "people_count": "人数",
+  "indoor": "屋内",
+  "outdoor": "屋外",
+  "both": "どちらでも",
+  "steps": "ステップ",
+  "step": "ステップ",
+  "plan_this": "これを計画する！",
+  "reviews": "レビュー",
+  "no_reviews": "まだレビューがありません",
+  "estimated_budget": "予算目安",
+  "days_prep": "{{count}}日の準備",
+  "people_range": "{{min}}〜{{max}}人",
+  "filters": {
+    "category": "カテゴリー",
+    "budget_min": "最低予算",
+    "budget_max": "最高予算",
+    "people": "人数",
+    "location_type": "場所のタイプ",
+    "difficulty": "難易度",
+    "clear_all": "すべてクリア",
+    "apply": "適用"
+  }
+}

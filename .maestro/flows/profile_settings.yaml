@@ -1,0 +1,67 @@
+appId: com.momentra.app
+---
+# Flow: Profile tab — navigate settings and verify screens load
+- launchApp
+
+- runFlow: auth_login.yaml
+
+# Go to Profile tab
+- tapOn:
+    text: "Profil"
+  optional: true
+- tapOn:
+    text: "Profile"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Verify profile screen loaded
+- assertVisible:
+    text: "Profil"
+  optional: true
+
+# Scroll to see settings options
+- scrollDown
+
+# Tap Language settings
+- tapOn:
+    text: "Dil"
+  optional: true
+- tapOn:
+    text: "Language"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Go back
+- tapOn:
+    text: "Geri"
+  optional: true
+- back
+  optional: true
+
+- waitForAnimationToEnd
+
+# Tap Notifications settings
+- tapOn:
+    text: "Bildirimler"
+  optional: true
+- tapOn:
+    text: "Notifications"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Go back
+- back
+  optional: true
+
+- waitForAnimationToEnd
+
+# Profile screen should still be accessible
+- assertVisible:
+    text: "Profil"
+  optional: true
+- assertVisible:
+    text: "Profile"
+  optional: true

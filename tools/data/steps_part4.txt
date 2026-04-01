@@ -1,0 +1,100 @@
+{"cat_slug":"holiday","id":"d87467cb-25d6-444b-a9c2-d3ddcf291eb8","slug":"womens-day-celebration","title_en":"Women's Day Celebration","title_tr":"Kadınlar Günü Kutlaması"}
+{"cat_slug":"holiday","id":"6658beac-aafd-4250-84f1-9d69b7b0414f","slug":"world-timezone-countdown","title_en":"World Timezone Countdown","title_tr":"Dünya Saat Dilimleri Geri Sayımı"}
+{"cat_slug":"holiday","id":"a8ba8099-1646-477d-80d1-dcf0020b0e5a","slug":"yilbasi-tombala-night","title_en":"New Year's Tombola Night","title_tr":"Yılbaşı Tombala Gecesi"}
+{"cat_slug":"other","id":"a0000013-0001-0001-0001-000000000002","slug":"escape-room-adventure","title_en":"Escape Room Adventure","title_tr":"Kaçış Odası Macerası"}
+{"cat_slug":"other","id":"a0000013-0001-0001-0001-000000000001","slug":"random-act-of-kindness","title_en":"Random Act of Kindness Day","title_tr":"Rastgele İyilik Günü"}
+{"cat_slug":"proposal","id":"060dfb14-adab-4b55-8dba-e2fb7ddc7c72","slug":"aquarium-tunnel-proposal","title_en":"Aquarium Tunnel Proposal","title_tr":"Akvaryum Tüneli Teklifi"}
+{"cat_slug":"proposal","id":"1fa77726-cf14-422f-beeb-b85e4f6eeffc","slug":"ar-card-proposal","title_en":"AR Card Proposal","title_tr":"Artırılmış Gerçeklik Kart Teklifi"}
+{"cat_slug":"proposal","id":"a0000002-0001-0001-0001-000000000002","slug":"beach-proposal","title_en":"Beach Proposal","title_tr":"Sahilde Evlilik Teklifi"}
+{"cat_slug":"proposal","id":"32ff4895-99fa-490d-80c2-b0b1cf30730c","slug":"bosphorus-fireworks-proposal","title_en":"Bosphorus Fireworks Proposal","title_tr":"Boğaz'da Havai Fişek Teklifi"}
+{"cat_slug":"proposal","id":"a1de9ba4-75fa-4800-9fff-23d1e795f632","slug":"cappadocia-sunrise-proposal","title_en":"Cappadocia Sunrise Proposal","title_tr":"Kapadokya Gün Doğumu Teklifi"}
+{"cat_slug":"proposal","id":"a70ec37e-6f90-414f-9366-f63113120ab7","slug":"cat-bandana-proposal","title_en":"Cat Bandana Proposal","title_tr":"Kedi Bandanası Teklifi"}
+{"cat_slug":"proposal","id":"1cf7f4ac-1a17-4dfa-bf71-d7d93cde81a2","slug":"cinema-trailer-proposal","title_en":"Cinema Trailer Proposal","title_tr":"Sinema Fragmanı Teklifi"}
+{"cat_slug":"proposal","id":"9acca900-54f8-4b8e-8e32-1dcd32fa15f0","slug":"custom-crossword-proposal","title_en":"Custom Crossword Proposal","title_tr":"Bulmaca Çözdüren Teklif"}
+{"cat_slug":"proposal","id":"6e1f50ea-459d-41bc-aa7d-56a735b56576","slug":"custom-storybook-proposal","title_en":"Custom Storybook Proposal","title_tr":"Kişisel Hikaye Kitabıyla Teklif"}
+{"cat_slug":"proposal","id":"b5d8b0a3-c064-418f-bcac-7828378993d3","slug":"dolphin-show-proposal","title_en":"Dolphin Show Proposal","title_tr":"Yunus Gösterisi Teklifi"}
+{"cat_slug":"proposal","id":"40704b45-2619-4dbc-a194-08d736b2f99d","slug":"drive-in-movie-proposal","title_en":"Drive-In Movie Proposal","title_tr":"Açık Hava Sineması Teklifi"}
+{"cat_slug":"proposal","id":"352a5844-975a-4e05-a7e3-e80360adf7fd","slug":"drone-light-show-proposal","title_en":"Drone Light Show Proposal","title_tr":"Drone Işık Gösterisi Teklifi"}
+{"cat_slug":"proposal","id":"7df6d753-b27d-43bc-83e0-1a7b92cf3cc4","slug":"escape-room-proposal","title_en":"Escape Room Proposal","title_tr":"Escape Room'da Evlilik Teklifi"}
+{"cat_slug":"proposal","id":"ae727b09-69de-40e6-a38c-a0a6ffb49158","slug":"fake-tiktok-proposal","title_en":"Fake TikTok Proposal","title_tr":"Sahte TikTok Çekimi Teklifi"}
+{"cat_slug":"proposal","id":"e5dd0152-f568-44fb-8e55-755b236e4c63","slug":"ferris-wheel-proposal","title_en":"Ferris Wheel Proposal","title_tr":"Dönme Dolap Teklifi"}
+{"cat_slug":"proposal","id":"ef800d25-3c0e-4465-96ec-608ed330e823","slug":"geocaching-proposal","title_en":"Geocaching Treasure Hunt Proposal","title_tr":"Geocaching Hazine Avı Teklifi"}
+{"cat_slug":"proposal","id":"054eca69-1d16-4868-90b4-0c1d247d88e0","slug":"glow-star-ceiling-proposal","title_en":"Glowing Star Ceiling Proposal","title_tr":"Yıldızlı Tavan Teklifi"}
+{"cat_slug":"proposal","id":"366233b6-1183-43ea-92ac-54f1243eee4f","slug":"library-scavenger-proposal","title_en":"Library Scavenger Hunt Proposal","title_tr":"Kütüphane Hazine Avı Teklifi"}
+{"cat_slug":"proposal","id":"7a04c7bb-04a5-4817-b176-acf62e024e05","slug":"magician-show-proposal","title_en":"Magician Show Proposal","title_tr":"Sihirbaz Gösterisi Teklifi"}
+{"cat_slug":"proposal","id":"d2c21a56-917a-4770-a08f-0711776c4e64","slug":"memory-gallery-proposal","title_en":"Memory Gallery Proposal","title_tr":"Anı Galerisi Teklifi"}
+{"cat_slug":"proposal","id":"a36ed3ad-4cf0-449b-9e52-76c26fb4ad59","slug":"message-in-bottle-proposal","title_en":"Message in a Bottle Proposal","title_tr":"Şişede Mesaj Teklifi"}
+{"cat_slug":"proposal","id":"e061d5c5-edcc-48ba-a66e-35a237ff824f","slug":"meteor-shower-proposal","title_en":"Meteor Shower Proposal","title_tr":"Meteor Yağmuru Altında Teklif"}
+{"cat_slug":"proposal","id":"ab13c496-31b2-432e-8880-2953795aaf85","slug":"minecraft-world-proposal","title_en":"Minecraft World Proposal","title_tr":"Minecraft Dünyasında Evlilik Teklifi"}
+{"cat_slug":"proposal","id":"ef943877-c08f-4b82-8602-aa41b2865128","slug":"movie-scene-recreation","title_en":"Movie Scene Recreation Proposal","title_tr":"Film Sahnesi Canlandırma Teklifi"}
+{"cat_slug":"proposal","id":"37532423-06a6-475e-a357-1f62004ec5f0","slug":"northern-lights-proposal","title_en":"Northern Lights Proposal","title_tr":"Kuzey Işıkları Altında Teklif"}
+{"cat_slug":"proposal","id":"79c3fb86-5c25-42cc-848b-2a7928cab12f","slug":"paris-artist-proposal","title_en":"Paris Street Artist Proposal","title_tr":"Paris Sokak Ressamı Teklifi"}
+{"cat_slug":"proposal","id":"17ff561b-e724-4ff5-aa53-d2adbafb691f","slug":"pet-ring-bearer-proposal","title_en":"Pet Ring Bearer Proposal","title_tr":"Köpek Yüzük Taşıyıcısı Teklifi"}
+{"cat_slug":"proposal","id":"3f7bcae7-2e3c-46b2-b136-550623125d0d","slug":"planetarium-proposal","title_en":"Planetarium Proposal","title_tr":"Planetaryumda Yıldızlar Altında Teklif"}
+{"cat_slug":"proposal","id":"a1ac3689-c399-42ba-bc2b-7fe0855e2a27","slug":"pottery-class-proposal","title_en":"Pottery Class Proposal","title_tr":"Seramik Atölyesinde Teklif"}
+{"cat_slug":"proposal","id":"4e1103a7-74ec-4e72-82f1-c87c55e8ac1d","slug":"puzzle-message-proposal","title_en":"Puzzle Message Proposal","title_tr":"Yapboz Mesajı Teklifi"}
+{"cat_slug":"proposal","id":"a0000002-0001-0001-0001-000000000004","slug":"restaurant-proposal","title_en":"Restaurant Proposal","title_tr":"Restoranda Evlilik Teklifi"}
+{"cat_slug":"proposal","id":"26018006-b4e2-4e90-9bdb-96a16b169fd6","slug":"rooftop-dinner-proposal","title_en":"Rooftop Dinner Proposal","title_tr":"Çatı Katı Akşam Yemeği Teklifi"}
+{"cat_slug":"proposal","id":"c0f494fe-05d9-42f6-9430-b90cba8310f9","slug":"secret-garden-bloom","title_en":"Secret Garden Bloom Proposal","title_tr":"Gizli Bahçe Çiçek Teklifi"}
+{"cat_slug":"proposal","id":"07bf25b4-8263-4624-bbbe-bca389e96d7d","slug":"skywriting-proposal","title_en":"Skywriting Proposal","title_tr":"Gökyüzüne Yazı Teklifi"}
+{"cat_slug":"proposal","id":"6fa5d0a2-ec47-4887-907b-a0ac57772002","slug":"stadium-jumbotron-proposal","title_en":"Stadium Jumbotron Proposal","title_tr":"Stadyum Dev Ekran Teklifi"}
+{"cat_slug":"proposal","id":"aedb552e-ae09-4789-8091-6db686368e7f","slug":"subscription-box-countdown","title_en":"Subscription Box Countdown Proposal","title_tr":"Geri Sayım Kutuları Teklifi"}
+{"cat_slug":"proposal","id":"6cd06995-bc8f-46eb-a3cf-7f5ffeba8fa6","slug":"sunrise-mountain-proposal","title_en":"Sunrise Mountain Proposal","title_tr":"Dağ Zirvesinde Gün Doğumu Teklifi"}
+{"cat_slug":"proposal","id":"775c2d10-73df-4064-86dd-62c8597822b6","slug":"train-journey-proposal","title_en":"Train Journey Proposal","title_tr":"Tren Yolculuğu Teklifi"}
+{"cat_slug":"proposal","id":"9c66559c-31ee-43cd-8f6c-e46ccf880f66","slug":"turkish-coffee-fortune","title_en":"Turkish Coffee Fortune Proposal","title_tr":"Türk Kahvesi Falı Teklifi"}
+{"cat_slug":"proposal","id":"9bcfb6ae-2a2f-49ff-ad5e-b8b3fc3a8f8d","slug":"underwater-scuba-proposal","title_en":"Underwater Scuba Proposal","title_tr":"Sualtı Dalış Teklifi"}
+{"cat_slug":"proposal","id":"224d8843-df57-4ff0-be64-6c8441525c4d","slug":"venice-gondola-proposal","title_en":"Venice Gondola Proposal","title_tr":"Venedik Gondol Teklifi"}
+{"cat_slug":"proposal","id":"2fb92c87-71f0-4dae-92f6-b52f53bc69a2","slug":"vinyl-record-proposal","title_en":"Vinyl Record Proposal","title_tr":"Plak Kaydı Teklifi"}
+{"cat_slug":"romantic","id":"7acbd863-252b-44cc-81b4-3539a89a3ac2","slug":"blindfold-mystery-date","title_en":"Blindfold Mystery Date","title_tr":"Gözü Bağlı Gizemli Buluşma"}
+{"cat_slug":"romantic","id":"bfbea56f-7ee1-4342-b470-d1d616d973f3","slug":"bonsai-love-gift","title_en":"Bonsai Love Tree Gift","title_tr":"Bonsai Aşk Ağacı Hediyesi"}
+{"cat_slug":"romantic","id":"71a08be4-a478-4935-a2e0-6b0397218552","slug":"chemistry-of-love-experiment","title_en":"Chemistry of Love Experiment","title_tr":"Aşkın Kimyası Deneyi"}
+{"cat_slug":"romantic","id":"c7e5df42-0b64-43fb-90c7-558015d07a53","slug":"couple-photoshoot-surprise","title_en":"Couple Photoshoot Surprise","title_tr":"Sürpriz Çift Fotoğraf Çekimi"}
+{"cat_slug":"romantic","id":"dda5d919-1ca4-4e1a-8c36-eeb0b2359a54","slug":"couples-cooking-class","title_en":"Couples Cooking Class","title_tr":"Çift Yemek Yapma Atölyesi"}
+{"cat_slug":"romantic","id":"d840689c-f4ee-4199-8454-88a5f78c6c8d","slug":"couples-painting-night","title_en":"Couples Painting Night","title_tr":"Çift Resim Yapma Gecesi"}
+{"cat_slug":"romantic","id":"8a5fe721-7730-4be7-bfe9-e0788c0970f3","slug":"custom-board-game-date","title_en":"Custom Board Game Date","title_tr":"Kişiye Özel Kutu Oyunu Buluşması"}
+{"cat_slug":"romantic","id":"fefa90d3-c9b0-4d0a-aafe-3f22faa25438","slug":"custom-vinyl-love-album","title_en":"Custom Vinyl Love Album","title_tr":"Kişiye Özel Vinil Aşk Albümü"}
+{"cat_slug":"romantic","id":"3f1d63b0-eb43-40e5-a3b3-4943fc801a0a","slug":"date-night-jar","title_en":"Date Night Jar","title_tr":"Buluşma Gecesi Kavanozu"}
+{"cat_slug":"romantic","id":"7e66379b-c1d0-491a-8117-325404785f0b","slug":"five-senses-box","title_en":"Five Senses Gift Box","title_tr":"Beş Duyu Hediye Kutusu"}
+{"cat_slug":"romantic","id":"1a9f8c8e-c004-4c4c-b2f0-ad9a3fa76e75","slug":"floating-lantern-night","title_en":"Floating Lantern Night","title_tr":"Dilek Feneri Gecesi"}
+{"cat_slug":"romantic","id":"a7ea94c0-096c-47f0-8d48-45e34dadecdf","slug":"glamping-getaway","title_en":"Enchanted Glamping Getaway","title_tr":"Glamping Kaçamak Gecesi"}
+{"cat_slug":"romantic","id":"698a3825-4a97-4702-bd71-368c2826a0d1","slug":"glow-star-bedroom","title_en":"Glow Star Bedroom Surprise","title_tr":"Yıldızlı Yatak Odası Sürprizi"}
+{"cat_slug":"romantic","id":"b4bc3f3b-5295-40b5-9996-7e34d276780e","slug":"hanami-bento-picnic","title_en":"Japanese Hanami Bento Picnic","title_tr":"Hanami Bento Pikniği"}
+{"cat_slug":"romantic","id":"72da5bd8-cd27-46a2-9fc9-ac455af91b6f","slug":"handwritten-poem-gift","title_en":"Handwritten Poem Gift","title_tr":"El Yazması Şiir Hediyesi"}
+{"cat_slug":"romantic","id":"edd43f85-6d38-46d4-8181-7173b99c9d69","slug":"home-cinema-date-night","title_en":"Home Cinema Date Night","title_tr":"Ev Sineması Gecesi"}
+{"cat_slug":"romantic","id":"2617bf45-37b3-487d-a765-078c6f90c728","slug":"home-spa-massage","title_en":"Home Spa and Massage Night","title_tr":"Evde Spa ve Masaj Gecesi"}
+{"cat_slug":"romantic","id":"a37fcf95-f542-40d5-8085-72ff36a76993","slug":"horseback-sunset-ride","title_en":"Horseback Ride Into the Sunset","title_tr":"Gün Batımında At Binme"}
+{"cat_slug":"romantic","id":"a0000004-0001-0001-0001-000000000003","slug":"hot-air-balloon-ride","title_en":"Hot Air Balloon Ride","title_tr":"Sıcak Hava Balonu Turu"}
+{"cat_slug":"romantic","id":"7b612e50-4d6a-478b-9aa7-858ddf074501","slug":"italian-trattoria-home","title_en":"Italian Trattoria Night at Home","title_tr":"Evde İtalyan Trattoria Gecesi"}
+{"cat_slug":"romantic","id":"60da64bf-a9ea-459e-8eaa-75ad6025e044","slug":"long-distance-lamp","title_en":"Long Distance Touch Lamp","title_tr":"Uzak Mesafe Dokunma Lambası"}
+{"cat_slug":"romantic","id":"8a857640-4f20-4e66-aebe-b996637cdbba","slug":"love-coupon-book","title_en":"Love Coupon Book","title_tr":"Aşk Kuponu Kitapçığı"}
+{"cat_slug":"romantic","id":"a0000004-0001-0001-0001-000000000002","slug":"love-letter-trail","title_en":"Love Letter Trail","title_tr":"Aşk Mektubu Rotası"}
+{"cat_slug":"romantic","id":"3eba584e-414c-484d-bc0c-f350a2e500a0","slug":"love-letter-trail-surprise","title_en":"Love Letter Trail","title_tr":"Aşk Mektubu Parkuru"}
+{"cat_slug":"romantic","id":"a9088c9b-10f2-4671-88d1-25ca13d2611c","slug":"love-map-wall-art","title_en":"Love Map Wall Art","title_tr":"Aşk Haritası Duvar Sanatı"}
+{"cat_slug":"romantic","id":"da51bc02-895d-42bf-9955-917a0bd2ea8c","slug":"love-playlist-exchange","title_en":"Love Playlist Exchange","title_tr":"Aşk Müzik Listesi Değişimi"}
+{"cat_slug":"romantic","id":"01943d4e-43fd-450a-b4c4-5b09e82223da","slug":"love-scrapbook-gift","title_en":"Love Scrapbook Gift","title_tr":"Aşk Anı Defteri Hediyesi"}
+{"cat_slug":"romantic","id":"2696e49b-70bf-4030-9191-e29e32c4c7f2","slug":"love-story-comic-book","title_en":"Love Story Comic Book","title_tr":"Aşk Hikayesi Çizgi Roman"}
+{"cat_slug":"romantic","id":"f0218504-faed-4556-bd1f-e2d089a83d3e","slug":"love-treasure-hunt","title_en":"Love Treasure Hunt","title_tr":"Aşk Hazine Avı"}
+{"cat_slug":"romantic","id":"893c5581-a518-4038-87c9-6dd9bad5c201","slug":"love-video-capsule","title_en":"Love Video Capsule","title_tr":"Aşk Video Kapsülü"}
+{"cat_slug":"romantic","id":"161e4c2b-39fb-4730-b2fe-65aca4e5b08b","slug":"luxury-surprise-picnic","title_en":"Luxury Surprise Picnic","title_tr":"Lüks Sürpriz Piknik"}
+{"cat_slug":"romantic","id":"995685b3-00f9-4bf1-889e-1d370f98c84a","slug":"moonlight-boat-ride","title_en":"Moonlight Boat Ride","title_tr":"Ay Işığında Tekne Gezintisi"}
+{"cat_slug":"romantic","id":"fff66cb6-b13e-47d7-a826-959936fd0cdb","slug":"mystery-road-trip","title_en":"Mystery Road Trip Adventure","title_tr":"Gizemli Yol Gezisi"}
+{"cat_slug":"romantic","id":"1d958e42-4a70-431e-9893-b8b16d3c1b75","slug":"northern-lights-bedroom","title_en":"Northern Lights Bedroom Experience","title_tr":"Kuzey Işıkları Yatak Odası"}
+{"cat_slug":"romantic","id":"a0000004-0001-0001-0001-000000000004","slug":"picnic-in-the-park","title_en":"Surprise Park Picnic","title_tr":"Parkta Piknik Sürprizi"}
+{"cat_slug":"romantic","id":"b7abd3e1-af05-43e4-a617-44033c9ec047","slug":"picnic-under-stars","title_en":"Picnic Under the Stars","title_tr":"Yıldızların Altında Piknik"}
+{"cat_slug":"romantic","id":"95383ebf-decc-43af-832d-51d11655bac0","slug":"popup-restaurant-home","title_en":"Pop-up Restaurant at Home","title_tr":"Evde Pop-up Restoran"}
+{"cat_slug":"romantic","id":"8917b477-0353-4bdb-8336-5ad427bb8cb4","slug":"reasons-i-love-you-jar","title_en":"Reasons I Love You Jar","title_tr":"Seni Sevmemin Nedenleri Kavanozu"}
+{"cat_slug":"romantic","id":"f9e3ab81-2368-48e5-8927-af573d5d0694","slug":"romantic-train-journey","title_en":"Romantic Train Journey","title_tr":"Romantik Tren Yolculuğu"}
+{"cat_slug":"romantic","id":"c39cfaff-ccc6-49f4-923d-578b70aa03f8","slug":"rooftop-starlight-dinner","title_en":"Rooftop Starlight Dinner","title_tr":"Çatıda Yıldız Işığı Yemeği"}
+{"cat_slug":"romantic","id":"0efa9017-7ad6-469f-99a5-17ede11f6141","slug":"rumi-persian-tea","title_en":"Rumi Poetry and Persian Tea Ceremony","title_tr":"Rumi Şiiri ve İran Çay Seremonisi"}
+{"cat_slug":"romantic","id":"8035f534-7137-42c4-bdc9-30179355e175","slug":"scheduled-love-messages","title_en":"Scheduled Love Messages","title_tr":"Zamanlanmış Aşk Mesajları"}
+{"cat_slug":"romantic","id":"83710242-6536-4049-803f-59b985c688fa","slug":"secret-date-reveal","title_en":"Secret Date Reveal","title_tr":"Gizli Buluşma Açıklaması"}
+{"cat_slug":"romantic","id":"a4a42467-d017-4e1b-aa10-3324d87662fc","slug":"secret-message-garden","title_en":"Secret Message Garden","title_tr":"Gizli Mesaj Bahçesi"}
+{"cat_slug":"romantic","id":"6960b6cf-36b3-467d-b1fa-c657ca8931a0","slug":"serenata-moderna","title_en":"Modern Serenade Surprise","title_tr":"La Serenata Moderna"}
+{"cat_slug":"romantic","id":"a90765bc-3510-4a10-9539-0d8ec7e65fde","slug":"sky-lantern-ceremony","title_en":"Sky Lantern Wish Ceremony","title_tr":"Gökyüzü Feneri Dilek Töreni"}
+{"cat_slug":"romantic","id":"74dea79d-9419-487d-a000-242dd0c3c181","slug":"stargazing-rooftop-date","title_en":"Stargazing Rooftop Date","title_tr":"Çatıda Yıldız Gözlemi Buluşması"}
+{"cat_slug":"romantic","id":"4d6bb609-892a-4730-8a1c-3b648010bc23","slug":"sunrise-breakfast-beach","title_en":"Sunrise Breakfast on the Beach","title_tr":"Sahilde Gün Doğumu Kahvaltısı"}
+{"cat_slug":"romantic","id":"61f28feb-cc22-49fd-a2b6-9786fd2b69b0","slug":"sunset-sailing-surprise","title_en":"Sunset Sailing Surprise","title_tr":"Gün Batımı Yelken Sürprizi"}
+{"cat_slug":"romantic","id":"a0000004-0001-0001-0001-000000000005","slug":"surprise-weekend-getaway","title_en":"Surprise Weekend Getaway","title_tr":"Sürpriz Hafta Sonu Kaçamağı"}
+{"cat_slug":"romantic","id":"9918d010-478f-42cb-b1d6-3bf504e82440","slug":"turkish-coffee-date-surprise","title_en":"Turkish Coffee Date Surprise","title_tr":"Türk Kahvesi Buluşma Sürprizi"}
+{"cat_slug":"valentines","id":"a0000007-0001-0001-0001-000000000002","slug":"home-spa-date","title_en":"Home Spa Date","title_tr":"Evde Spa Günü"}
+{"cat_slug":"valentines","id":"a0000007-0001-0001-0001-000000000001","slug":"valentines-scavenger-hunt","title_en":"Valentines Day Scavenger Hunt","title_tr":"Sevgililer Günü Hazine Avı"}

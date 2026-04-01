@@ -1,0 +1,63 @@
+appId: com.momentra.app
+---
+# Flow: Explore tab — search and filter scenarios
+- launchApp
+
+- runFlow: auth_login.yaml
+
+# Go to Explore tab
+- tapOn:
+    text: "Keşfet"
+  optional: true
+- tapOn:
+    text: "Explore"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Verify explore screen loaded
+- assertVisible:
+    text: "Keşfet"
+  optional: true
+- assertVisible:
+    text: "Explore"
+  optional: true
+
+# Tap search field if present
+- tapOn:
+    text: "Ara..."
+  optional: true
+- tapOn:
+    text: "Search..."
+  optional: true
+- tapOn:
+    id: "search-input"
+  optional: true
+
+- inputText: "doğum günü"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Clear search
+- clearText
+  optional: true
+
+# Scroll through scenarios
+- scrollDown
+
+- waitForAnimationToEnd
+
+# Tap on a category filter if visible
+- tapOn:
+    text: "Doğum Günü"
+  optional: true
+- tapOn:
+    text: "Birthday"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Verify results still showing
+- scrollDown
+  optional: true

@@ -1,0 +1,51 @@
+appId: com.momentra.app
+---
+# Flow: Login with invalid credentials — verify error message shown
+- launchApp:
+    clearState: true
+
+# Wait for login screen
+- assertVisible:
+    id: "email-input"
+  timeout: 10000
+
+# Enter invalid email
+- tapOn:
+    id: "email-input"
+- clearText
+- inputText: "notauser@invalid.com"
+
+# Enter wrong password
+- tapOn:
+    id: "password-input"
+- clearText
+- inputText: "WrongPassword999!"
+
+# Tap login button
+- tapOn:
+    text: "Giriş Yap"
+  optional: true
+- tapOn:
+    text: "Sign In"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Should still be on login screen (not navigated away)
+- assertVisible:
+    id: "email-input"
+  timeout: 8000
+
+# Should see an error toast or error message
+- assertVisible:
+    text: "Hatalı"
+  optional: true
+- assertVisible:
+    text: "Invalid"
+  optional: true
+- assertVisible:
+    text: "hata"
+  optional: true
+- assertVisible:
+    text: "error"
+  optional: true

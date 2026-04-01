@@ -1,0 +1,29 @@
+{
+  "featured": "سيناريوهات مميزة",
+  "all_scenarios": "جميع السيناريوهات",
+  "difficulty": "الصعوبة",
+  "prep_time": "وقت التحضير",
+  "budget_range": "نطاق الميزانية",
+  "people_count": "عدد الأشخاص",
+  "indoor": "داخلي",
+  "outdoor": "خارجي",
+  "both": "كلاهما",
+  "steps": "الخطوات",
+  "step": "خطوة",
+  "plan_this": "خطط لهذا!",
+  "reviews": "التقييمات",
+  "no_reviews": "لا توجد تقييمات بعد",
+  "estimated_budget": "الميزانية التقديرية",
+  "days_prep": "{{count}} يوم تحضير",
+  "people_range": "{{min}}-{{max}} شخص",
+  "filters": {
+    "category": "الفئة",
+    "budget_min": "أدنى ميزانية",
+    "budget_max": "أقصى ميزانية",
+    "people": "عدد الأشخاص",
+    "location_type": "نوع الموقع",
+    "difficulty": "مستوى الصعوبة",
+    "clear_all": "مسح الكل",
+    "apply": "تطبيق"
+  }
+}

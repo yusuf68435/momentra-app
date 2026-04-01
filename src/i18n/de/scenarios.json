@@ -1,0 +1,29 @@
+{
+  "featured": "Ausgewählte Szenarien",
+  "all_scenarios": "Alle Szenarien",
+  "difficulty": "Schwierigkeitsgrad",
+  "prep_time": "Vorbereitungszeit",
+  "budget_range": "Budgetrahmen",
+  "people_count": "Personenanzahl",
+  "indoor": "Drinnen",
+  "outdoor": "Draußen",
+  "both": "Beides",
+  "steps": "Schritte",
+  "step": "Schritt",
+  "plan_this": "Das planen!",
+  "reviews": "Bewertungen",
+  "no_reviews": "Noch keine Bewertungen",
+  "estimated_budget": "Geschätztes Budget",
+  "days_prep": "{{count}} Tage Vorbereitung",
+  "people_range": "{{min}}–{{max}} Personen",
+  "filters": {
+    "category": "Kategorie",
+    "budget_min": "Mindestbudget",
+    "budget_max": "Höchstbudget",
+    "people": "Personenanzahl",
+    "location_type": "Standorttyp",
+    "difficulty": "Schwierigkeitsstufe",
+    "clear_all": "Alle löschen",
+    "apply": "Anwenden"
+  }
+}

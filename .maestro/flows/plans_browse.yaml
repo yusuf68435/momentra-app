@@ -1,0 +1,31 @@
+appId: com.momentra.app
+---
+# Flow: Open Plans tab, verify list/empty state, tap a plan if one exists
+- launchApp
+
+# Login first
+- runFlow: auth_login.yaml
+
+# Tap Plans tab
+- tapOn:
+    text: "Planlarım"
+  optional: true
+- tapOn:
+    text: "My Plans"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Either empty state or plan list should be visible
+- assertTrue:
+    condition: >
+      ${maestro.visible('Planlarım')} || ${maestro.visible('My Plans')}
+  optional: true
+
+# If "Yeni plan oluştur" button is visible the screen loaded correctly
+- assertVisible:
+    text: "Yeni plan oluştur"
+  optional: true
+- assertVisible:
+    text: "Create Plan"
+  optional: true

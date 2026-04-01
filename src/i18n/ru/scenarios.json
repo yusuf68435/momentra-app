@@ -1,0 +1,29 @@
+{
+  "featured": "Избранные сценарии",
+  "all_scenarios": "Все сценарии",
+  "difficulty": "Сложность",
+  "prep_time": "Время подготовки",
+  "budget_range": "Диапазон бюджета",
+  "people_count": "Количество людей",
+  "indoor": "В помещении",
+  "outdoor": "На улице",
+  "both": "Оба варианта",
+  "steps": "Шаги",
+  "step": "Шаг",
+  "plan_this": "Спланировать!",
+  "reviews": "Отзывы",
+  "no_reviews": "Отзывов пока нет",
+  "estimated_budget": "Приблизительный бюджет",
+  "days_prep": "{{count}} дней подготовки",
+  "people_range": "{{min}}–{{max}} человек",
+  "filters": {
+    "category": "Категория",
+    "budget_min": "Мин. бюджет",
+    "budget_max": "Макс. бюджет",
+    "people": "Количество людей",
+    "location_type": "Тип места",
+    "difficulty": "Уровень сложности",
+    "clear_all": "Сбросить всё",
+    "apply": "Применить"
+  }
+}

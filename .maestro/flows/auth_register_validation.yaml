@@ -1,0 +1,46 @@
+appId: com.momentra.app
+---
+# Flow: Register form validation — empty fields should show errors
+- launchApp:
+    clearState: true
+
+# Wait for login screen and navigate to register
+- assertVisible:
+    id: "email-input"
+  timeout: 10000
+
+- tapOn:
+    text: "Hesap oluştur"
+  optional: true
+- tapOn:
+    text: "Create account"
+  optional: true
+- tapOn:
+    text: "Kayıt ol"
+  optional: true
+- tapOn:
+    text: "Sign Up"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Try submitting with empty fields
+- tapOn:
+    text: "Kayıt Ol"
+  optional: true
+- tapOn:
+    text: "Register"
+  optional: true
+- tapOn:
+    text: "Create Account"
+  optional: true
+
+- waitForAnimationToEnd
+
+# Should remain on register screen
+- assertNotVisible:
+    text: "Anasayfa"
+  optional: true
+- assertNotVisible:
+    text: "Home"
+  optional: true

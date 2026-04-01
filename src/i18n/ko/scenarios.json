@@ -1,0 +1,29 @@
+{
+  "featured": "추천 시나리오",
+  "all_scenarios": "모든 시나리오",
+  "difficulty": "난이도",
+  "prep_time": "준비 시간",
+  "budget_range": "예산 범위",
+  "people_count": "인원 수",
+  "indoor": "실내",
+  "outdoor": "야외",
+  "both": "상관없음",
+  "steps": "단계",
+  "step": "단계",
+  "plan_this": "이걸로 계획하기!",
+  "reviews": "리뷰",
+  "no_reviews": "아직 리뷰가 없어요",
+  "estimated_budget": "예상 예산",
+  "days_prep": "{{count}}일 준비",
+  "people_range": "{{min}}~{{max}}명",
+  "filters": {
+    "category": "카테고리",
+    "budget_min": "최소 예산",
+    "budget_max": "최대 예산",
+    "people": "인원 수",
+    "location_type": "장소 유형",
+    "difficulty": "난이도",
+    "clear_all": "전체 초기화",
+    "apply": "적용"
+  }
+}

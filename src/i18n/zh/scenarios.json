@@ -1,0 +1,29 @@
+{
+  "featured": "精选场景",
+  "all_scenarios": "所有场景",
+  "difficulty": "难度",
+  "prep_time": "准备时间",
+  "budget_range": "预算范围",
+  "people_count": "人数",
+  "indoor": "室内",
+  "outdoor": "户外",
+  "both": "均可",
+  "steps": "步骤",
+  "step": "步骤",
+  "plan_this": "选择此方案！",
+  "reviews": "评价",
+  "no_reviews": "暂无评价",
+  "estimated_budget": "预计预算",
+  "days_prep": "{{count}} 天准备",
+  "people_range": "{{min}}-{{max}} 人",
+  "filters": {
+    "category": "分类",
+    "budget_min": "最低预算",
+    "budget_max": "最高预算",
+    "people": "人数",
+    "location_type": "地点类型",
+    "difficulty": "难度等级",
+    "clear_all": "清除全部",
+    "apply": "应用"
+  }
+}

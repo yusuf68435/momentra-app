@@ -1,0 +1,29 @@
+{
+  "featured": "विशेष परिदृश्य",
+  "all_scenarios": "सभी परिदृश्य",
+  "difficulty": "कठिनाई",
+  "prep_time": "तैयारी का समय",
+  "budget_range": "बजट सीमा",
+  "people_count": "लोगों की संख्या",
+  "indoor": "इनडोर",
+  "outdoor": "आउटडोर",
+  "both": "दोनों",
+  "steps": "चरण",
+  "step": "चरण",
+  "plan_this": "इसे प्लान करें!",
+  "reviews": "समीक्षाएँ",
+  "no_reviews": "अभी कोई समीक्षा नहीं",
+  "estimated_budget": "अनुमानित बजट",
+  "days_prep": "{{count}} दिन की तैयारी",
+  "people_range": "{{min}}-{{max}} लोग",
+  "filters": {
+    "category": "श्रेणी",
+    "budget_min": "न्यूनतम बजट",
+    "budget_max": "अधिकतम बजट",
+    "people": "लोगों की संख्या",
+    "location_type": "स्थान का प्रकार",
+    "difficulty": "कठिनाई स्तर",
+    "clear_all": "सभी हटाएँ",
+    "apply": "लागू करें"
+  }
+}

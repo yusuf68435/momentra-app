@@ -1,0 +1,29 @@
+{
+  "featured": "Рекомендовані сценарії",
+  "all_scenarios": "Усі сценарії",
+  "difficulty": "Складність",
+  "prep_time": "Час підготовки",
+  "budget_range": "Бюджетний діапазон",
+  "people_count": "Кількість людей",
+  "indoor": "У приміщенні",
+  "outdoor": "Надворі",
+  "both": "Обидва",
+  "steps": "Кроки",
+  "step": "Крок",
+  "plan_this": "Спланувати це!",
+  "reviews": "Відгуки",
+  "no_reviews": "Відгуків ще немає",
+  "estimated_budget": "Орієнтовний бюджет",
+  "days_prep": "{{count}} днів підготовки",
+  "people_range": "{{min}}-{{max}} людей",
+  "filters": {
+    "category": "Категорія",
+    "budget_min": "Мінімальний бюджет",
+    "budget_max": "Максимальний бюджет",
+    "people": "Кількість людей",
+    "location_type": "Тип місця",
+    "difficulty": "Рівень складності",
+    "clear_all": "Очистити все",
+    "apply": "Застосувати"
+  }
+}

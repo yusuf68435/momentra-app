@@ -13,12 +13,16 @@
     },
     "production": {
       "channel": "production",
-      "autoIncrement": true
+      "autoIncrement": true,
+      "env": {
+        "SENTRY_DISABLE_AUTO_UPLOAD": "true"
+      }
     }
   },
   "submit": {
     "production": {
       "ios": {
+        "ascAppId": "6760708636",
         "ascApiKeyId": "X2MRHFV27Z",
         "ascApiKeyIssuerId": "0c203279-bcf4-49ec-8e75-40b7618c5f94",
         "ascApiKeyPath": "../AuthKey_X2MRHFV27Z.p8"

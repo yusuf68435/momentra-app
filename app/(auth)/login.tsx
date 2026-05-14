@@ -107,9 +107,9 @@ export default function LoginScreen() {
       loginAttemptTracker.count = 0;
       loginAttemptTracker.lockedUntil = 0;
       router.replace("/(tabs)");
-    } catch (error: any) {
+    } catch (error) {
       triggerShake();
-      const msg = error?.message || "";
+      const msg = error instanceof Error ? error.message : "";
       if (msg.includes("Invalid login credentials")) {
         loginAttemptTracker.count += 1;
         if (loginAttemptTracker.count >= MAX_LOGIN_ATTEMPTS) {
@@ -156,29 +156,31 @@ export default function LoginScreen() {
     try {
       await authService.resetPassword(email);
       Alert.alert(t("auth.email_sent_title"), t("auth.email_sent_body"));
-    } catch (error: any) {
+    } catch {
       Alert.alert(t("auth.error_title"), t("auth.reset_failed_body"));
     }
   };
 
   const handleGoogleLogin = async () => {
     try {
-      const { data, error } = await supabase.auth.signInWithOAuth({
+      const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
+        options: { redirectTo: "momentra://auth/callback" },
       });
       if (error) throw error;
-    } catch (error: any) {
+    } catch {
       Alert.alert(t("auth.error_title"), t("auth.google_login_failed"));
     }
   };
 
   const handleAppleLogin = async () => {
     try {
-      const { data, error } = await supabase.auth.signInWithOAuth({
+      const { error } = await supabase.auth.signInWithOAuth({
         provider: "apple",
+        options: { redirectTo: "momentra://auth/callback" },
       });
       if (error) throw error;
-    } catch (error: any) {
+    } catch {
       Alert.alert(t("auth.error_title"), t("auth.apple_login_failed"));
     }
   };

@@ -122,13 +122,13 @@ export default function ScenarioDetailScreen() {
   const title = lang === "tr" ? scenario.title_tr : scenario.title_en;
   const description =
     lang === "tr" ? scenario.description_tr : scenario.description_en;
-  const catSlug = (scenario.category as any)?.slug;
+  const catSlug = scenario.category?.slug;
   const catDef = CATEGORIES.find((c) => c.slug === catSlug);
   const catColor = catDef?.color || colors.primary;
   const catName = catDef
     ? lang === "tr"
-      ? (scenario.category as any)?.name_tr
-      : (scenario.category as any)?.name_en
+      ? scenario.category?.name_tr
+      : scenario.category?.name_en
     : "";
   const steps = scenario.steps || [];
 

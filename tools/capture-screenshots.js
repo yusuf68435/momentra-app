@@ -3,7 +3,7 @@ const sharp = require("sharp");
 const path = require("path");
 const fs = require("fs");
 
-const HTML = path.resolve(__dirname, "aso-screenshots.html");
+const HTML = path.resolve(__dirname, "lex-nova.html");
 const OUT = path.resolve(__dirname, "../assets/screenshots");
 
 // App Store: 1290×2796 (iPhone 6.7")
@@ -40,7 +40,7 @@ async function run() {
     const page = await browser.newPage();
     await page.setViewport({
       width: 1800,
-      height: 900,
+      height: 2200,
       deviceScaleFactor: SCALE,
     });
 
@@ -62,27 +62,12 @@ async function run() {
     for (let i = 0; i < SS_COUNT; i++) {
       const name = SS_NAMES[i];
 
-      // Get the i-th .screenshot element in the active section
-      const el = await page.evaluateHandle(
-        (idx, l) => {
-          const sec = document.getElementById("sec-" + l);
-          if (!sec) return null;
-          return sec.querySelectorAll(".screenshot")[idx] || null;
-        },
-        i,
-        lang,
-      );
-
-      if (!el || el.toString() === "undefined") {
-        console.warn(`  ⚠ ${lang}/${name} — element not found, skipping`);
-        continue;
-      }
-
       // Scroll element into view inside the overflow container
       await page.evaluate(
         (idx, l) => {
           const sec = document.getElementById("sec-" + l);
-          const el = sec.querySelectorAll(".screenshot")[idx];
+          if (!sec) return;
+          const el = sec.querySelectorAll(".ss")[idx];
           if (el) el.scrollIntoView({ block: "nearest", inline: "start" });
         },
         i,
@@ -90,8 +75,34 @@ async function run() {
       );
       await new Promise((r) => setTimeout(r, 150));
 
-      // el.screenshot() automatically handles scrolling and captures only the element
-      const rawBuf = await el.screenshot({ type: "png" });
+      // Get bounding box via evaluate and capture via page.screenshot clip
+      const box = await page.evaluate(
+        (idx, l) => {
+          const sec = document.getElementById("sec-" + l);
+          if (!sec) return null;
+          const el = sec.querySelectorAll(".ss")[idx];
+          if (!el) return null;
+          const r = el.getBoundingClientRect();
+          return { x: r.left, y: r.top, width: r.width, height: r.height };
+        },
+        i,
+        lang,
+      );
+
+      if (!box) {
+        console.warn(`  ⚠ ${lang}/${name} — element not found, skipping`);
+        continue;
+      }
+
+      const rawBuf = await page.screenshot({
+        type: "png",
+        clip: {
+          x: box.x,
+          y: box.y,
+          width: box.width,
+          height: box.height,
+        },
+      });
 
       // Resize to App Store dimensions
       const outFile = path.join(langDir, `${name}.png`);

@@ -32,6 +32,11 @@ import {
   resetAnalytics,
   trackScreen,
 } from "../src/services/analytics";
+import {
+  initErrorTracking,
+  setUser as setErrorTrackingUser,
+  clearUser as clearErrorTrackingUser,
+} from "../src/utils/errorTracking";
 import * as Linking from "expo-linking";
 import {
   initOfflineQueueSync,
@@ -160,9 +165,14 @@ function RootLayoutNav() {
   const notificationListener = useRef<Notifications.EventSubscription>(null);
   const responseListener = useRef<Notifications.EventSubscription>(null);
 
-  // Initialize analytics once on mount
+  // Initialize analytics and error tracking once on mount
   useEffect(() => {
     initAnalytics().catch(() => {});
+    try {
+      initErrorTracking();
+    } catch {
+      // No-op if Sentry package is not installed or DSN is missing
+    }
   }, []);
 
   // Identify / de-identify user when auth state changes
@@ -171,11 +181,23 @@ function RootLayoutNav() {
     if (isAuthenticated) {
       getCurrentUserId()
         .then((userId) => {
-          if (userId) identifyUser(userId, { language });
+          if (userId) {
+            identifyUser(userId, { language });
+            try {
+              setErrorTrackingUser(userId);
+            } catch {
+              // No-op if Sentry is unavailable
+            }
+          }
         })
         .catch(() => {});
     } else {
       resetAnalytics();
+      try {
+        clearErrorTrackingUser();
+      } catch {
+        // No-op if Sentry is unavailable
+      }
     }
   }, [isAuthenticated, isLoading]);
 

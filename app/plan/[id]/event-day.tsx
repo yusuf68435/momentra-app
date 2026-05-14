@@ -277,7 +277,7 @@ export default function EventDayScreen() {
                       styles.progressFill,
                       {
                         backgroundColor: colors.primary,
-                        width: `${progressPct}%` as any,
+                        width: `${progressPct}%`,
                       },
                     ]}
                   />

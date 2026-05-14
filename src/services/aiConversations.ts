@@ -76,7 +76,7 @@ export async function createConversation(context?: {
     .from("ai_conversations")
     .insert({
       user_id: userId,
-      title: context?.title || new Date().toLocaleDateString("tr-TR"),
+      title: context?.title || new Date().toLocaleDateString(),
       context_plan_id: context?.planId || null,
       context_scenario_id: context?.scenarioId || null,
       messages: [],
@@ -177,5 +177,12 @@ export async function loadConversation(
 export async function deleteConversation(
   conversationId: string,
 ): Promise<void> {
-  await supabase.from("ai_conversations").delete().eq("id", conversationId);
+  const userId = await getCurrentUserId();
+  if (!userId) return;
+
+  await supabase
+    .from("ai_conversations")
+    .delete()
+    .eq("id", conversationId)
+    .eq("user_id", userId);
 }

@@ -184,7 +184,10 @@
     "thu": "Czw",
     "fri": "Pt",
     "sat": "Sob",
-    "sun": "Nd"
+    "sun": "Nd",
+    "gpsLoading": "Pobieranie GPS...",
+    "useGPS": "Użyj mojej lokalizacji GPS",
+    "or": "lub"
   },
   "timeline": {
     "title": "Oś czasu przygotowań",

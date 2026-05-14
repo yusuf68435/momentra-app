@@ -1,7 +1,7 @@
-import { supabase } from './supabase';
-import { getCurrentUserId } from './helpers';
-import type { SubscriptionPlan } from './subscription';
-import { PLAN_FEATURES } from './subscription';
+import { supabase } from "./supabase";
+import { getCurrentUserId } from "./helpers";
+import type { SubscriptionPlan } from "./subscription";
+import { PLAN_FEATURES } from "./subscription";
 
 /**
  * AI Credit System
@@ -22,17 +22,21 @@ export function getCreditsForPlan(plan: SubscriptionPlan): number {
  */
 export async function fetchAICreditsUsed(userId: string): Promise<number> {
   const now = new Date();
-  const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
+  const startOfMonth = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    1,
+  ).toISOString();
 
   const { count, error } = await supabase
-    .from('ai_interactions')
-    .select('*', { count: 'exact', head: true })
-    .eq('user_id', userId)
-    .gte('created_at', startOfMonth);
+    .from("ai_interactions")
+    .select("*", { count: "exact", head: true })
+    .eq("user_id", userId)
+    .gte("created_at", startOfMonth);
 
   if (error) {
     if (__DEV__) {
-      console.warn('Failed to fetch AI credits used:', error);
+      console.warn("Failed to fetch AI credits used:", error);
     }
     return 0;
   }
@@ -42,16 +46,21 @@ export async function fetchAICreditsUsed(userId: string): Promise<number> {
 
 /**
  * Returns the remaining AI credits for a user this month.
+ *
+ * NOTE (v1.0): All users get unlimited credits while IAP is disabled.
+ * Restore the per-plan limit logic (commented out below) in v1.1+ when
+ * RevenueCat integration is enabled.
  */
 export async function getRemainingCredits(
-  userId: string,
-  plan: SubscriptionPlan,
+  _userId: string,
+  _plan: SubscriptionPlan,
 ): Promise<number> {
-  const maxCredits = getCreditsForPlan(plan);
-  if (maxCredits >= Number.MAX_SAFE_INTEGER) return Infinity;
-
-  const used = await fetchAICreditsUsed(userId);
-  return Math.max(0, maxCredits - used);
+  return Infinity;
+  // Original implementation (restore for v1.1):
+  // const maxCredits = getCreditsForPlan(_plan);
+  // if (maxCredits >= Number.MAX_SAFE_INTEGER) return Infinity;
+  // const used = await fetchAICreditsUsed(_userId);
+  // return Math.max(0, maxCredits - used);
 }
 
 /**
@@ -63,9 +72,9 @@ export async function consumeAICredit(
   promptType: string,
   inputData: Record<string, unknown> = {},
   responseData: Record<string, unknown> = {},
-  modelUsed: string = 'edge-function',
+  modelUsed: string = "edge-function",
 ): Promise<void> {
-  const { error } = await supabase.from('ai_interactions').insert({
+  const { error } = await supabase.from("ai_interactions").insert({
     user_id: userId,
     prompt_type: promptType,
     input_data: inputData,
@@ -75,7 +84,7 @@ export async function consumeAICredit(
 
   if (error) {
     if (__DEV__) {
-      console.warn('Failed to log AI interaction:', error);
+      console.warn("Failed to log AI interaction:", error);
     }
   }
 }

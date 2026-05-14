@@ -230,7 +230,7 @@ export default function NotificationsScreen() {
           const isDisabled = !notificationsEnabled;
           const optionColor = option.colorKey.startsWith("#")
             ? option.colorKey
-            : (colors as any)[option.colorKey];
+            : (colors as Record<string, string>)[option.colorKey];
 
           return (
             <Animated.View

@@ -184,7 +184,10 @@
     "thu": "Qui",
     "fri": "Sex",
     "sat": "Sáb",
-    "sun": "Dom"
+    "sun": "Dom",
+    "gpsLoading": "Obtendo GPS...",
+    "useGPS": "Usar minha localização GPS",
+    "or": "ou"
   },
   "timeline": {
     "title": "Cronograma de preparação",

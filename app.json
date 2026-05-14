@@ -13,7 +13,7 @@
       "backgroundColor": "#F5F0E8"
     },
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "com.uyart.momentra",
       "buildNumber": "1",
       "infoPlist": {
@@ -139,7 +139,8 @@
         {
           "locationAlwaysAndWhenInUsePermission": "Momentra hava durumu için konumunuza erişim ister."
         }
-      ]
+      ],
+      "@sentry/react-native"
     ],
     "experiments": {
       "typedRoutes": true

@@ -189,6 +189,7 @@ export async function markAsCelebrated(
   id: string,
   year?: number,
 ): Promise<RecurringEvent> {
+  const user = await getCurrentUser();
   const celebratedYear = year || new Date().getFullYear();
 
   const { data, error } = await supabase
@@ -198,6 +199,7 @@ export async function markAsCelebrated(
       updated_at: new Date().toISOString(),
     })
     .eq("id", id)
+    .eq("user_id", user.id)
     .select()
     .single();
 

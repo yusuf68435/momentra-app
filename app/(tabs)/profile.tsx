@@ -357,21 +357,8 @@ function ProfileScreenContent() {
         </View>
       </View>
 
-      {/* Upgrade Row (free users) */}
-      {subscriptionPlan === "free" && (
-        <View style={styles.section}>
-          <View style={styles.sectionCard}>
-            <SettingsRow
-              icon="crown"
-              label={t("common:profile.upgradeToPro")}
-              onPress={() => router.push("/settings/subscription")}
-              color={colors.primary}
-              colors={colors}
-              isLast
-            />
-          </View>
-        </View>
-      )}
+      {/* Upgrade Row disabled in v1.0 — all features are free.
+          Re-enable when IAP / RevenueCat is wired up in v1.1+. */}
 
       {/* Settings */}
       <View style={styles.section}>

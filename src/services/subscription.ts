@@ -94,12 +94,19 @@ const PLAN_RANK: Record<SubscriptionPlan, number> = {
 
 /**
  * Returns true if `current` plan is equal to or higher than `required`.
+ *
+ * NOTE (v1.0): All features are temporarily free for the initial release.
+ * IAP / RevenueCat integration is deferred to v1.1+.
+ * Revert this function to the rank comparison below when re-enabling paywall.
  */
 export function isPlanAtLeast(
-  current: SubscriptionPlan,
-  required: SubscriptionPlan,
+  _current: SubscriptionPlan,
+  _required: SubscriptionPlan,
 ): boolean {
-  return PLAN_RANK[current] >= PLAN_RANK[required];
+  // v1.0 free-for-all override:
+  return true;
+  // Original gating (restore for v1.1):
+  // return PLAN_RANK[_current] >= PLAN_RANK[_required];
 }
 
 // ---------------------------------------------------------------------------
@@ -108,15 +115,14 @@ export function isPlanAtLeast(
 
 /**
  * Check whether a boolean feature is available on the given plan.
+ *
+ * NOTE (v1.0): All features unlocked for initial release. See isPlanAtLeast.
  */
 export function hasFeature(
-  plan: SubscriptionPlan,
-  feature: keyof PlanFeatures,
+  _plan: SubscriptionPlan,
+  _feature: keyof PlanFeatures,
 ): boolean {
-  const value = PLAN_FEATURES[plan][feature];
-  if (typeof value === "boolean") return value;
-  // For numeric features, treat > 0 as "has feature"
-  return (value as number) > 0;
+  return true;
 }
 
 /**
@@ -141,15 +147,12 @@ export function getLimit(
  * @returns             true if the user still has capacity
  */
 export function canPerformAction(
-  plan: SubscriptionPlan,
-  action: keyof PlanFeatures,
-  currentUsage: number,
+  _plan: SubscriptionPlan,
+  _action: keyof PlanFeatures,
+  _currentUsage: number,
 ): boolean {
-  const limit = getLimit(plan, action);
-  if (typeof PLAN_FEATURES[plan][action] === "boolean") {
-    return PLAN_FEATURES[plan][action] as boolean;
-  }
-  return currentUsage < limit;
+  // v1.0: All actions allowed (no limits). Re-enable gating in v1.1 with IAP.
+  return true;
 }
 
 /**

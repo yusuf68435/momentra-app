@@ -184,7 +184,10 @@
     "thu": "周四",
     "fri": "周五",
     "sat": "周六",
-    "sun": "周日"
+    "sun": "周日",
+    "gpsLoading": "获取GPS中...",
+    "useGPS": "使用我的GPS位置",
+    "or": "或"
   },
   "timeline": {
     "title": "准备时间线",

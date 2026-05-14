@@ -184,7 +184,10 @@
     "thu": "木",
     "fri": "金",
     "sat": "土",
-    "sun": "日"
+    "sun": "日",
+    "gpsLoading": "GPS取得中...",
+    "useGPS": "GPS位置情報を使用",
+    "or": "または"
   },
   "timeline": {
     "title": "準備タイムライン",

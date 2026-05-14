@@ -184,7 +184,10 @@
     "thu": "Jeu",
     "fri": "Ven",
     "sat": "Sam",
-    "sun": "Dim"
+    "sun": "Dim",
+    "gpsLoading": "Récupération GPS...",
+    "useGPS": "Utiliser ma position GPS",
+    "or": "ou"
   },
   "timeline": {
     "title": "Calendrier de préparation",

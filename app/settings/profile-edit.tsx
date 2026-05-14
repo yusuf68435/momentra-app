@@ -45,7 +45,8 @@ export default function ProfileEditScreen() {
   const [importantDates, setImportantDates] = useState<
     Array<{ label: string; date: string; type: string }>
   >(() => {
-    const saved = (profile?.preferences as any)?.importantDates;
+    const saved = (profile?.preferences as Record<string, unknown>)
+      ?.importantDates;
     return Array.isArray(saved) && saved.length > 0
       ? saved
       : [{ label: "", date: "", type: "birthday" }];
@@ -76,7 +77,9 @@ export default function ProfileEditScreen() {
   ];
 
   const [selectedInterests, setSelectedInterests] = useState<string[]>(
-    (profile?.preferences as any)?.interests || [],
+    ((profile?.preferences as Record<string, unknown>)?.interests as
+      | string[]
+      | undefined) || [],
   );
 
   const toggleInterest = (id: string) => {

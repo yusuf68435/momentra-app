@@ -7,6 +7,7 @@ import {
   removeNotificationIds,
 } from "../utils/notificationStore";
 import { requestNotificationPermission } from "../utils/notifications";
+import { useSettingsStore } from "../stores/settingsStore";
 
 // ──────────────────────────────────────────────
 // Types
@@ -16,6 +17,8 @@ interface CountdownMilestone {
   days: number;
   titleTr: string;
   titleEn: string;
+  bodyTr: (planTitle: string) => string;
+  bodyEn: (planTitle: string) => string;
   emoji: string;
   channel: string;
 }
@@ -37,15 +40,19 @@ interface NotificationData {
 const COUNTDOWN_MILESTONES: CountdownMilestone[] = [
   {
     days: 14,
-    titleTr: "2 hafta kaldi!",
+    titleTr: "2 hafta kaldı!",
     titleEn: "2 weeks to go!",
+    bodyTr: (t) => `"${t}" için 14 gün kaldı. Her şey yolunda mı?`,
+    bodyEn: (t) => `14 days until "${t}". Are you on track?`,
     emoji: "\u{1F4C5}",
     channel: "countdown",
   },
   {
     days: 7,
-    titleTr: "1 hafta kaldi!",
+    titleTr: "1 hafta kaldı!",
     titleEn: "1 week to go!",
+    bodyTr: (t) => `"${t}" için 7 gün kaldı. Hazırlıkları kontrol et!`,
+    bodyEn: (t) => `7 days until "${t}". Are you on track?`,
     emoji: "\u{1F514}",
     channel: "countdown",
   },
@@ -53,6 +60,8 @@ const COUNTDOWN_MILESTONES: CountdownMilestone[] = [
     days: 3,
     titleTr: "3 gün kaldı!",
     titleEn: "3 days to go!",
+    bodyTr: (t) => `"${t}" için sadece 3 gün kaldı. Son hazırlıkları yap!`,
+    bodyEn: (t) => `3 days until "${t}". Are you on track?`,
     emoji: "\u{26A1}",
     channel: "countdown",
   },
@@ -60,6 +69,9 @@ const COUNTDOWN_MILESTONES: CountdownMilestone[] = [
     days: 1,
     titleTr: "Yarın büyük gün!",
     titleEn: "Tomorrow is the big day!",
+    bodyTr: (t) => `"${t}" için yarın! Her şeyin hazır olduğundan emin ol.`,
+    bodyEn: (t) =>
+      `Tomorrow is the day for "${t}"! Make sure everything is ready.`,
     emoji: "\u{1F389}",
     channel: "surprises",
   },
@@ -169,16 +181,17 @@ export async function scheduleCountdownReminders(
 
   const storeKey = countdownStoreKey(planId);
   const scheduledIds: string[] = [];
+  const isTurkish = useSettingsStore.getState().language === "tr";
 
   for (const milestone of COUNTDOWN_MILESTONES) {
     const triggerDate = computeTriggerDate(eventDate, milestone.days);
     if (!triggerDate) continue;
 
-    const notifTitle = `${milestone.emoji} ${milestone.titleEn}`;
-    const notifBody =
-      milestone.days === 1
-        ? `Tomorrow is the day for "${title}"! Make sure everything is ready.`
-        : `${milestone.days} days until "${title}". Are you on track?`;
+    const milestoneTitle = isTurkish ? milestone.titleTr : milestone.titleEn;
+    const notifTitle = `${milestone.emoji} ${milestoneTitle}`;
+    const notifBody = isTurkish
+      ? milestone.bodyTr(title)
+      : milestone.bodyEn(title);
 
     const data: NotificationData = {
       planId,
@@ -241,10 +254,18 @@ export async function scheduleChecklistReminder(
     itemTitle,
   };
 
+  const isTurkish = useSettingsStore.getState().language === "tr";
+  const checklistTitle = isTurkish
+    ? "\u{1F4CB} Görev Hatırlatıcı"
+    : "\u{1F4CB} Task Reminder";
+  const checklistBody = isTurkish
+    ? `"${itemTitle}" görevini tamamlamayı unutma!`
+    : `Don't forget to complete "${itemTitle}"!`;
+
   const id = await scheduleAndPersist(
     storeKey,
-    "\u{1F4CB} Task Reminder",
-    `Don't forget to complete "${itemTitle}"!`,
+    checklistTitle,
+    checklistBody,
     data,
     triggerDate,
     "surprises",

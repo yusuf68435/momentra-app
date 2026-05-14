@@ -513,7 +513,9 @@ export default function WeatherScreen() {
             <Icon name="crosshairs-gps" size={20} color={colors.primary} />
           )}
           <Text style={[styles.updateButtonText, { color: colors.primary }]}>
-            {isGettingGPS ? "GPS Alınıyor..." : t("weather.updateLocation")}
+            {isGettingGPS
+              ? t("weather.gpsLoading")
+              : t("weather.updateLocation")}
           </Text>
         </TouchableOpacity>
 
@@ -546,7 +548,7 @@ export default function WeatherScreen() {
               >
                 <Icon name="crosshairs-gps" size={20} color={colors.primary} />
                 <Text style={[styles.gpsButtonText, { color: colors.primary }]}>
-                  GPS ile Konumumu Kullan
+                  {t("weather.useGPS")}
                 </Text>
               </TouchableOpacity>
               <View style={styles.dividerRow}>
@@ -559,7 +561,7 @@ export default function WeatherScreen() {
                 <Text
                   style={[styles.dividerText, { color: colors.textTertiary }]}
                 >
-                  veya
+                  {t("weather.or")}
                 </Text>
                 <View
                   style={[

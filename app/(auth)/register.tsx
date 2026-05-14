@@ -88,7 +88,7 @@ export default function RegisterScreen() {
 
   const strength = getPasswordStrength(password);
   const strengthColor = getPasswordStrengthColor(strength);
-  const strengthWidths: Record<string, string> = {
+  const strengthWidths: Record<string, `${number}%`> = {
     weak: "33%",
     medium: "66%",
     strong: "100%",
@@ -145,9 +145,9 @@ export default function RegisterScreen() {
           },
         ],
       );
-    } catch (error: any) {
+    } catch (error) {
       triggerShake();
-      const msg = error?.message || "";
+      const msg = error instanceof Error ? error.message : "";
       if (
         msg.includes("already registered") ||
         msg.includes("already exists")
@@ -214,7 +214,7 @@ export default function RegisterScreen() {
                 style={[
                   styles.strengthBarFill,
                   {
-                    width: strengthWidths[strength] as any,
+                    width: strengthWidths[strength],
                     backgroundColor: strengthColor,
                   },
                 ]}

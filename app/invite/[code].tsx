@@ -160,8 +160,8 @@ export default function InviteScreen() {
       const details = await coOrganizerService.validateInviteLink(code);
       setInviteDetails(details);
       setScreenState("preview");
-    } catch (err: any) {
-      setErrorCode(err?.code || "unknown");
+    } catch (err) {
+      setErrorCode((err as { code?: InviteErrorCode })?.code ?? "unknown");
       setScreenState("error");
     }
   }, [code]);

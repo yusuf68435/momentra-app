@@ -184,7 +184,10 @@
     "thu": "Tor",
     "fri": "Fre",
     "sat": "Lör",
-    "sun": "Sön"
+    "sun": "Sön",
+    "gpsLoading": "Hämtar GPS...",
+    "useGPS": "Använd min GPS-plats",
+    "or": "eller"
   },
   "timeline": {
     "title": "Förberedelsernas tidslinje",

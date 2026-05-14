@@ -195,7 +195,10 @@
     "thu": "Thu",
     "fri": "Fri",
     "sat": "Sat",
-    "sun": "Sun"
+    "sun": "Sun",
+    "gpsLoading": "Getting GPS...",
+    "useGPS": "Use My GPS Location",
+    "or": "or"
   },
   "timeline": {
     "title": "Preparation Timeline",
@@ -867,6 +870,17 @@
   "favorites": {
     "emptyTitle": "No favorites yet",
     "emptyDesc": "Save scenarios you like!"
+  },
+  "subscription_v1": {
+    "heroTitle": "All features unlocked",
+    "heroSubtitle": "In this version of Momentra, every feature is free. Let your first surprise begin.",
+    "feature_ai_assistant": "AI assistant — unlimited",
+    "feature_co_organizer": "Co-organizer collaborative planning",
+    "feature_smart_countdown": "Smart countdown & reminders",
+    "feature_encrypted_messaging": "End-to-end encrypted messaging",
+    "feature_languages": "17 languages supported",
+    "feature_unlimited_plans": "Unlimited surprise plans",
+    "thanks": "Thanks for using Momentra 💜"
   },
   "paywall": {
     "heroTitle": "Momentra Premium",

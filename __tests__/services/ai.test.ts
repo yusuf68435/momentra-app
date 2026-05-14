@@ -176,7 +176,9 @@ describe("ai – saveAIInteraction", () => {
     const chain = buildChain({
       insert: jest.fn().mockResolvedValue({ data: null, error: null }),
     });
-    mockedFrom.mockReturnValueOnce(chain as unknown as ReturnType<typeof supabase.from>);
+    mockedFrom.mockReturnValueOnce(
+      chain as unknown as ReturnType<typeof supabase.from>,
+    );
 
     await saveAIInteraction(
       "recommend",
@@ -202,7 +204,9 @@ describe("ai – saveAIInteraction", () => {
     const chain = buildChain({
       insert: jest.fn().mockResolvedValue({ data: null, error: null }),
     });
-    mockedFrom.mockReturnValueOnce(chain as unknown as ReturnType<typeof supabase.from>);
+    mockedFrom.mockReturnValueOnce(
+      chain as unknown as ReturnType<typeof supabase.from>,
+    );
 
     await saveAIInteraction("chat", {}, {}, "gpt-4o-mini");
 
@@ -246,7 +250,9 @@ describe("aiConversations – getActiveConversation", () => {
         .fn()
         .mockResolvedValue({ data: mockConversation, error: null }),
     });
-    mockedFrom.mockReturnValueOnce(chain as unknown as ReturnType<typeof supabase.from>);
+    mockedFrom.mockReturnValueOnce(
+      chain as unknown as ReturnType<typeof supabase.from>,
+    );
 
     const result = await getActiveConversation();
 
@@ -261,7 +267,9 @@ describe("aiConversations – getActiveConversation", () => {
     const chain = buildChain({
       maybeSingle: jest.fn().mockResolvedValue({ data: null, error: null }),
     });
-    mockedFrom.mockReturnValueOnce(chain as unknown as ReturnType<typeof supabase.from>);
+    mockedFrom.mockReturnValueOnce(
+      chain as unknown as ReturnType<typeof supabase.from>,
+    );
 
     const result = await getActiveConversation();
 
@@ -309,8 +317,12 @@ describe("aiConversations – createConversation", () => {
     });
 
     mockedFrom
-      .mockReturnValueOnce(updateChain as unknown as ReturnType<typeof supabase.from>)
-      .mockReturnValueOnce(insertChain as unknown as ReturnType<typeof supabase.from>);
+      .mockReturnValueOnce(
+        updateChain as unknown as ReturnType<typeof supabase.from>,
+      )
+      .mockReturnValueOnce(
+        insertChain as unknown as ReturnType<typeof supabase.from>,
+      );
 
     const result = await createConversation({ title: "22.03.2026" });
 
@@ -331,8 +343,12 @@ describe("aiConversations – createConversation", () => {
     });
 
     mockedFrom
-      .mockReturnValueOnce(updateChain as unknown as ReturnType<typeof supabase.from>)
-      .mockReturnValueOnce(insertChain as unknown as ReturnType<typeof supabase.from>);
+      .mockReturnValueOnce(
+        updateChain as unknown as ReturnType<typeof supabase.from>,
+      )
+      .mockReturnValueOnce(
+        insertChain as unknown as ReturnType<typeof supabase.from>,
+      );
 
     const result = await createConversation();
 
@@ -352,8 +368,12 @@ describe("aiConversations – createConversation", () => {
     });
 
     mockedFrom
-      .mockReturnValueOnce(updateChain as unknown as ReturnType<typeof supabase.from>)
-      .mockReturnValueOnce(insertChain as unknown as ReturnType<typeof supabase.from>);
+      .mockReturnValueOnce(
+        updateChain as unknown as ReturnType<typeof supabase.from>,
+      )
+      .mockReturnValueOnce(
+        insertChain as unknown as ReturnType<typeof supabase.from>,
+      );
 
     await createConversation({ planId: "plan-1", scenarioId: "sc-2" });
 
@@ -406,8 +426,12 @@ describe("aiConversations – appendMessage", () => {
     });
 
     mockedFrom
-      .mockReturnValueOnce(selectChain as unknown as ReturnType<typeof supabase.from>)
-      .mockReturnValueOnce(updateChain as unknown as ReturnType<typeof supabase.from>);
+      .mockReturnValueOnce(
+        selectChain as unknown as ReturnType<typeof supabase.from>,
+      )
+      .mockReturnValueOnce(
+        updateChain as unknown as ReturnType<typeof supabase.from>,
+      );
 
     const newMessage: ConversationMessage = {
       role: "user",
@@ -444,8 +468,12 @@ describe("aiConversations – appendMessage", () => {
     });
 
     mockedFrom
-      .mockReturnValueOnce(selectChain as unknown as ReturnType<typeof supabase.from>)
-      .mockReturnValueOnce(updateChain as unknown as ReturnType<typeof supabase.from>);
+      .mockReturnValueOnce(
+        selectChain as unknown as ReturnType<typeof supabase.from>,
+      )
+      .mockReturnValueOnce(
+        updateChain as unknown as ReturnType<typeof supabase.from>,
+      );
 
     const overflowMessage: ConversationMessage = {
       role: "user",
@@ -474,8 +502,12 @@ describe("aiConversations – appendMessage", () => {
     });
 
     mockedFrom
-      .mockReturnValueOnce(selectChain as unknown as ReturnType<typeof supabase.from>)
-      .mockReturnValueOnce(updateChain as unknown as ReturnType<typeof supabase.from>);
+      .mockReturnValueOnce(
+        selectChain as unknown as ReturnType<typeof supabase.from>,
+      )
+      .mockReturnValueOnce(
+        updateChain as unknown as ReturnType<typeof supabase.from>,
+      );
 
     const firstMessage: ConversationMessage = {
       role: "user",
@@ -503,8 +535,12 @@ describe("aiConversations – appendMessage", () => {
     });
 
     mockedFrom
-      .mockReturnValueOnce(selectChain as unknown as ReturnType<typeof supabase.from>)
-      .mockReturnValueOnce(updateChain as unknown as ReturnType<typeof supabase.from>);
+      .mockReturnValueOnce(
+        selectChain as unknown as ReturnType<typeof supabase.from>,
+      )
+      .mockReturnValueOnce(
+        updateChain as unknown as ReturnType<typeof supabase.from>,
+      );
 
     const longContent = "A".repeat(80);
     const firstMessage: ConversationMessage = {
@@ -538,8 +574,12 @@ describe("aiConversations – appendMessage", () => {
     });
 
     mockedFrom
-      .mockReturnValueOnce(selectChain as unknown as ReturnType<typeof supabase.from>)
-      .mockReturnValueOnce(updateChain as unknown as ReturnType<typeof supabase.from>);
+      .mockReturnValueOnce(
+        selectChain as unknown as ReturnType<typeof supabase.from>,
+      )
+      .mockReturnValueOnce(
+        updateChain as unknown as ReturnType<typeof supabase.from>,
+      );
 
     const secondMessage: ConversationMessage = {
       role: "user",
@@ -594,7 +634,9 @@ describe("aiConversations – getConversationHistory", () => {
         .fn()
         .mockResolvedValue({ data: mockConversations, error: null }),
     });
-    mockedFrom.mockReturnValueOnce(chain as unknown as ReturnType<typeof supabase.from>);
+    mockedFrom.mockReturnValueOnce(
+      chain as unknown as ReturnType<typeof supabase.from>,
+    );
 
     const result = await getConversationHistory();
 
@@ -607,7 +649,9 @@ describe("aiConversations – getConversationHistory", () => {
     const chain = buildChain({
       limit: jest.fn().mockResolvedValue({ data: null, error: null }),
     });
-    mockedFrom.mockReturnValueOnce(chain as unknown as ReturnType<typeof supabase.from>);
+    mockedFrom.mockReturnValueOnce(
+      chain as unknown as ReturnType<typeof supabase.from>,
+    );
 
     const result = await getConversationHistory();
 
@@ -618,7 +662,9 @@ describe("aiConversations – getConversationHistory", () => {
     mockedGetCurrentUserId.mockResolvedValueOnce("user-1");
     const limitMock = jest.fn().mockResolvedValue({ data: [], error: null });
     const chain = buildChain({ limit: limitMock });
-    mockedFrom.mockReturnValueOnce(chain as unknown as ReturnType<typeof supabase.from>);
+    mockedFrom.mockReturnValueOnce(
+      chain as unknown as ReturnType<typeof supabase.from>,
+    );
 
     await getConversationHistory(25);
 
@@ -631,9 +677,21 @@ describe("aiConversations – deleteConversation", () => {
     jest.clearAllMocks();
   });
 
+  it("returns early when no authenticated user", async () => {
+    mockedGetCurrentUserId.mockResolvedValueOnce(null);
+
+    await deleteConversation("conv-to-delete");
+
+    expect(mockedFrom).not.toHaveBeenCalled();
+  });
+
   it("calls delete with the correct conversation id", async () => {
-    const eqMock = jest.fn().mockResolvedValue({ data: null, error: null });
-    const deleteMock = jest.fn().mockReturnValue({ eq: eqMock });
+    mockedGetCurrentUserId.mockResolvedValueOnce("user-1");
+    const finalEqMock = jest
+      .fn()
+      .mockResolvedValue({ data: null, error: null });
+    const firstEqMock = jest.fn().mockReturnValue({ eq: finalEqMock });
+    const deleteMock = jest.fn().mockReturnValue({ eq: firstEqMock });
     mockedFrom.mockReturnValueOnce({
       delete: deleteMock,
     } as unknown as unknown as ReturnType<typeof supabase.from>);
@@ -642,6 +700,7 @@ describe("aiConversations – deleteConversation", () => {
 
     expect(mockedFrom).toHaveBeenCalledWith("ai_conversations");
     expect(deleteMock).toHaveBeenCalled();
-    expect(eqMock).toHaveBeenCalledWith("id", "conv-to-delete");
+    expect(firstEqMock).toHaveBeenCalledWith("id", "conv-to-delete");
+    expect(finalEqMock).toHaveBeenCalledWith("user_id", "user-1");
   });
 });

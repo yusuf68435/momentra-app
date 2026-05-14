@@ -1,0 +1,30 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["3B57WU65P8.com.uyart.momentra"],
+        "components": [
+          {
+            "/": "/invite/*",
+            "comment": "Co-organizer invitation deep links"
+          },
+          {
+            "/": "/plan/*",
+            "comment": "Shared plan deep links"
+          },
+          {
+            "/": "/guest/*",
+            "comment": "Guest RSVP links"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["3B57WU65P8.com.uyart.momentra"]
+  },
+  "activitycontinuation": {
+    "apps": ["3B57WU65P8.com.uyart.momentra"]
+  }
+}

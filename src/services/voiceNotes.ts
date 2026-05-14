@@ -170,10 +170,13 @@ export async function updateVoiceNoteTitle(
   id: string,
   title: string,
 ): Promise<VoiceNote> {
+  const user = await getCurrentUser();
+
   const { data, error } = await supabase
     .from("voice_notes")
     .update({ title })
     .eq("id", id)
+    .eq("user_id", user.id)
     .select()
     .single();
 

@@ -1,4 +1,9 @@
-import { AccessibilityInfo, Platform, ViewStyle } from "react-native";
+import {
+  AccessibilityInfo,
+  findNodeHandle,
+  Platform,
+  ViewStyle,
+} from "react-native";
 import { TouchTargets } from "../constants/theme";
 
 // Re-export for convenience
@@ -192,12 +197,15 @@ export function announceDelayed(message: string, delayMs = 500) {
  * Useful after navigation or content changes
  */
 export function setAccessibilityFocus(
-  ref: React.RefObject<any>,
+  ref: React.RefObject<React.Component>,
   delayMs = 300,
 ) {
   if (ref.current) {
     setTimeout(() => {
-      AccessibilityInfo.setAccessibilityFocus(ref.current);
+      const handle = findNodeHandle(ref.current);
+      if (handle !== null) {
+        AccessibilityInfo.setAccessibilityFocus(handle);
+      }
     }, delayMs);
   }
 }

@@ -113,10 +113,10 @@ export default function ReviewsScreen() {
       });
       setShowWriteModal(false);
       loadReviews();
-    } catch (err: any) {
+    } catch (err) {
       Alert.alert(
         t("reviews.errorTitle"),
-        err?.message || t("reviews.submitError"),
+        err instanceof Error ? err.message : t("reviews.submitError"),
       );
     } finally {
       setSubmitting(false);

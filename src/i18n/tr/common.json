@@ -195,7 +195,10 @@
     "thu": "Per",
     "fri": "Cum",
     "sat": "Cmt",
-    "sun": "Paz"
+    "sun": "Paz",
+    "gpsLoading": "GPS Alınıyor...",
+    "useGPS": "GPS ile Konumumu Kullan",
+    "or": "veya"
   },
   "timeline": {
     "title": "Hazırlık Zaman Çizelgesi",
@@ -867,6 +870,17 @@
   "favorites": {
     "emptyTitle": "Henüz favori yok",
     "emptyDesc": "Beğendiğin senaryoları kaydet!"
+  },
+  "subscription_v1": {
+    "heroTitle": "Tüm özellikler senin",
+    "heroSubtitle": "Momentra'nın bu sürümünde tüm özellikler ücretsiz. İlk sürpriz seninle başlasın.",
+    "feature_ai_assistant": "AI asistan — sınırsız",
+    "feature_co_organizer": "Co-organizer ile ortak planlama",
+    "feature_smart_countdown": "Akıllı geri sayım & hatırlatmalar",
+    "feature_encrypted_messaging": "Uçtan uca şifreli mesajlaşma",
+    "feature_languages": "17 dil desteği",
+    "feature_unlimited_plans": "Sınırsız sürpriz planı",
+    "thanks": "Momentra'yı kullandığın için teşekkürler 💜"
   },
   "paywall": {
     "heroTitle": "Momentra Premium",

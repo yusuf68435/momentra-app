@@ -184,7 +184,10 @@
     "thu": "목",
     "fri": "금",
     "sat": "토",
-    "sun": "일"
+    "sun": "일",
+    "gpsLoading": "GPS 가져오는 중...",
+    "useGPS": "내 GPS 위치 사용",
+    "or": "또는"
   },
   "timeline": {
     "title": "준비 타임라인",

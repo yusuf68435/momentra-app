@@ -250,13 +250,11 @@ export async function completePlan(
     updatePayload.completion_photos = completionData.photos;
   updatePayload.completed_at = new Date().toISOString();
 
-  try {
-    updatePayload.completion_data = {
-      reactionType: completionData.reactionType,
-      memoryEntry: completionData.memoryEntry,
-      shareToGallery: completionData.shareToGallery,
-    };
-  } catch {}
+  updatePayload.completion_data = {
+    reactionType: completionData.reactionType,
+    memoryEntry: completionData.memoryEntry,
+    shareToGallery: completionData.shareToGallery,
+  };
 
   const { data: plan, error } = await supabase
     .from("plans")
@@ -267,14 +265,4 @@ export async function completePlan(
 
   if (error) throw error;
   return plan;
-}
-
-// ==========================================
-// HELPERS
-// ==========================================
-
-function subtractDays(dateStr: string, days: number): string {
-  const date = new Date(dateStr);
-  date.setDate(date.getDate() - days);
-  return date.toISOString().split("T")[0];
 }

@@ -65,7 +65,7 @@ export const useSettingsStore = create<SettingsState>()(
         proactiveSuggestions: true,
       },
       currency: "TRY",
-      subscriptionPlan: "pro",
+      subscriptionPlan: "free",
       hasSeenOnboarding: false,
       favoriteCategories: [],
       firstSurpriseCompleted: false,

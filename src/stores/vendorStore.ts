@@ -1,21 +1,21 @@
-import { create } from 'zustand';
-import * as vendorApi from '../services/vendors';
+import { create } from "zustand";
+import * as vendorApi from "../services/vendors";
 
 // ── Types ────────────────────────────────────────────────────────────
 
 export type VendorType =
-  | 'florist'
-  | 'restaurant'
-  | 'photographer'
-  | 'decorator'
-  | 'baker'
-  | 'musician'
-  | 'venue'
-  | 'caterer'
-  | 'event_planner'
-  | 'other';
+  | "florist"
+  | "restaurant"
+  | "photographer"
+  | "decorator"
+  | "baker"
+  | "musician"
+  | "venue"
+  | "caterer"
+  | "event_planner"
+  | "other";
 
-export type PriceRange = '$' | '$$' | '$$$' | '$$$$';
+export type PriceRange = "$" | "$$" | "$$$" | "$$$$";
 
 export interface Vendor {
   id: string;
@@ -54,7 +54,7 @@ export interface VendorReview {
 export interface VendorFilters {
   type?: VendorType;
   location?: string;
-  priceRange?: Vendor['price_range'];
+  priceRange?: Vendor["price_range"];
   minRating?: number;
   isVerified?: boolean;
 }
@@ -62,11 +62,23 @@ export interface VendorFilters {
 // ── Service layer ────────────────────────────────────────────────────
 
 const vendorService = {
-  searchVendors: (query: string, type?: VendorType, location?: string): Promise<Vendor[]> =>
-    vendorApi.searchVendors(query, type as any, location) as Promise<Vendor[]>,
+  searchVendors: (
+    query: string,
+    type?: VendorType,
+    location?: string,
+  ): Promise<Vendor[]> =>
+    vendorApi.searchVendors(
+      query,
+      type as vendorApi.VendorType,
+      location,
+    ) as Promise<Vendor[]>,
   fetchFeatured: (): Promise<Vendor[]> =>
     vendorApi.getFeaturedVendors() as Promise<Vendor[]>,
-  rateVendor: (id: string, rating: number, review: string): Promise<VendorReview> =>
+  rateVendor: (
+    id: string,
+    rating: number,
+    review: string,
+  ): Promise<VendorReview> =>
     vendorApi.rateVendor(id, rating, review) as Promise<VendorReview>,
   toggleFavorite: async (id: string): Promise<boolean> => {
     // Try to add; if already favorited, remove instead
@@ -94,9 +106,17 @@ interface VendorState {
   filters: VendorFilters;
 
   // Actions
-  searchVendors: (query: string, type?: VendorType, location?: string) => Promise<void>;
+  searchVendors: (
+    query: string,
+    type?: VendorType,
+    location?: string,
+  ) => Promise<void>;
   fetchFeatured: () => Promise<void>;
-  rateVendor: (id: string, rating: number, review: string) => Promise<VendorReview>;
+  rateVendor: (
+    id: string,
+    rating: number,
+    review: string,
+  ) => Promise<VendorReview>;
   toggleFavorite: (id: string) => Promise<void>;
   setFilters: (filters: VendorFilters) => void;
   clearFilters: () => void;
@@ -117,9 +137,10 @@ export const useVendorStore = create<VendorState>((set, get) => ({
       const results = await vendorService.searchVendors(query, type, location);
       set({ searchResults: results });
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Failed to search vendors';
+      const message =
+        error instanceof Error ? error.message : "Failed to search vendors";
       if (__DEV__) {
-        console.error('Failed to search vendors:', error);
+        console.error("Failed to search vendors:", error);
       }
       set({ error: message });
     } finally {
@@ -133,9 +154,12 @@ export const useVendorStore = create<VendorState>((set, get) => ({
       const featuredVendors = await vendorService.fetchFeatured();
       set({ featuredVendors });
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Failed to fetch featured vendors';
+      const message =
+        error instanceof Error
+          ? error.message
+          : "Failed to fetch featured vendors";
       if (__DEV__) {
-        console.error('Failed to fetch featured vendors:', error);
+        console.error("Failed to fetch featured vendors:", error);
       }
       set({ error: message });
     } finally {
@@ -153,10 +177,12 @@ export const useVendorStore = create<VendorState>((set, get) => ({
           v.id === id
             ? {
                 ...v,
-                average_rating: (v.average_rating * v.review_count + rating) / (v.review_count + 1),
+                average_rating:
+                  (v.average_rating * v.review_count + rating) /
+                  (v.review_count + 1),
                 review_count: v.review_count + 1,
               }
-            : v
+            : v,
         );
 
       set((state) => ({
@@ -169,7 +195,7 @@ export const useVendorStore = create<VendorState>((set, get) => ({
       return vendorReview;
     } catch (error) {
       if (__DEV__) {
-        console.error('Failed to rate vendor:', error);
+        console.error("Failed to rate vendor:", error);
       }
       throw error;
     }
@@ -178,9 +204,11 @@ export const useVendorStore = create<VendorState>((set, get) => ({
   toggleFavorite: async (id) => {
     // Optimistic update
     const isFavorite = get().favorites.some((v) => v.id === id);
-    const vendor = [...get().vendors, ...get().featuredVendors, ...get().searchResults].find(
-      (v) => v.id === id
-    );
+    const vendor = [
+      ...get().vendors,
+      ...get().featuredVendors,
+      ...get().searchResults,
+    ].find((v) => v.id === id);
 
     if (isFavorite) {
       set((state) => ({
@@ -206,7 +234,7 @@ export const useVendorStore = create<VendorState>((set, get) => ({
         }));
       }
       if (__DEV__) {
-        console.error('Failed to toggle favorite:', error);
+        console.error("Failed to toggle favorite:", error);
       }
       throw error;
     }

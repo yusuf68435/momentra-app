@@ -424,8 +424,15 @@ export default function OnboardingScreen() {
       setFavoriteCategories(selectedCategories);
     }
     setHasSeenOnboarding(true);
-    setShowPaywall(true);
-  }, [selectedCategories, setFavoriteCategories, setHasSeenOnboarding]);
+    // v1.0: paywall disabled, jump straight into the app.
+    // Re-enable `setShowPaywall(true)` here when IAP is integrated in v1.1+.
+    doNavigateToTabs();
+  }, [
+    selectedCategories,
+    setFavoriteCategories,
+    setHasSeenOnboarding,
+    doNavigateToTabs,
+  ]);
 
   const toggleCategory = useCallback((slug: string) => {
     setSelectedCategories((prev) =>
@@ -644,12 +651,8 @@ export default function OnboardingScreen() {
                   </Text>
                   <Text style={styles.notifResultText}>
                     {notificationsGranted
-                      ? lang === "tr"
-                        ? "Bildirimler açıldı!"
-                        : "Notifications enabled!"
-                      : lang === "tr"
-                        ? "Daha sonra ayarlardan açabilirsin"
-                        : "You can enable them later in settings"}
+                      ? tl("onboarding.notifEnabled")
+                      : tl("onboarding.notifEnableLater")}
                   </Text>
                 </View>
               ) : (

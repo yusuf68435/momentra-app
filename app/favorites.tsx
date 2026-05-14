@@ -82,7 +82,7 @@ export default function FavoritesScreen() {
           contentContainerStyle={styles.list}
           renderItem={({ item, index }) => {
             const catDef = CATEGORIES.find(
-              (c) => c.slug === (item.category as any)?.slug,
+              (c) => c.slug === item.category?.slug,
             );
             const catColor = catDef?.color || colors.primary;
             return (

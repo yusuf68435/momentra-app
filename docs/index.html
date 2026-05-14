@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Momentra — Sevdiklerin için unutulmaz sürprizler planla. AI destekli öneriler, adım adım planlar, geri sayım ve hatırlatmalar."
+    />
+    <meta name="theme-color" content="#FF6B8A" />
+    <meta property="og:title" content="Momentra — Sürpriz Planlayıcı" />
+    <meta
+      property="og:description"
+      content="Sevdiklerin için unutulmaz sürprizler planla. AI destekli öneriler ve adım adım planlar."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://momentra.app" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Momentra — Sürpriz Planlayıcı / Surprise Planner</title>
+    <link rel="icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <style>
+      :root {
+        --bg: #f9f8f6;
+        --surface: #ffffff;
+        --text: #1c1c1e;
+        --muted: #6c6c70;
+        --primary: #ff6b8a;
+        --primary2: #ffaa5c;
+        --border: #e5e5ea;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #000;
+          --surface: #1c1c1e;
+          --text: #f5f5f7;
+          --muted: #98989d;
+          --border: #2c2c2e;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+          "Segoe UI", Roboto, sans-serif;
+        line-height: 1.5;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 20px 24px;
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      .nav img {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+      }
+      .nav strong {
+        font-size: 17px;
+      }
+      .nav .spacer {
+        flex: 1;
+      }
+      .nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 14px;
+        margin-left: 20px;
+      }
+      .hero {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 64px 24px 32px;
+        text-align: center;
+      }
+      .badge {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 15,
+          var(--primary2) 15
+        );
+        color: var(--primary);
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        margin-bottom: 20px;
+        border: 1px solid var(--primary) 40;
+      }
+      h1 {
+        font-size: 56px;
+        line-height: 1.05;
+        letter-spacing: -1.5px;
+        margin: 0 0 20px;
+        background: linear-gradient(135deg, var(--primary), var(--primary2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 40px;
+        }
+      }
+      .lede {
+        font-size: 20px;
+        color: var(--muted);
+        max-width: 640px;
+        margin: 0 auto 32px;
+      }
+      .cta {
+        display: inline-flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 22px;
+        border-radius: 14px;
+        background: var(--text);
+        color: var(--bg);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: transform 0.15s;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn.alt {
+        background: var(--surface);
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+      .features {
+        max-width: 1080px;
+        margin: 64px auto;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+      }
+      .f {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 24px;
+      }
+      .f .ic {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 15,
+          var(--primary2) 15
+        );
+        margin-bottom: 16px;
+        font-size: 22px;
+      }
+      .f h3 {
+        margin: 0 0 8px;
+        font-size: 17px;
+      }
+      .f p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      footer {
+        max-width: 1080px;
+        margin: 64px auto 48px;
+        padding: 32px 24px 0;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 13px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: space-between;
+      }
+      footer a {
+        color: var(--muted);
+        text-decoration: none;
+        margin-right: 16px;
+      }
+      footer a:hover {
+        color: var(--primary);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <img src="/icon-192.png" alt="Momentra" />
+      <strong>Momentra</strong>
+      <span class="spacer"></span>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:support@momentra.com">Contact</a>
+    </nav>
+
+    <section class="hero">
+      <span class="badge">✨ AI Destekli Sürpriz Planlama</span>
+      <h1>Sevdiklerine<br />unutulmaz sürprizler.</h1>
+      <p class="lede">
+        Doğum günü, evlilik teklifi, yıldönümü… Momentra ile adım adım planla,
+        AI'dan fikir al, geri sayım tut. Hiçbir detayı kaçırma.
+      </p>
+      <div class="cta">
+        <a class="btn" href="#">App Store'da İndir</a>
+        <a class="btn alt" href="#">Google Play'de İndir</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="f">
+        <div class="ic">🎁</div>
+        <h3>30+ Hazır Senaryo</h3>
+        <p>
+          Doğum günü, evlilik teklifi, yıldönümü ve daha fazlası için hazır
+          planlar.
+        </p>
+      </div>
+      <div class="f">
+        <div class="ic">🤖</div>
+        <h3>AI Asistan</h3>
+        <p>
+          Kişiselleştirilmiş fikirler, zaman çizelgesi, hediye ve Plan B
+          önerileri.
+        </p>
+      </div>
+      <div class="f">
+        <div class="ic">👥</div>
+        <h3>Co-Organizer</h3>
+        <p>Sevdiklerinle birlikte planla. Görev paylaş, gizli sohbet et.</p>
+      </div>
+      <div class="f">
+        <div class="ic">⏱</div>
+        <h3>Akıllı Geri Sayım</h3>
+        <p>Kritik anları kaçırma — hatırlatmalar tam zamanında.</p>
+      </div>
+      <div class="f">
+        <div class="ic">🔒</div>
+        <h3>Gizlilik Öncelikli</h3>
+        <p>Uçtan uca şifreli mesajlaşma. Sürpriz, sürpriz olarak kalır.</p>
+      </div>
+      <div class="f">
+        <div class="ic">🌍</div>
+        <h3>17 Dil Desteği</h3>
+        <p>Türkçe, İngilizce, Almanca, İspanyolca, Arapça ve daha fazlası.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        © 2026 Momentra ·
+        <a href="mailto:support@momentra.com">support@momentra.com</a>
+      </div>
+      <div>
+        <a href="/privacy.html">Gizlilik / Privacy</a>
+        <a href="/terms.html">Şartlar / Terms</a>
+      </div>
+    </footer>
+  </body>
+</html>

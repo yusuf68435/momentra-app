@@ -15,7 +15,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.uyart.momentra",
-      "buildNumber": "1",
+      "buildNumber": "3",
       "infoPlist": {
         "NSContactsUsageDescription": "Momentra misafir listesi oluşturmak için kişilerinize erişim ister.",
         "NSCalendarsUsageDescription": "Momentra sürpriz tarihlerini takviminize eklemek için erişim ister.",
@@ -24,7 +24,7 @@
         "NSPhotoLibraryUsageDescription": "Momentra profil fotoğrafı ve sürpriz fotoğrafları için galeri erişimi ister.",
         "NSMicrophoneUsageDescription": "Momentra sesli not kayıt etmek için mikrofona erişim ister.",
         "NSPhotoLibraryAddUsageDescription": "Momentra fotoğraflarınızı galerinize kaydeder.",
-        "ITSAppUsesNonExemptEncryption": true,
+        "ITSAppUsesNonExemptEncryption": false,
         "NSPrivacyTracking": false,
         "NSLocationWhenInUseUsageDescription": "Momentra hava durumu için konumunuza erişim ister."
       },
@@ -87,11 +87,11 @@
         "android.permission.VIBRATE",
         "android.permission.SCHEDULE_EXACT_ALARM",
         "android.permission.POST_NOTIFICATIONS",
-        "android.permission.RECORD_AUDIO",
         "android.permission.READ_MEDIA_IMAGES",
         "android.permission.READ_MEDIA_VIDEO",
         "android.permission.ACCESS_FINE_LOCATION",
-        "android.permission.ACCESS_COARSE_LOCATION"
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.WRITE_CONTACTS"
       ]
     },
     "web": {
@@ -148,9 +148,9 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "54b90c9c-9024-4659-9819-19a8439810ef"
+        "projectId": "6f7fb7d3-8da7-4dfd-ad3b-79d88235940f"
       }
     },
-    "owner": "flux435"
+    "owner": "yusuf435"
   }
 }

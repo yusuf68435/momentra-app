@@ -15,7 +15,9 @@
       "channel": "production",
       "autoIncrement": true,
       "env": {
-        "SENTRY_DISABLE_AUTO_UPLOAD": "true"
+        "SENTRY_DISABLE_AUTO_UPLOAD": "true",
+        "EXPO_PUBLIC_SUPABASE_URL": "https://mbsxgnavtwnxvmhdjevz.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ic3hnbmF2dHdueHZtaGRqZXZ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2OTAwMTMsImV4cCI6MjA4OTI2NjAxM30.BTOJbPtg8KIZHqn9GOIH37LIA1kW57jZni0C0XqDPt4"
       }
     }
   },

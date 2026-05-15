@@ -7,9 +7,13 @@ function getEnvVar(key: string, fallback?: string): string {
         `⚠️ Environment variable ${key} is not set. ` +
           `Create a .env file with ${key}=your-value`,
       );
-      return "";
+    } else {
+      // Production: don't throw at module-load time (crashes the JS bundle).
+      // Log via Sentry/console; downstream code can render an error UI.
+      // eslint-disable-next-line no-console
+      console.error(`[config] Missing required environment variable: ${key}`);
     }
-    throw new Error(`Missing required environment variable: ${key}`);
+    return "";
   }
   return value;
 }

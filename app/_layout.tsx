@@ -108,8 +108,18 @@ export const unstable_settings = {
   initialRouteName: "(tabs)",
 };
 
-SplashScreen.preventAutoHideAsync();
-setupNotificationHandler();
+// Module-load side effects — defensively wrapped so a native module that
+// throws during initialization (e.g. expo-notifications on a newer iOS where
+// the API contract changed) cannot crash the JS bundle before any UI renders.
+SplashScreen.preventAutoHideAsync().catch(() => {});
+try {
+  setupNotificationHandler();
+} catch (error) {
+  if (__DEV__) {
+    // eslint-disable-next-line no-console
+    console.warn("[Layout] setupNotificationHandler failed:", error);
+  }
+}
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({

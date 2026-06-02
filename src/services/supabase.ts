@@ -1,5 +1,5 @@
 import "react-native-url-polyfill/auto";
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { Platform } from "react-native";
 import { APP_CONFIG } from "../constants/config";
 
@@ -53,15 +53,70 @@ if (Platform.OS === "web") {
   authStorage = AsyncStorage;
 }
 
-export const supabase = createClient(
-  APP_CONFIG.supabaseUrl,
-  APP_CONFIG.supabaseAnonKey,
-  {
-    auth: {
-      storage: authStorage,
-      autoRefreshToken: true,
-      persistSession: true,
-      detectSessionInUrl: false,
-    },
-  },
-);
+// `createClient` internally calls `new URL(supabaseUrl)`. If the env vars
+// are missing at runtime (empty strings), that constructor throws and
+// crashes the JS bundle at module-load time before any ErrorBoundary can
+// render. To keep the bundle loadable in that edge case we substitute a
+// syntactically-valid placeholder URL/key — subsequent network calls will
+// fail gracefully and the UI can surface a connectivity / config error
+// instead of a hard launch crash.
+function createSupabaseClient(): SupabaseClient {
+  const url = APP_CONFIG.supabaseUrl;
+  const key = APP_CONFIG.supabaseAnonKey;
+
+  const hasValidConfig = Boolean(url) && Boolean(key);
+  if (!hasValidConfig) {
+    if (__DEV__) {
+      // eslint-disable-next-line no-console
+      console.error(
+        "[Supabase] Missing EXPO_PUBLIC_SUPABASE_URL or _ANON_KEY — " +
+          "returning a stub client. Network calls will fail but the bundle will load.",
+      );
+    }
+    return createClient(
+      "https://placeholder.invalid",
+      "placeholder-anon-key-not-used-for-real-requests",
+      {
+        auth: {
+          storage: authStorage,
+          autoRefreshToken: false,
+          persistSession: false,
+          detectSessionInUrl: false,
+        },
+      },
+    );
+  }
+
+  try {
+    return createClient(url, key, {
+      auth: {
+        storage: authStorage,
+        autoRefreshToken: true,
+        persistSession: true,
+        detectSessionInUrl: false,
+      },
+    });
+  } catch (error) {
+    if (__DEV__) {
+      // eslint-disable-next-line no-console
+      console.error(
+        "[Supabase] createClient threw — falling back to stub client:",
+        error,
+      );
+    }
+    return createClient(
+      "https://placeholder.invalid",
+      "placeholder-anon-key-not-used-for-real-requests",
+      {
+        auth: {
+          storage: authStorage,
+          autoRefreshToken: false,
+          persistSession: false,
+          detectSessionInUrl: false,
+        },
+      },
+    );
+  }
+}
+
+export const supabase = createSupabaseClient();

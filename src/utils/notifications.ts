@@ -2,16 +2,11 @@ import * as Notifications from "expo-notifications";
 import Constants from "expo-constants";
 import { Platform } from "react-native";
 
-// Configure notification handler
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowAlert: true,
-    shouldPlaySound: true,
-    shouldSetBadge: true,
-    shouldShowBanner: true,
-    shouldShowList: true,
-  }),
-});
+// Note: Notification handler is configured once in src/services/notifications.ts
+// via setupNotificationHandler() called from app/_layout.tsx. We removed the
+// duplicate module-load side effect here to avoid double-registration and
+// to drop the deprecated `shouldShowAlert` flag (iOS 26 / expo-notifications
+// ~0.32.17 prefer shouldShowBanner/shouldShowList only).
 
 /**
  * Request push notification permissions

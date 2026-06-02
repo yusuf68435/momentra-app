@@ -91,37 +91,46 @@ function subtractDays(date: Date, days: number): Date | null {
  * Call once in the app entry point (e.g. _layout.tsx).
  */
 export function setupNotificationHandler(): void {
-  Notifications.setNotificationHandler({
-    handleNotification: async () => ({
-      shouldShowAlert: true,
-      shouldPlaySound: true,
-      shouldSetBadge: true,
-      shouldShowBanner: true,
-      shouldShowList: true,
-    }),
-  });
+  try {
+    Notifications.setNotificationHandler({
+      handleNotification: async () => ({
+        // Deprecated `shouldShowAlert` removed — iOS 26 / SDK 54 expo-notifications
+        // prefer the new shouldShowBanner + shouldShowList split.
+        shouldPlaySound: true,
+        shouldSetBadge: true,
+        shouldShowBanner: true,
+        shouldShowList: true,
+      }),
+    });
+  } catch (error) {
+    if (__DEV__) {
+      console.warn("[Notifications] setNotificationHandler failed:", error);
+    }
+  }
 
   if (Platform.OS === "android") {
+    // Each channel call is best-effort — a single channel failure must not
+    // prevent the others from being registered or crash app startup.
     Notifications.setNotificationChannelAsync(IMPORTANT_DATES_CHANNEL, {
       name: "Important Date Reminders",
       importance: Notifications.AndroidImportance.HIGH,
       vibrationPattern: [0, 250, 250, 250],
       lightColor: "#E91E63",
       sound: "default",
-    });
+    }).catch(() => {});
     Notifications.setNotificationChannelAsync("countdown", {
       name: "Plan Countdown Reminders",
       importance: Notifications.AndroidImportance.DEFAULT,
       lightColor: "#FF6B8A",
       sound: "default",
-    });
+    }).catch(() => {});
     Notifications.setNotificationChannelAsync("surprises", {
       name: "Surprise Reminders",
       importance: Notifications.AndroidImportance.HIGH,
       vibrationPattern: [0, 250, 250, 250],
       lightColor: "#FFAA5C",
       sound: "default",
-    });
+    }).catch(() => {});
   }
 }
 

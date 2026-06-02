@@ -15,7 +15,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.uyart.momentra",
-      "buildNumber": "3",
+      "buildNumber": "6",
       "infoPlist": {
         "NSContactsUsageDescription": "Momentra misafir listesi oluşturmak için kişilerinize erişim ister.",
         "NSCalendarsUsageDescription": "Momentra sürpriz tarihlerini takviminize eklemek için erişim ister.",
@@ -139,8 +139,7 @@
         {
           "locationAlwaysAndWhenInUsePermission": "Momentra hava durumu için konumunuza erişim ister."
         }
-      ],
-      "@sentry/react-native"
+      ]
     ],
     "experiments": {
       "typedRoutes": true

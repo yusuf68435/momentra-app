@@ -124,143 +124,192 @@ const SUPPORTED_LANGUAGES = [
   "uk",
 ] as const;
 
-const deviceLanguage = Localization.getLocales()[0]?.languageCode ?? "en";
-const initialLanguage = SUPPORTED_LANGUAGES.includes(
-  deviceLanguage as (typeof SUPPORTED_LANGUAGES)[number],
-)
-  ? deviceLanguage
-  : "en";
+// Defensive read of the device locale — on iOS 26 the underlying
+// Localization native module has been observed to return shapes that crash
+// the Hermes runtime when iterated. We never want this to throw on
+// module load, so we wrap it and fall back to English.
+function detectInitialLanguage(): string {
+  try {
+    const locales = Localization.getLocales();
+    const code = Array.isArray(locales) ? locales[0]?.languageCode : null;
+    if (
+      code &&
+      SUPPORTED_LANGUAGES.includes(code as (typeof SUPPORTED_LANGUAGES)[number])
+    ) {
+      return code;
+    }
+  } catch {
+    // Fall through to default
+  }
+  return "en";
+}
 
-i18n.use(initReactI18next).init({
-  resources: {
-    tr: {
-      common: trCommon,
-      scenarios: trScenarios,
-      plans: trPlans,
-      ai: trAi,
-      settings: trSettings,
+const initialLanguage = detectInitialLanguage();
+
+try {
+  i18n.use(initReactI18next).init({
+    resources: {
+      tr: {
+        common: trCommon,
+        scenarios: trScenarios,
+        plans: trPlans,
+        ai: trAi,
+        settings: trSettings,
+      },
+      en: {
+        common: enCommon,
+        scenarios: enScenarios,
+        plans: enPlans,
+        ai: enAi,
+        settings: enSettings,
+      },
+      de: {
+        common: deCommon,
+        scenarios: deScenarios,
+        plans: dePlans,
+        ai: deAi,
+        settings: deSettings,
+      },
+      fr: {
+        common: frCommon,
+        scenarios: frScenarios,
+        plans: frPlans,
+        ai: frAi,
+        settings: frSettings,
+      },
+      es: {
+        common: esCommon,
+        scenarios: esScenarios,
+        plans: esPlans,
+        ai: esAi,
+        settings: esSettings,
+      },
+      it: {
+        common: itCommon,
+        scenarios: itScenarios,
+        plans: itPlans,
+        ai: itAi,
+        settings: itSettings,
+      },
+      pt: {
+        common: ptCommon,
+        scenarios: ptScenarios,
+        plans: ptPlans,
+        ai: ptAi,
+        settings: ptSettings,
+      },
+      ru: {
+        common: ruCommon,
+        scenarios: ruScenarios,
+        plans: ruPlans,
+        ai: ruAi,
+        settings: ruSettings,
+      },
+      ar: {
+        common: arCommon,
+        scenarios: arScenarios,
+        plans: arPlans,
+        ai: arAi,
+        settings: arSettings,
+      },
+      ja: {
+        common: jaCommon,
+        scenarios: jaScenarios,
+        plans: jaPlans,
+        ai: jaAi,
+        settings: jaSettings,
+      },
+      ko: {
+        common: koCommon,
+        scenarios: koScenarios,
+        plans: koPlans,
+        ai: koAi,
+        settings: koSettings,
+      },
+      zh: {
+        common: zhCommon,
+        scenarios: zhScenarios,
+        plans: zhPlans,
+        ai: zhAi,
+        settings: zhSettings,
+      },
+      hi: {
+        common: hiCommon,
+        scenarios: hiScenarios,
+        plans: hiPlans,
+        ai: hiAi,
+        settings: hiSettings,
+      },
+      nl: {
+        common: nlCommon,
+        scenarios: nlScenarios,
+        plans: nlPlans,
+        ai: nlAi,
+        settings: nlSettings,
+      },
+      pl: {
+        common: plCommon,
+        scenarios: plScenarios,
+        plans: plPlans,
+        ai: plAi,
+        settings: plSettings,
+      },
+      sv: {
+        common: svCommon,
+        scenarios: svScenarios,
+        plans: svPlans,
+        ai: svAi,
+        settings: svSettings,
+      },
+      uk: {
+        common: ukCommon,
+        scenarios: ukScenarios,
+        plans: ukPlans,
+        ai: ukAi,
+        settings: ukSettings,
+      },
     },
-    en: {
-      common: enCommon,
-      scenarios: enScenarios,
-      plans: enPlans,
-      ai: enAi,
-      settings: enSettings,
+    lng: initialLanguage,
+    fallbackLng: "en",
+    defaultNS: "common",
+    ns: ["common", "scenarios", "plans", "ai", "settings"],
+    interpolation: {
+      escapeValue: false,
     },
-    de: {
-      common: deCommon,
-      scenarios: deScenarios,
-      plans: dePlans,
-      ai: deAi,
-      settings: deSettings,
-    },
-    fr: {
-      common: frCommon,
-      scenarios: frScenarios,
-      plans: frPlans,
-      ai: frAi,
-      settings: frSettings,
-    },
-    es: {
-      common: esCommon,
-      scenarios: esScenarios,
-      plans: esPlans,
-      ai: esAi,
-      settings: esSettings,
-    },
-    it: {
-      common: itCommon,
-      scenarios: itScenarios,
-      plans: itPlans,
-      ai: itAi,
-      settings: itSettings,
-    },
-    pt: {
-      common: ptCommon,
-      scenarios: ptScenarios,
-      plans: ptPlans,
-      ai: ptAi,
-      settings: ptSettings,
-    },
-    ru: {
-      common: ruCommon,
-      scenarios: ruScenarios,
-      plans: ruPlans,
-      ai: ruAi,
-      settings: ruSettings,
-    },
-    ar: {
-      common: arCommon,
-      scenarios: arScenarios,
-      plans: arPlans,
-      ai: arAi,
-      settings: arSettings,
-    },
-    ja: {
-      common: jaCommon,
-      scenarios: jaScenarios,
-      plans: jaPlans,
-      ai: jaAi,
-      settings: jaSettings,
-    },
-    ko: {
-      common: koCommon,
-      scenarios: koScenarios,
-      plans: koPlans,
-      ai: koAi,
-      settings: koSettings,
-    },
-    zh: {
-      common: zhCommon,
-      scenarios: zhScenarios,
-      plans: zhPlans,
-      ai: zhAi,
-      settings: zhSettings,
-    },
-    hi: {
-      common: hiCommon,
-      scenarios: hiScenarios,
-      plans: hiPlans,
-      ai: hiAi,
-      settings: hiSettings,
-    },
-    nl: {
-      common: nlCommon,
-      scenarios: nlScenarios,
-      plans: nlPlans,
-      ai: nlAi,
-      settings: nlSettings,
-    },
-    pl: {
-      common: plCommon,
-      scenarios: plScenarios,
-      plans: plPlans,
-      ai: plAi,
-      settings: plSettings,
-    },
-    sv: {
-      common: svCommon,
-      scenarios: svScenarios,
-      plans: svPlans,
-      ai: svAi,
-      settings: svSettings,
-    },
-    uk: {
-      common: ukCommon,
-      scenarios: ukScenarios,
-      plans: ukPlans,
-      ai: ukAi,
-      settings: ukSettings,
-    },
-  },
-  lng: initialLanguage,
-  fallbackLng: "en",
-  defaultNS: "common",
-  ns: ["common", "scenarios", "plans", "ai", "settings"],
-  interpolation: {
-    escapeValue: false,
-  },
-});
+  });
+} catch (error) {
+  // If full init fails (e.g. corrupt resource bundle), fall back to a minimal
+  // English-only configuration so the app can still render an error UI rather
+  // than crashing at module-load time.
+  if (__DEV__) {
+    // eslint-disable-next-line no-console
+    console.error(
+      "[i18n] Full init failed, falling back to English-only:",
+      error,
+    );
+  }
+  try {
+    i18n.use(initReactI18next).init({
+      resources: {
+        en: {
+          common: enCommon,
+          scenarios: enScenarios,
+          plans: enPlans,
+          ai: enAi,
+          settings: enSettings,
+        },
+      },
+      lng: "en",
+      fallbackLng: "en",
+      defaultNS: "common",
+      ns: ["common", "scenarios", "plans", "ai", "settings"],
+      interpolation: { escapeValue: false },
+    });
+  } catch {
+    // Even the fallback failed — leave i18n uninitialised; t() calls will
+    // return the key string instead of crashing the bundle.
+  }
+}
 
 export default i18n;
 export { SUPPORTED_LANGUAGES };

@@ -29,8 +29,8 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - name: Build production
-        run: eas build --profile production --platform all --non-interactive
+      - name: Build iOS production
+        run: eas build --profile production --platform ios --non-interactive
 
       - name: Submit to App Store
         run: eas submit --profile production --platform ios --non-interactive --latest

@@ -15,7 +15,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.uyart.momentra",
-      "buildNumber": "7",
+      "buildNumber": "8",
       "infoPlist": {
         "NSContactsUsageDescription": "Momentra misafir listesi oluşturmak için kişilerinize erişim ister.",
         "NSCalendarsUsageDescription": "Momentra sürpriz tarihlerini takviminize eklemek için erişim ister.",

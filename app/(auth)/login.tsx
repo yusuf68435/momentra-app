@@ -20,6 +20,11 @@ import { useAuthStore } from "../../src/stores/authStore";
 import * as authService from "../../src/services/auth";
 import { supabase } from "../../src/services/supabase";
 import { MomentraLogo } from "../../src/components/ui/MomentraLogo";
+import * as WebBrowser from "expo-web-browser";
+import * as Linking from "expo-linking";
+
+// Required for OAuth redirect handling on web
+WebBrowser.maybeCompleteAuthSession();
 
 const MAX_LOGIN_ATTEMPTS = 5;
 const LOCKOUT_DURATION_MS = 15 * 60 * 1000; // 15 minutes
@@ -163,11 +168,30 @@ export default function LoginScreen() {
 
   const handleGoogleLogin = async () => {
     try {
-      const { error } = await supabase.auth.signInWithOAuth({
+      const redirectTo = Linking.createURL("auth/callback");
+
+      const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "google",
-        options: { redirectTo: "momentra://auth/callback" },
+        options: {
+          redirectTo,
+          skipBrowserRedirect: true, // We open the browser manually below
+        },
       });
+
       if (error) throw error;
+      if (!data.url) throw new Error("No OAuth URL returned");
+
+      const result = await WebBrowser.openAuthSessionAsync(
+        data.url,
+        redirectTo,
+      );
+
+      if (result.type === "success" && result.url) {
+        const { error: sessionError } =
+          await supabase.auth.exchangeCodeForSession(result.url);
+        if (sessionError) throw sessionError;
+        router.replace("/(tabs)");
+      }
     } catch {
       Alert.alert(t("auth.error_title"), t("auth.google_login_failed"));
     }
@@ -175,11 +199,30 @@ export default function LoginScreen() {
 
   const handleAppleLogin = async () => {
     try {
-      const { error } = await supabase.auth.signInWithOAuth({
+      const redirectTo = Linking.createURL("auth/callback");
+
+      const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "apple",
-        options: { redirectTo: "momentra://auth/callback" },
+        options: {
+          redirectTo,
+          skipBrowserRedirect: true, // We open the browser manually below
+        },
       });
+
       if (error) throw error;
+      if (!data.url) throw new Error("No OAuth URL returned");
+
+      const result = await WebBrowser.openAuthSessionAsync(
+        data.url,
+        redirectTo,
+      );
+
+      if (result.type === "success" && result.url) {
+        const { error: sessionError } =
+          await supabase.auth.exchangeCodeForSession(result.url);
+        if (sessionError) throw sessionError;
+        router.replace("/(tabs)");
+      }
     } catch {
       Alert.alert(t("auth.error_title"), t("auth.apple_login_failed"));
     }

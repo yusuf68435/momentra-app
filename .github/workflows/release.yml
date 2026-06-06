@@ -29,6 +29,11 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
+      - name: Write Apple API Key
+        run: printf '%s' "$APPLE_API_KEY_P8" > ./AuthKey_X2MRHFV27Z.p8
+        env:
+          APPLE_API_KEY_P8: ${{ secrets.APPLE_API_KEY_P8 }}
+
       - name: Build iOS production
         run: eas build --profile production --platform ios --non-interactive
 

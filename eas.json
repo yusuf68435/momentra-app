@@ -25,8 +25,7 @@
     "production": {
       "ios": {
         "ascAppId": "6760708636",
-        "ascApiKeyId": "X2MRHFV27Z",
-        "ascApiKeyIssuerId": "0c203279-bcf4-49ec-8e75-40b7618c5f94"
+        "appleId": "yusuf.uyar68@gmail.com"
       },
       "android": {
         "serviceAccountKeyPath": "../google-service-account.json",

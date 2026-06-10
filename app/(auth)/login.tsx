@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
-import { Icon } from "../../src/components/ui/Icon";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Spacing, Typography, BorderRadius } from "../../src/constants/theme";
 import { useTheme } from "../../src/contexts/ThemeContext";
@@ -18,13 +17,7 @@ import { Input } from "../../src/components/ui/Input";
 import { validateEmail, getMsg } from "../../src/utils/validation";
 import { useAuthStore } from "../../src/stores/authStore";
 import * as authService from "../../src/services/auth";
-import { supabase } from "../../src/services/supabase";
 import { MomentraLogo } from "../../src/components/ui/MomentraLogo";
-import * as WebBrowser from "expo-web-browser";
-import * as Linking from "expo-linking";
-
-// Required for OAuth redirect handling on web
-WebBrowser.maybeCompleteAuthSession();
 
 const MAX_LOGIN_ATTEMPTS = 5;
 const LOCKOUT_DURATION_MS = 15 * 60 * 1000; // 15 minutes
@@ -166,68 +159,6 @@ export default function LoginScreen() {
     }
   };
 
-  const handleGoogleLogin = async () => {
-    try {
-      const redirectTo = Linking.createURL("auth/callback");
-
-      const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: "google",
-        options: {
-          redirectTo,
-          skipBrowserRedirect: true, // We open the browser manually below
-        },
-      });
-
-      if (error) throw error;
-      if (!data.url) throw new Error("No OAuth URL returned");
-
-      const result = await WebBrowser.openAuthSessionAsync(
-        data.url,
-        redirectTo,
-      );
-
-      if (result.type === "success" && result.url) {
-        const { error: sessionError } =
-          await supabase.auth.exchangeCodeForSession(result.url);
-        if (sessionError) throw sessionError;
-        router.replace("/(tabs)");
-      }
-    } catch {
-      Alert.alert(t("auth.error_title"), t("auth.google_login_failed"));
-    }
-  };
-
-  const handleAppleLogin = async () => {
-    try {
-      const redirectTo = Linking.createURL("auth/callback");
-
-      const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: "apple",
-        options: {
-          redirectTo,
-          skipBrowserRedirect: true, // We open the browser manually below
-        },
-      });
-
-      if (error) throw error;
-      if (!data.url) throw new Error("No OAuth URL returned");
-
-      const result = await WebBrowser.openAuthSessionAsync(
-        data.url,
-        redirectTo,
-      );
-
-      if (result.type === "success" && result.url) {
-        const { error: sessionError } =
-          await supabase.auth.exchangeCodeForSession(result.url);
-        if (sessionError) throw sessionError;
-        router.replace("/(tabs)");
-      }
-    } catch {
-      Alert.alert(t("auth.error_title"), t("auth.apple_login_failed"));
-    }
-  };
-
   const styles = useMemo(() => createStyles(colors), [colors]);
 
   return (
@@ -274,24 +205,6 @@ export default function LoginScreen() {
           loading={isSubmitting}
         />
 
-        <Text style={styles.divider}>{t("auth.or_continue_with")}</Text>
-
-        <Button
-          title={t("auth.google")}
-          onPress={handleGoogleLogin}
-          variant="outline"
-          fullWidth
-          icon={<Icon name="google" size={20} color={colors.primary} />}
-          style={{ marginBottom: Spacing.md }}
-        />
-        <Button
-          title={t("auth.apple")}
-          onPress={handleAppleLogin}
-          variant="outline"
-          fullWidth
-          icon={<Icon name="apple" size={20} color={colors.primary} />}
-        />
-
         <TouchableOpacity
           style={styles.registerLink}
           onPress={() => router.push("/(auth)/register" as any)}
@@ -336,12 +249,6 @@ const createStyles = (
     forgotText: {
       ...Typography.bodySmall,
       color: colors.primary,
-    },
-    divider: {
-      ...Typography.bodySmall,
-      color: colors.textTertiary,
-      textAlign: "center",
-      marginVertical: Spacing.lg,
     },
     registerLink: {
       marginTop: Spacing.xl,

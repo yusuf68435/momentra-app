@@ -1,0 +1,25 @@
+name: Supabase Keep-Alive
+
+# Supabase free-tier projects are paused after ~7 days without activity,
+# which takes auth (and the whole app) offline. A daily REST ping keeps
+# the project active. The anon key is already public (shipped in the
+# client bundle), so it is safe to use here.
+on:
+  schedule:
+    - cron: "17 6 * * *" # daily at 06:17 UTC
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase Auth health endpoint
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ic3hnbmF2dHdueHZtaGRqZXZ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2OTAwMTMsImV4cCI6MjA4OTI2NjAxM30.BTOJbPtg8KIZHqn9GOIH37LIA1kW57jZni0C0XqDPt4" \
+            "https://mbsxgnavtwnxvmhdjevz.supabase.co/auth/v1/health")
+          echo "Auth health endpoint returned HTTP $STATUS"
+          if [ "$STATUS" -ne 200 ]; then
+            echo "::error::Supabase project appears to be down or paused (HTTP $STATUS)"
+            exit 1
+          fi

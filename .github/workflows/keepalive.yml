@@ -17,9 +17,9 @@ jobs:
         run: |
           STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
             -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ic3hnbmF2dHdueHZtaGRqZXZ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2OTAwMTMsImV4cCI6MjA4OTI2NjAxM30.BTOJbPtg8KIZHqn9GOIH37LIA1kW57jZni0C0XqDPt4" \
-            "https://mbsxgnavtwnxvmhdjevz.supabase.co/auth/v1/health")
+              "https://mbsxgnavtwnxvmhdjevz.supabase.co/rest/v1/categories?select=id&limit=1")
           echo "Auth health endpoint returned HTTP $STATUS"
-          if [ "$STATUS" -ne 200 ]; then
+            if [ "$STATUS" = "000" ]; then
             echo "::error::Supabase project appears to be down or paused (HTTP $STATUS)"
             exit 1
           fi

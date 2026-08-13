@@ -1,0 +1,24 @@
+name: Temporary Upload Momentra Build 18
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  upload:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - name: Download signed IPA
+        run: curl --fail --location --retry 3 "https://expo.dev/artifacts/eas/62HOwDd30I7oc-1xsvN2r9EEpnTUiSppe9RoyyTP-Es.ipa" --output Momentra-build-18.ipa
+      - name: Configure App Store Connect key
+        env:
+          ASC_PRIVATE_KEY: ${{ secrets.TEMP_ASC_PRIVATE_KEY_BUILD18 }}
+        run: |
+          mkdir -p "$HOME/.appstoreconnect/private_keys"
+          printf '%s' "$ASC_PRIVATE_KEY" > "$HOME/.appstoreconnect/private_keys/AuthKey_P752C956D4.p8"
+          chmod 600 "$HOME/.appstoreconnect/private_keys/AuthKey_P752C956D4.p8"
+      - name: Upload build 18 to App Store Connect
+        run: xcrun altool --upload-app --type ios --file Momentra-build-18.ipa --apiKey P752C956D4 --apiIssuer 0c203279-bcf4-49ec-8e75-40b7618c5f94
